@@ -1,0 +1,103 @@
+/* ホバーしたとき名前を変える処理 */
+.rotate .front {
+    animation: 3s fadeIn forwards;
+}
+.rotate .back {
+    display:none;
+}
+.rotate:hover .front{
+    animation: 3s fadeOut forwards;
+    display:none;
+}
+.rotate:hover .back{
+    animation: 3s fadeIn forwards;
+    display: inline-block;
+    vertical-align: top;
+}
+@keyframes fadeOut { 
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes fadeIn { 
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* レスポンシブ処理 */
+@media (max-width: 500px) {
+  .icon,.title {
+        text-align: center;
+  }
+}
+@media (min-width: 500px){
+  .flexbox {
+        display: flex;
+  }
+}
+
+/* 枠線 */
+.box {
+    position: relative;
+    margin: 2em 0;
+    padding: 0.5em 1em;
+    border: solid 2px #000000;
+    border-radius: 8px;
+    width: 14em;
+}
+.box .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 19px;
+    background: #FFF;
+    color: #000000;
+    font-weight: bold;
+}
+.box span {
+    margin: 0; 
+    padding: 0;
+}
+
+/* フッターのメニュー */
+.footer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+.footer-column {
+    width: 19%;
+    text-align: center;
+    border: 2px solid #eee;
+    box-sizing: border-box;
+    margin:2px 2px;
+}
+.footer-column h3{
+    background: #353A40;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+@media screen and (max-width: 800px){
+    .footer-munu {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    .footer-column {
+        flex: 0 0 auto;
+        -webkit-flex: 0 0 auto;
+        width:10em;
+    }
+}
+.scale:hover {
+    transform: scale(1.1);
+}
