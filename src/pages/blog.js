@@ -181,7 +181,7 @@ const SiteIndex = ({ location }) => {
       <div style={{ 'text-align': 'center' }}>
         <Link href="https://sechack365.nict.go.jp/" target="_blank" rel="noopener noreferrer">
           <StaticImage
-            src="../../images/logo-yoko.png"
+            src="../images/logo-yoko.png"
             alt="SecHack365 logo"
             style={{ width: '40%', height: 'auto' }}
           />
