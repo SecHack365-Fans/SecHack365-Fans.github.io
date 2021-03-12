@@ -5,7 +5,7 @@ module.exports = {
       name: `xryuseix and more...`,
     },
     description: `This is SecHack365-Fans HomePage`,
-    siteUrl: `https://SecHack365-Fans.github.io`,
+    siteUrl: `https://fans.sechack365.com/`,
   },
   plugins: [
     {
@@ -25,6 +25,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
+    'gatsby-plugin-cname',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
