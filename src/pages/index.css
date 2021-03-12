@@ -24,6 +24,7 @@
     padding: 0;
 }
 
+/* 公式サイトへのリンク */
 .officialLink {
     list-style: none;
     margin: 0;
@@ -47,6 +48,19 @@
     margin:2px 2px;
 }
 .officialBtn:hover {
-    background: silver;
+    background: #F8E44C;
     transform: scale(1.05);
+}
+
+/* トップ画像 */
+.topicon {
+    text-align:center;
+}
+
+/* 非公式の文字 */
+.unofficial {
+    color: red;
+    font-size: 2em;
+    margin: 0;
+    font-weight: bold;
 }

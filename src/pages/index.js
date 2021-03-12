@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Meta from '../components/meta'
 
-import { StaticImage } from 'gatsby-plugin-image'
+import GamingSecHack from '../images/GamingSecHack.gif'
 
 import './index.css'
 
@@ -18,9 +18,9 @@ const SiteIndex = ({ location }) => {
       <h5 class="box">
         <div>
           <span class="box-title">注意</span>
-          このページは<span style={{ color: 'red', 'font-size': '2em' }}>非公式</span>のファンページです．
-          <br />
-          公式のページはこちらになります．
+          このページは修了生よって運営されている
+          <div class="unofficial">非公式</div>
+          のファンページです。 公式のページはこちらになります。
         </div>
         <ul class="officialLink">
           <li class="officialBtn">
@@ -35,8 +35,8 @@ const SiteIndex = ({ location }) => {
           </li>
         </ul>
       </h5>
-      <div class="icon">
-        <StaticImage src="../images/top.png" alt="icon" style={{ border: '50' }} />
+      <div class="topicon">
+        <img src={GamingSecHack} alt="icon" style={{ border: '50' }} />
       </div>
     </Layout>
   )
