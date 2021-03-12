@@ -6,11 +6,14 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Meta from '../components/meta'
 
+import './404.css'
+
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="404" description="404page" />
       <Meta title="404" />
+
       <h1>404 Not Found</h1>
       <p>あれ，もしかしてページをなくし物されていますか？そんな時はこちら！！</p>
       <h3>
@@ -25,6 +28,9 @@ const SiteIndex = ({ location }) => {
       >
         <StaticImage src="../images/tsukushi_speaker.png" alt="tsuku4" />
       </Link>
+      <div class="menu">
+        <StaticImage src="../images/tsuku4.png" alt="tsuku4" />
+      </div>
     </Layout>
   )
 }
