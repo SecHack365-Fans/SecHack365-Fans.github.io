@@ -16,7 +16,7 @@ export default () => (
         <Navbar.Collapse id="navbarResponsive" className="mr-auto">
           <Nav as="ul" className="mr-auto">
             <Nav.Item as="li">
-              <Link class="nav-link" href="/blog">
+              <Link class="nav-link" href="/2020/blog">
                 参加記ブログ
               </Link>
             </Nav.Item>
