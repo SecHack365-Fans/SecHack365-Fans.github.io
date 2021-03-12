@@ -24,12 +24,22 @@ const SiteIndex = ({ location }) => {
         </div>
         <ul class="officialLink">
           <li class="officialBtn">
-            <Link href="https://sechack365.nict.go.jp/" style={{ color: '#353A40' }}>
+            <Link
+              href="https://sechack365.nict.go.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#353A40' }}
+            >
               Webサイト
             </Link>
           </li>
           <li class="officialBtn">
-            <Link href="https://twitter.com/SecHack365" style={{ color: '#353A40' }}>
+            <Link
+              href="https://twitter.com/SecHack365"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#353A40' }}
+            >
               Twitter
             </Link>
           </li>
