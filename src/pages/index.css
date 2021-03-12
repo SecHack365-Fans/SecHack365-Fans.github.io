@@ -40,6 +40,7 @@
     padding: 10px;
     margin: 0;
     width: 19%;
+    min-width: 7em;
     text-align: center;
     border: 2px solid #353A40;
     box-sizing: border-box;
