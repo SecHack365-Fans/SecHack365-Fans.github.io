@@ -7,6 +7,52 @@ import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 import './blog.css'
 
+/**
+ * TableRow でのみの使用を想定している
+ * @param {string} title - 作品のタイトル
+ * @param {string} href - 作品へのリンク
+ * @returns {JSX.Element} - 多分
+ */
+const AchivementLink = ({ title, href }) => (
+  <Link href={href} target="_blank" rel="noopener noreferrer">
+    {title}
+  </Link>
+)
+
+/**
+ * テーブルの1行
+ * @param {string} author - 参加者の名前
+ * @param {string} title - 参加記のタイトル
+ * @param {string} blogHRef - 参加記への href
+ * @param {string} blogHostedAt - 参加記をホスティングしてるドメイン
+ * @param {Array<{title: string, href: string}>} achivements - 作品のタイトルとリンク
+ * @returns {JSX.Element} - 多分
+ */
+const TableRow = ({ author, title, blogHRef, blogHostedAt, achivements }) => (
+  <tr class="title">
+    <td class="sh365_name">{author}</td>
+    <td class="sh365_title">{title}</td>
+    <td class="sh365_blog">
+      <Link href={blogHRef} target="_blank" rel="noopener noreferrer">
+        {blogHostedAt}
+      </Link>
+    </td>
+    <td class="sh365_hack">
+      {achivements.length > 0 && (
+        <>
+          {/* 2つ目以降の作品のリンクの前には <br /> を入れたいので最初のだけ直接添字アクセスをして、それ以降を map で呼び出す */}
+          <AchivementLink {...achivements[0]} />
+          {achivements.slice(1).map((achivement) => (
+            <>
+              <br />
+              <AchivementLink {...achivement} />
+            </>
+          ))}
+        </>
+      )}
+    </td>
+  </tr>
+)
 const SiteIndex = ({ location }) => {
   const siteTitle = 'sh365 blog'
   return (
