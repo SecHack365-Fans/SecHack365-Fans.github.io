@@ -7,6 +7,53 @@ import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 import './blog.css'
 
+/**
+ * TableRow でのみの使用を想定している
+ * @param {string} title - 作品のタイトル
+ * @param {string} href - 作品へのリンク
+ * @returns {JSX.Element} - 多分
+ */
+const AchivementLink = ({ title, href }) => (
+  <Link href={href} target="_blank" rel="noopener noreferrer">
+    {title}
+  </Link>
+)
+
+/**
+ * テーブルの1行
+ * @param {string} author - 参加者の名前
+ * @param {string} title - 参加記のタイトル
+ * @param {string} blogHRef - 参加記への href
+ * @param {string} blogHostedAt - 参加記をホスティングしてるドメイン
+ * @param {Array<{title: string, href: string}>} achivements - 作品のタイトルとリンク
+ * @returns {JSX.Element} - 多分
+ */
+const TableRow = ({ author, title, blogHRef, blogHostedAt, achivements }) => (
+  <tr class="title">
+    <td class="sh365_name">{author}</td>
+    <td class="sh365_title">{title}</td>
+    <td class="sh365_blog">
+      <Link href={blogHRef} target="_blank" rel="noopener noreferrer">
+        {blogHostedAt}
+      </Link>
+    </td>
+    <td class="sh365_hack">
+      {achivements.length > 0 && (
+        <>
+          {/* 2つ目以降の作品のリンクの前には <br /> を入れたいので最初のだけ直接添字アクセスをして、それ以降を map で呼び出す */}
+          <AchivementLink {...achivements[0]} />
+          {achivements.slice(1).map((achivement) => (
+            <>
+              <br />
+              <AchivementLink {...achivement} />
+            </>
+          ))}
+        </>
+      )}
+    </td>
+  </tr>
+)
+
 const SiteIndex = ({ location }) => {
   const siteTitle = 'sh365 blog'
   return (
@@ -25,80 +72,46 @@ const SiteIndex = ({ location }) => {
               <th class="sh365_blog">参加記</th>
               <th class="sh365_hack">成果物</th>
             </tr>
-            <tr class="title">
-              <td class="sh365_name">中嶋 桃香</td>
-              <td class="sh365_title">「SecHack365修了しました」</td>
-              <td class="sh365_blog">
-                <Link
-                  href="https://momoka-mero.hatenablog.com/entry/2021/03/06/232920"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  hatenablog.com
-                </Link>
-              </td>
-              <td class="sh365_hack">
-                <Link
-                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tsukushi Speaker 僕だけが失くしモノをしない
-                </Link>
-              </td>
-            </tr>
-            <tr class="title">
-              <td class="sh365_name">酒井 義史</td>
-              <td class="sh365_title">「SecHack365 2020表現駆動コース参加体験記」</td>
-              <td class="sh365_blog">
-                <Link
-                  href="https://yoshistl.hatenablog.com/entry/2021/03/08/024337"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  hatenablog.com
-                </Link>
-              </td>
-              <td class="sh365_hack">
-                <Link
-                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tsukushi Speaker 僕だけが失くしモノをしない
-                </Link>
-              </td>
-            </tr>
-            <tr class="title">
-              <td class="sh365_name">玉田 遍</td>
-              <td class="sh365_title">「たのしかったSecHack365」</td>
-              <td class="sh365_blog">
-                <Link
-                  href="https://iiimiiino.hatenablog.com/entry/2021/03/08/232321"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  hatenablog.com
-                </Link>
-              </td>
-              <td class="sh365_hack">
-                <Link
-                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tsukushi Speaker 僕だけが失くしモノをしない
-                </Link>
-                <br />
-                <Link
-                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_02.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  距離を縮めるチャット Approachat
-                </Link>
-              </td>
-            </tr>
+            <TableRow
+              author={'中嶋 桃香'}
+              title={'「SecHack365修了しました」'}
+              blogHRef={'https://momoka-mero.hatenablog.com/entry/2021/03/06/232920'}
+              blogHostedAt={'hatenablog.com'}
+              achivements={[
+                {
+                  title: 'Tsukushi Speaker 僕だけが失くしモノをしない',
+                  href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf'
+                }
+              ]}
+            />
+            <TableRow
+              author={'酒井 義史'}
+              title={'「SecHack365 2020表現駆動コース参加体験記」'}
+              blogHRef={'https://yoshistl.hatenablog.com/entry/2021/03/08/024337'}
+              blogHostedAt={'hatenablog.com'}
+              achivements={[
+                {
+                  title: 'Tsukushi Speaker 僕だけが失くしモノをしない',
+                  href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf'
+                }
+              ]}
+            />
+            <TableRow
+              author={'玉田 遍'}
+              title={'「たのしかったSecHack365」'}
+              blogHRef={'https://iiimiiino.hatenablog.com/entry/2021/03/08/232321'}
+              blogHostedAt={'hatenablog.com'}
+              achivements={[
+                {
+                  title: 'Tsukushi Speaker 僕だけが失くしモノをしない',
+                  href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf'
+                },
+                {
+                  title: '距離を縮めるチャット Approachat',
+                  href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_02.pdf'
+                }
+              ]}
+            />
           </table>
         </div>
       </div>
@@ -115,28 +128,18 @@ const SiteIndex = ({ location }) => {
               <th class="sh365_blog">参加記</th>
               <th class="sh365_hack">成果物</th>
             </tr>
-            <tr class="title">
-              <td class="sh365_name">寺嶋 友哉</td>
-              <td class="sh365_title">「SecHack365を修了しました」</td>
-              <td class="sh365_blog">
-                <Link
-                  href="https://terassyi.net/posts/2021/03/09/sechack365.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  terassyi.net
-                </Link>
-              </td>
-              <td class="sh365_hack">
-                <Link
-                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_20.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  セキュリティ演習環境構築支援ツールKAKOI
-                </Link>
-              </td>
-            </tr>
+            <TableRow
+              author={'寺嶋 友哉'}
+              title={'「SecHack365を修了しました」'}
+              blogHRef={'https://terassyi.net/posts/2021/03/09/sechack365.html'}
+              blogHostedAt={'terassyi.net'}
+              achivements={[
+                {
+                  title: 'セキュリティ演習環境構築支援ツールKAKOI',
+                  href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_20.pdf'
+                }
+              ]}
+            />
           </table>
         </div>
       </div>
@@ -150,28 +153,18 @@ const SiteIndex = ({ location }) => {
               <th class="sh365_blog">参加記</th>
               <th class="sh365_hack">成果物</th>
             </tr>
-            <tr class="title">
-              <td class="sh365_name">福地 成彦</td>
-              <td class="sh365_title">「2020年度のSecHack365を完走しました」</td>
-              <td class="sh365_blog">
-                <Link
-                  href="https://fqc.hatenablog.com/entry/2021/03/14/092046"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  hatenablog.com
-                </Link>
-              </td>
-              <td class="sh365_hack">
-                <Link
-                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_26.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  FairTorch: 深層学習の公平性ライブラリ
-                </Link>
-              </td>
-            </tr>
+            <TableRow
+              author={'福地 成彦'}
+              title={'「2020年度のSecHack365を完走しました」'}
+              blogHRef={'https://fqc.hatenablog.com/entry/2021/03/14/092046'}
+              blogHostedAt={'hatenablog.com'}
+              achivements={[
+                {
+                  title: 'FairTorch: 深層学習の公平性ライブラリ',
+                  href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_26.pdf'
+                }
+              ]}
+            />
           </table>
         </div>
       </div>
@@ -185,28 +178,18 @@ const SiteIndex = ({ location }) => {
               <th class="sh365_blog">参加記</th>
               <th class="sh365_hack">成果物</th>
             </tr>
-            <tr class="title">
-              <td class="sh365_name">石川 琉聖</td>
-              <td class="sh365_title">「SecHack365 参加記」</td>
-              <td class="sh365_blog">
-                <Link
-                  href="https://xryuseix.hatenablog.com/entry/2021/03/08/173442"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  hatenablog.com
-                </Link>
-              </td>
-              <td class="sh365_hack">
-                <Link
-                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_28.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ソースコードの盗作判定システム SA-Plag
-                </Link>
-              </td>
-            </tr>
+            <TableRow
+              author={'石川 琉聖'}
+              title={'「SecHack365 参加記'}
+              blogHRef={'https://xryuseix.hatenablog.com/entry/2021/03/08/173442'}
+              blogHostedAt={'hatenablog.com'}
+              achivements={[
+                {
+                  title: 'ソースコードの盗作判定システム SA-Plag',
+                  href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_28.pdf'
+                }
+              ]}
+            />
           </table>
         </div>
       </div>
