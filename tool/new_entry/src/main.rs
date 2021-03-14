@@ -1,4 +1,4 @@
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize, Serializer};
 use std::{
     io::{self, stdout, Write},
     time::UNIX_EPOCH,
@@ -19,6 +19,22 @@ enum Course {
     Research,
 }
 
+impl Serialize for Course {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        let s = match self {
+            Course::Expr => "expr",
+            Course::Learn => "learn",
+            Course::Dev => "dev",
+            Course::Think => "think",
+            Course::Research => "research",
+        };
+        serializer.serialize_str(s)
+    }
+}
+
 impl Course {
     fn from_str(s: &str) -> Option<Self> {
         match s {
@@ -32,20 +48,24 @@ impl Course {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 struct Achivement {
     title: String,
     href: String,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 struct Entry {
+    course: Course,
     author: String,
     title: String,
+    #[serde(rename = "blogHRef")]
     blog_href: String,
+    #[serde(rename = "blogHostedAt")]
     blog_hosted_at: String,
     achivements: Vec<Achivement>,
     // 日付でソートする？
+    #[serde(rename = "inputDate")]
     input_date: u64,
 }
 
@@ -99,6 +119,7 @@ fn main() -> io::Result<()> {
         }
     }
     let entry = Entry {
+        course,
         author,
         title,
         blog_href,
@@ -110,6 +131,7 @@ fn main() -> io::Result<()> {
             .as_secs()
             .into(),
     };
-    dbg!(entry);
+    let j = serde_json::to_string(&entry)?;
+    println!("{}", j);
     Ok(())
 }
