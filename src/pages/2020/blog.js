@@ -142,6 +142,38 @@ const SiteIndex = ({ location }) => {
       </div>
       <div>
         <h2 class="coursettl c0 c04">思索駆動コース</h2>
+        <div>
+          <table>
+            <tr class="title">
+              <th class="sh365_name">名前</th>
+              <th class="sh365_title">タイトル</th>
+              <th class="sh365_blog">参加記</th>
+              <th class="sh365_hack">成果物</th>
+            </tr>
+            <tr class="title">
+              <td class="sh365_name">福地 成彦</td>
+              <td class="sh365_title">「2020年度のSecHack365を完走しました」</td>
+              <td class="sh365_blog">
+                <Link
+                  href="https://fqc.hatenablog.com/entry/2021/03/14/092046"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  hatenablog.com
+                </Link>
+              </td>
+              <td class="sh365_hack">
+                <Link
+                  href="https://sechack365.nict.go.jp/achievement/2020/pdf/2020_26.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  FairTorch: 深層学習の公平性ライブラリ
+                </Link>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div>
         <h2 class="coursettl c0 c05">研究駆動コース</h2>
