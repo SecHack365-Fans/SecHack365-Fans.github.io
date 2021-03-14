@@ -3,4 +3,23 @@
 
 # SecHack365 Fansのホームページ
 
-修了生が作成しています．
+修了生が運営しています．  
+誰か充実したREADME書いてください．
+
+## このサイトの開発がしたい
+
+```sh
+git clone https://github.com/SecHack365-Fans/SecHack365-Fans.github.io
+```
+
+```sh
+npm install
+gatsby develop
+```
+
+または
+
+```sh
+yarn
+yarn develop
+```
