@@ -33,10 +33,11 @@
         "typeface-montserrat": "^1.1.13"
     },
     "scripts": {
-        "develop": "gatsby develop",
-        "build": "gatsby build",
-        "serve": "gatsby serve",
-        "format": "prettier --write 'src/**/*.js'"
+        "develop": "npx gatsby develop",
+        "build": "npx gatsby build",
+        "serve": "npx gatsby serve",
+        "format": "npx prettier --write 'src/**/*.js'",
+        "clean": "rm -rf node_modules public .cache/ jspm_packages/"
     },
     "devDependencies": {
         "prettier": "^2.2.1",
