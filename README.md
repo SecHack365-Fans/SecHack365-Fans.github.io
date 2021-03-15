@@ -23,3 +23,13 @@ gatsby develop
 yarn
 yarn develop
 ```
+
+# あなたの参加記を追加しましょう！
+追加は結構大変な作業なので、どうか皆様の力をお貸しください。
+
+入力支援スクリプトが tool/new_entryにあります。
+
+`$ cd tool/new_entry && docker build . -t sechack365fans-new-entry && docker run -it sechack365fans-new-entry` のように実行すれば、対話的に入力できます。
+その後にJSONが標準出力されるので、`src/pages/2020/blog.js` をエスパーしてそのJSONを貼ってください！(TODO: blog.jsをエスパーしなくても貼れる方法を考える)
+
+皆様の Pull Request をお待ちしています！
