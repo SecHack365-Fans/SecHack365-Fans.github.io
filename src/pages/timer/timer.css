@@ -36,3 +36,11 @@
     line-height: 40px;
     font-family: "7seg4";
 }
+
+body {
+    background-color: black;
+}
+
+footer {
+    color:white;
+}
