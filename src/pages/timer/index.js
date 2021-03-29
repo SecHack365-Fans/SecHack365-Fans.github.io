@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -34,7 +33,7 @@ const SiteIndex = ({ location }) => {
         <div class="counter" id="counter"></div>
       </div>
       {/* カウントダウンの締め切りを設定する */}
-      {countdown(2022, 4, 1, 0, 'SecHack365\'21募集開始まで', 'counter')}
+      {countdown(2021, 4, 1, 0, "SecHack365'21募集開始まで", 'counter')}
       {/* カウントダウンタイマーの実行スクリプト */}
       <div style={{ display: 'none' }}>{setInterval(display, 10)}</div>
     </Layout>
