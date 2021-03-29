@@ -17,14 +17,6 @@ export default function showClock() {
   var nowHour = set2fig(nowTime.getHours())
   var nowMin = set2fig(nowTime.getMinutes())
   var nowSec = set2fig(nowTime.getSeconds())
-  var msg =
-    '<i><b><font size="+3" color="#ff0000">現実世界の時刻<br>' +
-    nowHour +
-    ':' +
-    nowMin +
-    ':' +
-    nowSec +
-    '</font></b></i>'
   const element = (
     <div>
       <i>
