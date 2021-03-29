@@ -108,9 +108,9 @@ export function display() {
         <div>
           <p>
             {com1}
+            <br />
             <span>{time_0}</span>
             {cnt1}
-            <br />
             {com2}
             <span>{time1}</span>
             {cnt2}
