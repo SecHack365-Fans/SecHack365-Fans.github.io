@@ -1,0 +1,38 @@
+/* カウントダウンタイマーのフォント */
+@font-face {
+    font-family: "7seg4";
+    src: url("./fonts/7seg4.woff") format('woff');
+}
+
+.counter {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    height: 100%;
+
+    /* カウントダウンの背景画像 */
+    background-image: url("./warning.jpeg");
+
+    background-size: 100% 100%;
+}
+
+.counter p {
+    color: #000000;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: 3px;
+    font-family: Osaka;
+    font-style: italic;
+    text-align: center;
+    font-weight: 700;
+    padding: 50px 0 50px 0;
+    margin: 0;
+}
+
+.counter span {
+    color: #FF0000;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: "7seg4";
+}
