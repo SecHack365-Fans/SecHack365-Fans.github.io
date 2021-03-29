@@ -52,8 +52,20 @@ const ExprData = [
 ]
 
 // 学習駆動コースのデータ
-// eslint-disable-next-line no-unused-vars
-const StudyData = []
+const StudyData = [
+  {
+    author: '古田 花恋',
+    title: '「2020SecHack365修了しました(学習駆動コース)」',
+    blogHRef: 'https://rinruren.hatenablog.com/entry/2021/03/28/223316',
+    blogHostedAt: 'hatenablog.com',
+    achivements: [
+      {
+        title: '物語でセキュリティ啓発',
+        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_06.pdf'
+      }
+    ]
+  }
+]
 
 // 開発駆動のエントリデータ
 const DevData = [
@@ -176,7 +188,19 @@ const SiteIndex = ({ location }) => {
       </div>
       <div>
         <h2 class="coursettl c0 c02">学習駆動コース</h2>
-        {/* エントリが出たら突っ込む */}
+        <div>
+          <table>
+            <tr class="title">
+              <th class="sh365_name">名前</th>
+              <th class="sh365_title">タイトル</th>
+              <th class="sh365_blog">参加記</th>
+              <th class="sh365_hack">成果物</th>
+            </tr>
+            {StudyData.map((data) => (
+              <TableRow {...data} />
+            ))}
+          </table>
+        </div>
       </div>
       <div>
         <h2 class="coursettl c0 c03">開発駆動コース</h2>
