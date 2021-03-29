@@ -21,6 +21,11 @@ export default () => (
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
+              <Link class="nav-link" href="/timer/">
+                †締め切り駆動コース†
+              </Link>
+            </Nav.Item>
+            <Nav.Item as="li">
               <Link
                 class="nav-link"
                 href="https://github.com/SecHack365-Fans/SecHack365-Fans.github.io"
