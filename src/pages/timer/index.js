@@ -8,7 +8,7 @@ import Meta from '../../components/meta'
 import './timer.css'
 import showClock from './script/clock.js'
 import showDamedesu from './script/display.js'
-// import './script/countdown.js'
+import countdown from './script/countdown.js'
 
 const SiteIndex = ({ location }) => {
   return (
@@ -23,25 +23,28 @@ const SiteIndex = ({ location }) => {
           </font>
         </b>
       </p>
-
-      {/* カウントダウンタイマーの表示エリア */}
-      <div align="center">
-        <div class="counter" id="counter"></div>
-      </div>
+      
       {/* consoleにAAを表示する  */}
       {showDamedesu()}
       {/* 時計を表示する  */}
-      {setInterval(showClock(), 1000)}
+      {setInterval(showClock, 1000)}
+
+      {/* カウントダウンタイマーの表示エリア */}
+      <div align="center">
+        <div class="counter" id="counter">
+          {/* <countdown year={2022} month={4} day={1} hour={12} com1={'HogeのFuga</br>まで'} if={'counter'} /> */}
+        </div>
+      </div>
+      {/* カウントダウンの締め切りを設定する */}
       <Helmet>
         <script type="text/javascript">
-          {
-            // 
-            // {/* const counter = new countdown(2022, 4, 1, 12, "HogeのFuga</br>まで", "counter"); */}
-          }
+          {/* {`const counter = new countdown(2022, 4, 1, 12, "HogeのFuga</br>まで", "counter"); */}
         </script>
       </Helmet>
 
       {/* カウントダウンタイマーの実行スクリプト，bodyの最下部に書くのが安牌 */}
+      {/* {countdown.display()} */}
+      {/* {setInterval(console.log(1), 10)} */}
       <Helmet>
         {/* <script type="text/javascript">{`counter.display(); setInterval("counter.display()", 10);`}</script> */}
       </Helmet>

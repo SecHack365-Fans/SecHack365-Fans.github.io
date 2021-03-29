@@ -1,3 +1,6 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 function set2fig(num) {
   // 桁数が1桁だったら先頭に0を加えて2桁に調整する
   var ret
@@ -22,5 +25,18 @@ export default function showClock() {
     ':' +
     nowSec +
     '</font></b></i>'
-  document.getElementById('RealtimeClockArea').innerHTML = msg
+  const element = (
+    <div>
+      <i>
+        <b>
+          <font size="+3" color="#ff0000">
+            現実世界の時刻
+            <br />
+            {nowHour}:{nowMin}:{nowSec}
+          </font>
+        </b>
+      </i>
+    </div>
+  )
+  ReactDOM.render(element, document.getElementById('RealtimeClockArea'))
 }
