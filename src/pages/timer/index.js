@@ -8,7 +8,7 @@ import Meta from '../../components/meta'
 import './timer.css'
 import showClock from './script/clock.js'
 import showDamedesu from './script/display.js'
-import {countdown, display} from './script/countdown.js'
+import { countdown, display } from './script/countdown.js'
 
 const SiteIndex = ({ location }) => {
   return (
@@ -26,7 +26,8 @@ const SiteIndex = ({ location }) => {
       {/* consoleにAAを表示する  */}
       {showDamedesu()}
       {/* 時計を表示する  */}
-      {setInterval(showClock, 1000)}
+      {/* TODO: setIntervalの返り値が出力されるけど直し方わからないのでとりまdisplay:noneしておいた */}
+      <div style={{ display: 'none' }}>{setInterval(showClock, 1000)}</div>
 
       {/* カウントダウンタイマーの表示エリア */}
       <div align="center">
@@ -34,18 +35,8 @@ const SiteIndex = ({ location }) => {
       </div>
       {/* カウントダウンの締め切りを設定する */}
       {countdown(2022, 4, 1, 12, 'HogeのFugaまで', 'counter')}
-      {setInterval(display, 10)}
-      <Helmet>
-        <script type="text/javascript">
-          {/* {`const counter = new countdown(2022, 4, 1, 12, "HogeのFuga</br>まで", "counter"); */}
-        </script>
-      </Helmet>
-      {/* カウントダウンタイマーの実行スクリプト，bodyの最下部に書くのが安牌 */}
-      {/* {countdown.display()} */}
-      {/* {setInterval(console.log(1), 10)} */}
-      <Helmet>
-        {/* <script type="text/javascript">{`counter.display(); setInterval("counter.display()", 10);`}</script> */}
-      </Helmet>
+      {/* カウントダウンタイマーの実行スクリプト */}
+      <div style={{ display: 'none' }}>{setInterval(display, 10)}</div>
     </Layout>
   )
 }
