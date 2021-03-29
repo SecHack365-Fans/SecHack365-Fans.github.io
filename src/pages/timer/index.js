@@ -6,7 +6,7 @@ import SEO from '../../components/seo'
 import Meta from '../../components/meta'
 
 import './timer.css'
-// import './script/clock.js'
+import showClock from './script/clock.js'
 import showDamedesu from './script/display.js'
 // import './script/countdown.js'
 
@@ -28,19 +28,19 @@ const SiteIndex = ({ location }) => {
       <div align="center">
         <div class="counter" id="counter"></div>
       </div>
+      {/* consoleにAAを表示する  */}
       {showDamedesu()}
+      {/* 時計を表示する  */}
+      {setInterval(showClock(), 1000)}
       <Helmet>
-        <script type="text/javascript">{
-          // {/* consoleにAAを表示する  */}
-          // `showDamedesu();`
-
-          // {/* 時計を表示する  */}
-          // {/* setInterval('showClock()', 1000); */}
-
-          // {/* カウントダウンの締め切りを設定する  */}
-          // {/* const counter = new countdown(2022, 4, 1, 12, "HogeのFuga</br>まで", "counter"); */}
-        }</script>
+        <script type="text/javascript">
+          {
+            // 
+            // {/* const counter = new countdown(2022, 4, 1, 12, "HogeのFuga</br>まで", "counter"); */}
+          }
+        </script>
       </Helmet>
+
       {/* カウントダウンタイマーの実行スクリプト，bodyの最下部に書くのが安牌 */}
       <Helmet>
         {/* <script type="text/javascript">{`counter.display(); setInterval("counter.display()", 10);`}</script> */}

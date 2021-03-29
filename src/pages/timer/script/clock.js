@@ -9,7 +9,7 @@ function set2fig(num) {
   return ret
 }
 
-function showClock() {
+export default function showClock() {
   var nowTime = new Date()
   var nowHour = set2fig(nowTime.getHours())
   var nowMin = set2fig(nowTime.getMinutes())
