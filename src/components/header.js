@@ -23,7 +23,7 @@ export default () => {
               </Nav.Item>
               <Nav.Item as="li">
                 <Link class="nav-link" href="/timer/">
-                  †締め切り駆動コース†
+                  †締切駆動コース†
                 </Link>
               </Nav.Item>
               <Nav.Item as="li">

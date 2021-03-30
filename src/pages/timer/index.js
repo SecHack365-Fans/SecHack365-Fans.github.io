@@ -20,8 +20,8 @@ const SiteIndex = ({ location }) => {
   setInterval(display, 10)
   return (
     <Layout location={location}>
-      <SEO title="timer" description="†限界駆動コース†" />
-      <Meta title="†限界駆動コース†" />
+      <SEO title="timer" description="†締切駆動コース†" />
+      <Meta title="†締切駆動コース†" />
       {/* 現在時刻の表示エリア */}
       <p id="RealtimeClockArea" align="center">
         <b>
