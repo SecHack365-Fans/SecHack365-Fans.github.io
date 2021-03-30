@@ -7,9 +7,8 @@ import Meta from '../components/meta'
 
 import GamingSecHack from '../images/GamingSecHack.gif'
 
-import './index.css'
-
 const SiteIndex = ({ location }) => {
+  require('./index.css')
   return (
     <Layout location={location}>
       <SEO title="index" description="SecHack365-Fans Toppage" />

@@ -5,7 +5,6 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
-import './blog.css'
 
 // 表現駆動のエントリデータ
 const ExprData = [
@@ -164,6 +163,7 @@ const TableRow = ({ author, title, blogHRef, blogHostedAt, achivements }) => (
 
 const SiteIndex = ({ location }) => {
   const siteTitle = 'sh365 blog'
+  require('./blog.css')
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" description="2020年度にSecHack365に参加したトレーニーによる参加ブログのまとめです。" />

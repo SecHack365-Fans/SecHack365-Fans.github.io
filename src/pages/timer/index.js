@@ -4,12 +4,12 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import Meta from '../../components/meta'
 
-import './timer.css'
 import showClock from './script/clock.js'
 import showDamedesu from './script/display.js'
 import { countdown, display } from './script/countdown.js'
 
 const SiteIndex = ({ location }) => {
+  require('./timer.css')
   return (
     <Layout location={location}>
       <SEO title="timer" description="†限界駆動コース†" />

@@ -6,9 +6,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Meta from '../components/meta'
 
-import './404.css'
-
 const SiteIndex = ({ location }) => {
+  require('./404.css')
   return (
     <Layout location={location}>
       <SEO title="404" description="404page" />
