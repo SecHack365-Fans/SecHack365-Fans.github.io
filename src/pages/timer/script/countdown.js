@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 var year, month, day, hour, com1, id
 var millenium
 
-export function countdown(_year, _month, _day, _hour, _com1, _id) {
+export default function countdown(_year, _month, _day, _hour, _com1, _id) {
   const baseoffset = '-9'
   year = _year
   month = _month
@@ -21,9 +21,10 @@ export function countdown(_year, _month, _day, _hour, _com1, _id) {
   }
 
   millenium = new Date(year, month - 1, day, hour - offset, 0, 0)
+  return null
 }
 
-function convertNum(num, figures) {
+export function convertNum(num, figures) {
   var str = String(num)
   if (str) while (str.length < figures) str = '0' + str
   return str
@@ -84,11 +85,11 @@ export function display() {
   time2 = convertNum(time2, 2)
   time3 = convertNum(time3, 2)
   time4 = convertNum(time4, 2)
-  var element = <div>Wait...</div>
+  var Element = <div>Wait...</div>
 
   if (time0 >= 0) {
     if (time_0 === 0 && cuttime === 1) {
-      element = (
+      Element = (
         <div>
           <p>
             {com1}
@@ -104,7 +105,7 @@ export function display() {
         </div>
       )
     } else {
-      element = (
+      Element = (
         <div>
           <p>
             {com1}
@@ -126,11 +127,14 @@ export function display() {
       )
     }
   } else {
-    element = (
+    Element = (
       <div>
         <p>{com4}</p>
       </div>
     )
   }
-  ReactDOM.render(element, document.getElementById(id))
+  if (typeof document !== `undefined`) {
+    ReactDOM.render(Element, document.getElementById(id))
+  }
+  return null
 }

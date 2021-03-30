@@ -29,4 +29,5 @@ export default function showDamedesu() {
   console.log('                    _~~:~~`')
   console.log('                     ~:~`')
   console.log('                      `')
+  return null
 }
