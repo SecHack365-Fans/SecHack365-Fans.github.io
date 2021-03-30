@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import '../utils/global.css'
+import { withPrefix } from 'gatsby'
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-
+  require('../utils/global.css')
   return (
     <div>
       <Header />
