@@ -91,8 +91,8 @@ export function display() {
     if (time_0 === 0 && cuttime === 1) {
       Element = (
         <div>
-          <p>
-            {com1}
+          <p style={{ whiteSpace: 'pre-wrap' }}>
+          {com1.join("\n")}
             <span>{time1}</span>
             {cnt2}
             <span>{time2}</span>
@@ -107,8 +107,8 @@ export function display() {
     } else {
       Element = (
         <div>
-          <p>
-            {com1}
+          <p style={{ whiteSpace: 'pre-wrap' }}>
+            {com1.join("\n")}
             <br />
             <span>{time_0}</span>
             {cnt1}
