@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 
-export default () => {
+const headerComponent =  () => {
   require ('../components/header.css')
   return (
     <header className="bg-dark">
@@ -57,3 +57,5 @@ export default () => {
     </header>
   )
 }
+
+export default headerComponent;
