@@ -79,6 +79,18 @@ const DevData = [
         href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_20.pdf'
       }
     ]
+  },
+  {
+    author: '黒澤 佑太',
+    title: '「SecHack365を修了しました」',
+    blogHRef: 'https://yukuro.hatenablog.com/entry/2021/03/31/010757',
+    blogHostedAt: 'hatenablog.com',
+    achivements: [
+      {
+        title: 'カジュアルにDIDを扱うツール Cassis',
+        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_19.pdf'
+      }
+    ]
   }
 ]
 
@@ -102,13 +114,25 @@ const ThinkData = [
 const ResearchData = [
   {
     author: '石川 琉聖',
-    title: '「SecHack365 参加記',
+    title: '「SecHack365 参加記」',
     blogHRef: 'https://xryuseix.hatenablog.com/entry/2021/03/08/173442',
     blogHostedAt: 'hatenablog.com',
     achivements: [
       {
         title: 'ソースコードの盗作判定システム SA-Plag',
         href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_28.pdf'
+      }
+    ]
+  },
+  {
+    author: '美馬 隆志',
+    title: '「SecHack365 2020 研究駆動コース参加記録」',
+    blogHRef: 'https://task4233.hatenablog.com/entry/2021/03/31/234326',
+    blogHostedAt: 'hatenablog.com',
+    achivements: [
+      {
+        title: 'MalGraph : CFGを用いたマルウェア検知システム',
+        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_32.pdf'
       }
     ]
   }
