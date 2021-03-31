@@ -12,12 +12,10 @@ export default function countdown(_year, _month, _day, _hour, _com1, _id) {
   hour = _hour
   com1 = _com1
   id = _id
-
-  if (baseoffset === 'none') {
-    var offset = 0
-  } else {
+  var offset = 0;
+  if (baseoffset !== 'none') {
     var localoffset = new Date().getTimezoneOffset() / 60
-    var offset = localoffset - baseoffset
+    offset = localoffset - baseoffset
   }
 
   millenium = new Date(year, month - 1, day, hour - offset, 0, 0)
@@ -92,7 +90,7 @@ export function display() {
       Element = (
         <div>
           <p style={{ whiteSpace: 'pre-wrap' }}>
-          {com1.join("\n")}
+            {com1.join('\n')}
             <span>{time1}</span>
             {cnt2}
             <span>{time2}</span>
@@ -108,7 +106,7 @@ export function display() {
       Element = (
         <div>
           <p style={{ whiteSpace: 'pre-wrap' }}>
-            {com1.join("\n")}
+            {com1.join('\n')}
             <br />
             <span>{time_0}</span>
             {cnt1}
