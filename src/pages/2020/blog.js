@@ -63,6 +63,18 @@ const StudyData = [
         href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_06.pdf'
       }
     ]
+  },
+  {
+    author: '工藤 蒔大',
+    title: '「SecHack365を修了しました！」',
+    blogHRef: 'https://zenn.dev/shio_salt/articles/4603859eaaf194',
+    blogHostedAt: 'zenn.dev',
+    achivements: [
+      {
+        title: '指紋組み合わせ認証を搭載したスマートロックと握るだけで解錠できるスマートドアハンドル',
+        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_08.pdf'
+      }
+    ]
   }
 ]
 
