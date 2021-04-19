@@ -37,5 +37,5 @@ yarn develop
 
 * **[xryuseix](https://github.com/xryuseix)** (Development and Operation)
 * **[Krout0n](https://github.com/Krout0n)** (Development and Operation)
-* **[Satoki](https://github.com/satoki)** (Domain Management)
+* **[Satoki](https://github.com/satoki)** (Domain Management, Professional NEET)
 * [and more ...](https://github.com/SecHack365-Fans/SecHack365-Fans.github.io/graphs/contributors)
