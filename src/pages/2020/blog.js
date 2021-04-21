@@ -7,148 +7,19 @@ import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 
 // 表現駆動のエントリデータ
-const ExprData = [
-  {
-    author: '中嶋 桃香',
-    title: '「SecHack365修了しました」',
-    blogHRef: 'https://momoka-mero.hatenablog.com/entry/2021/03/06/232920',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: 'Tsukushi Speaker 僕だけが失くしモノをしない',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf'
-      }
-    ]
-  },
-  {
-    author: '酒井 義史',
-    title: '「SecHack365 2020表現駆動コース参加体験記」',
-    blogHRef: 'https://yoshistl.hatenablog.com/entry/2021/03/08/024337',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: 'Tsukushi Speaker 僕だけが失くしモノをしない',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf'
-      }
-    ]
-  },
-  {
-    author: '玉田 遍',
-    title: '「たのしかったSecHack365」',
-    blogHRef: 'https://iiimiiino.hatenablog.com/entry/2021/03/08/232321',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: 'Tsukushi Speaker 僕だけが失くしモノをしない',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_01.pdf'
-      },
-      {
-        title: '距離を縮めるチャット Approachat',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_02.pdf'
-      }
-    ]
-  }
-]
+const ExprData = require('../data/expr.json');
 
 // 学習駆動コースのデータ
-const StudyData = [
-  {
-    author: '古田 花恋',
-    title: '「2020SecHack365修了しました(学習駆動コース)」',
-    blogHRef: 'https://rinruren.hatenablog.com/entry/2021/03/28/223316',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: '物語でセキュリティ啓発',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_06.pdf'
-      }
-    ]
-  },
-  {
-    author: '工藤 蒔大',
-    title: '「SecHack365を修了しました！」',
-    blogHRef: 'https://zenn.dev/shio_salt/articles/4603859eaaf194',
-    blogHostedAt: 'zenn.dev',
-    achivements: [
-      {
-        title: '指紋組み合わせ認証を搭載したスマートロックと握るだけで解錠できるスマートドアハンドル',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_08.pdf'
-      }
-    ]
-  }
-]
+const StudyData = require('../data/study.json');
 
 // 開発駆動のエントリデータ
-const DevData = [
-  {
-    author: '寺嶋 友哉',
-    title: '「SecHack365を修了しました」',
-    blogHRef: 'https://terassyi.net/posts/2021/03/09/sechack365.html',
-    blogHostedAt: 'terassyi.net',
-    achivements: [
-      {
-        title: 'セキュリティ演習環境構築支援ツールKAKOI',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_20.pdf'
-      }
-    ]
-  },
-  {
-    author: '黒澤 佑太',
-    title: '「SecHack365を修了しました」',
-    blogHRef: 'https://yukuro.hatenablog.com/entry/2021/03/31/010757',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: 'カジュアルにDIDを扱うツール Cassis',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_19.pdf'
-      }
-    ]
-  }
-]
+const DevData = require('../data/dev.json');
 
 // 思索駆動のエントリデータ
-const ThinkData = [
-  {
-    author: '福地 成彦',
-    title: '「2020年度のSecHack365を完走しました」',
-    blogHRef: 'https://fqc.hatenablog.com/entry/2021/03/14/092046',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: 'FairTorch: 深層学習の公平性ライブラリ',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_26.pdf'
-      }
-    ]
-  }
-]
+const ThinkData = require('../data/think.json');
 
 // 研究駆動のエントリデータ
-const ResearchData = [
-  {
-    author: '石川 琉聖',
-    title: '「SecHack365 参加記」',
-    blogHRef: 'https://xryuseix.hatenablog.com/entry/2021/03/08/173442',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: 'ソースコードの盗作判定システム SA-Plag',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_28.pdf'
-      }
-    ]
-  },
-  {
-    author: '美馬 隆志',
-    title: '「SecHack365 2020 研究駆動コース参加記録」',
-    blogHRef: 'https://task4233.hatenablog.com/entry/2021/03/31/234326',
-    blogHostedAt: 'hatenablog.com',
-    achivements: [
-      {
-        title: 'MalGraph : CFGを用いたマルウェア検知システム',
-        href: 'https://sechack365.nict.go.jp/achievement/2020/pdf/2020_32.pdf'
-      }
-    ]
-  }
-]
+const ResearchData = require('../data/research.json');
 
 /**
  * TableRow でのみの使用を想定している

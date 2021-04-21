@@ -29,7 +29,7 @@ yarn develop
 入力支援スクリプトが tool/new_entryにあります。
 
 `$ cd tool/new_entry && docker build . -t sechack365fans-new-entry && docker run -it sechack365fans-new-entry` のように実行すれば、対話的に入力できます。
-その後にJSONが標準出力されるので、`src/pages/2020/blog.js` をエスパーしてそのJSONを貼ってください！(TODO: blog.jsをエスパーしなくても貼れる方法を考える)
+その後にJSONが標準出力されるので、`src/pages/2020/data/<自分の該当するコース>.json` に貼ってください！
 
 皆様の Pull Request をお待ちしています！
 
