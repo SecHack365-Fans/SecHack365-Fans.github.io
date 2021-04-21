@@ -1,0 +1,26 @@
+[
+  {
+    "author": "寺嶋 友哉",
+    "title": "「SecHack365を修了しました」",
+    "blogHRef": "https://terassyi.net/posts/2021/03/09/sechack365.html",
+    "blogHostedAt": "terassyi.net",
+    "achivements": [
+      {
+        "title": "セキュリティ演習環境構築支援ツールKAKOI",
+        "href": "https://sechack365.nict.go.jp/achievement/2020/pdf/2020_20.pdf"
+      }
+    ]
+  },
+  {
+    "author": "黒澤 佑太",
+    "title": "「SecHack365を修了しました」",
+    "blogHRef": "https://yukuro.hatenablog.com/entry/2021/03/31/010757",
+    "blogHostedAt": "hatenablog.com",
+    "achivements": [
+      {
+        "title": "カジュアルにDIDを扱うツール Cassis",
+        "href": "https://sechack365.nict.go.jp/achievement/2020/pdf/2020_19.pdf"
+      }
+    ]
+  }
+]
