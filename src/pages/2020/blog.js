@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -7,19 +6,19 @@ import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 
 // 表現駆動のエントリデータ
-const ExprData = require('../data/expr.json');
+const ExprData = require('../data/expr.json')
 
 // 学習駆動コースのデータ
-const StudyData = require('../data/study.json');
+const StudyData = require('../data/study.json')
 
 // 開発駆動のエントリデータ
-const DevData = require('../data/dev.json');
+const DevData = require('../data/dev.json')
 
 // 思索駆動のエントリデータ
-const ThinkData = require('../data/think.json');
+const ThinkData = require('../data/think.json')
 
 // 研究駆動のエントリデータ
-const ResearchData = require('../data/research.json');
+const ResearchData = require('../data/research.json')
 
 /**
  * TableRow でのみの使用を想定している
@@ -28,9 +27,9 @@ const ResearchData = require('../data/research.json');
  * @returns {JSX.Element} - 多分
  */
 const AchivementLink = ({ title, href }) => (
-  <Link href={href} target="_blank" rel="noopener noreferrer">
+  <a href={href} target="_blank" rel="noopener noreferrer">
     {title}
-  </Link>
+  </a>
 )
 
 /**
@@ -47,9 +46,9 @@ const TableRow = ({ author, title, blogHRef, blogHostedAt, achivements }) => (
     <td class="sh365_name">{author}</td>
     <td class="sh365_title">{title}</td>
     <td class="sh365_blog">
-      <Link href={blogHRef} target="_blank" rel="noopener noreferrer">
+      <a href={blogHRef} target="_blank" rel="noopener noreferrer">
         {blogHostedAt}
-      </Link>
+      </a>
     </td>
     <td class="sh365_hack">
       {achivements.length > 0 && (
@@ -158,13 +157,13 @@ const SiteIndex = ({ location }) => {
         </div>
       </div>
       <div style={{ 'text-align': 'center' }}>
-        <Link href="https://sechack365.nict.go.jp/" target="_blank" rel="noopener noreferrer">
+        <a href="https://sechack365.nict.go.jp/" target="_blank" rel="noopener noreferrer">
           <StaticImage
             src="../../images/logo-yoko.png"
             alt="SecHack365 logo"
             style={{ width: '40%', height: 'auto' }}
           />
-        </Link>
+        </a>
       </div>
     </Layout>
   )

@@ -10,24 +10,24 @@ const headerComponent =  () => {
     <header className="bg-dark">
       <Container>
         <Navbar expand="md" variant="dark">
-          <Link href="/" class="navbar-brand">
+          <Link to="/" className="navbar-brand">
             Home
           </Link>
           <Navbar.Toggle aria-controls="navbarResponsive" />
           <Navbar.Collapse id="navbarResponsive" className="mr-auto">
             <Nav as="ul" className="mr-auto">
               <Nav.Item as="li">
-                <Link class="nav-link" href="/2020/blog">
+                <Link to="/2020/blog" className="nav-link">
                   参加記ブログ
                 </Link>
               </Nav.Item>
               <Nav.Item as="li">
-                <Link class="nav-link" href="/timer/">
+                <Link to="/timer/" className="nav-link">
                   †締切駆動コース†
                 </Link>
               </Nav.Item>
               <Nav.Item as="li">
-                <Link
+                <a
                   class="nav-link"
                   href="https://github.com/SecHack365-Fans/SecHack365-Fans.github.io"
                   target="_blank"
@@ -48,7 +48,7 @@ const headerComponent =  () => {
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
-                </Link>
+                </a>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

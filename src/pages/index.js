@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -23,24 +22,24 @@ const SiteIndex = ({ location }) => {
         </div>
         <ul class="officialLink">
           <li class="officialBtn">
-            <Link
+            <a
               href="https://sechack365.nict.go.jp/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#353A40' }}
             >
               Webサイト
-            </Link>
+            </a>
           </li>
           <li class="officialBtn">
-            <Link
+            <a
               href="https://twitter.com/SecHack365"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#353A40' }}
             >
               Twitter
-            </Link>
+            </a>
           </li>
         </ul>
       </h5>
