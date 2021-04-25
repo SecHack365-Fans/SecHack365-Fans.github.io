@@ -12,7 +12,7 @@ function set2fig(num) {
   return ret
 }
 
-export default function showClock() {
+const showClock = () => {
   var nowTime = new Date()
   var nowHour = set2fig(nowTime.getHours())
   var nowMin = set2fig(nowTime.getMinutes())
@@ -30,8 +30,10 @@ export default function showClock() {
       </i>
     </div>
   )
-  if (typeof document !== `undefined`) {
+  if (typeof document !== `undefined` && document.getElementById('RealtimeClockArea') !== null) {
     ReactDOM.render(Element, document.getElementById('RealtimeClockArea'))
   }
   return null
 }
+
+export default showClock

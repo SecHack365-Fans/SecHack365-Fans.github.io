@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 var year, month, day, hour, com1, id
 var millenium
 
-export default function countdown(_year, _month, _day, _hour, _com1, _id) {
+const countDown = (_year, _month, _day, _hour, _com1, _id) => {
   const baseoffset = '-9'
   year = _year
   month = _month
@@ -12,7 +12,7 @@ export default function countdown(_year, _month, _day, _hour, _com1, _id) {
   hour = _hour
   com1 = _com1
   id = _id
-  var offset = 0;
+  var offset = 0
   if (baseoffset !== 'none') {
     var localoffset = new Date().getTimezoneOffset() / 60
     offset = localoffset - baseoffset
@@ -21,6 +21,8 @@ export default function countdown(_year, _month, _day, _hour, _com1, _id) {
   millenium = new Date(year, month - 1, day, hour - offset, 0, 0)
   return null
 }
+
+export default countDown
 
 export function convertNum(num, figures) {
   var str = String(num)
@@ -131,7 +133,7 @@ export function display() {
       </div>
     )
   }
-  if (typeof document !== `undefined`) {
+  if (typeof document !== `undefined` && document.getElementById(id) !== null) {
     ReactDOM.render(Element, document.getElementById(id))
   }
   return null
