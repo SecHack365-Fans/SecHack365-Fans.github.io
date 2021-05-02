@@ -13,7 +13,7 @@ const SiteIndex = ({ location }) => {
   /* consoleにAAを表示する */
   showDamedesu()
   /* カウントダウンの締め切りを設定する */
-  countdown(2021, 5, 10, 0, ["SecHack365'21", '合否発表期限まで'], 'counter')
+  countdown(2022, 1, 31, 0, ["SecHack365'21", '最終発表会まで'], 'counter')
   /* 時計を表示する  */
   setInterval(showClock, 1000)
   /* カウントダウンタイマーの実行スクリプト */
