@@ -26,7 +26,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMarkdownRemark.nodes
   if (posts.length > 0) {
     posts.forEach((post) => {
-      console.log(post.fields.slug)
       createPage({
         path: '/ctf/writeups' + post.fields.slug,
         component: writeups,

@@ -19,7 +19,7 @@ const SiteIndex = ({ data, location }) => {
         <a href="https://tsukuctf.sechack365.com/" target="_blank" rel="noopener noreferrer">
           <StaticImage
             src="../../../images/tsukuctf2021.png"
-            alt="SecHack365 logo"
+            alt="TsukuCTF"
             style={{ width: '50%', height: 'auto' }}
           />
           <div style={{ 'font-size': '2em' }}>https://tsukuctf.sechack365.com/</div>

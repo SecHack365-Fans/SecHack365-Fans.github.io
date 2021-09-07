@@ -12,7 +12,7 @@ const BlogPostTemplate = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title={post.frontmatter.title} />
-      <Meta title="news" />
+      <Meta title="writeups" />
       <article className="writeups" itemScope itemType="http://schema.org/Article">
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
       </article>
