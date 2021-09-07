@@ -2,18 +2,25 @@ module.exports = {
   siteMetadata: {
     title: `SecHack365-Fans HomePage`,
     author: {
-      name: `xryuseix and more...`,
+      name: `xryuseix and more...`
     },
     description: `This is SecHack365-Fans HomePage`,
-    siteUrl: `https://fans.sechack365.com/`,
+    siteUrl: `https://fans.sechack365.com/`
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`,
-      },
+        path: `${__dirname}/src/images/`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages/ctf/tsukuctf2021/writeups/`,
+        name: 'writeups'
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -26,20 +33,20 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
-            },
+              maxWidth: 630
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
+          `gatsby-remark-smartypants`
+        ]
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -51,15 +58,15 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/favicon.png`,
-      },
+        icon: `static/favicon.png`
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "G-RHCFVFMQTR",
+        trackingId: 'G-RHCFVFMQTR'
       }
     }
-  ],
+  ]
 }
