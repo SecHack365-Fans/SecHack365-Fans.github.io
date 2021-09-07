@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -72,7 +72,7 @@ const SiteIndex = ({ location }) => {
   require('./blog.css')
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" description="2020年度にSecHack365に参加したトレーニーによる参加ブログのまとめです。" />
+      <Seo title="All posts" description="2020年度にSecHack365に参加したトレーニーによる参加ブログのまとめです。" />
       <Meta title="SH365 Blog" />
       <h1>SecHack365 参加記 まとめ【随時更新】</h1>
       <p>2020年度にSecHack365に参加したトレーニーによる参加ブログのまとめです。(順不同)</p>
