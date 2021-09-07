@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 
 import showClock from './script/clock.js'
@@ -20,7 +20,7 @@ const SiteIndex = ({ location }) => {
   setInterval(display, 10)
   return (
     <Layout location={location}>
-      <SEO title="timer" description="†締切駆動コース†" />
+      <Seo title="timer" description="†締切駆動コース†" />
       <Meta title="†締切駆動コース†" />
       <div style={{ 'background-color': 'black' }}>
         <h3>

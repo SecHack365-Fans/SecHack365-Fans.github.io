@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 
 import GamingSecHack from '../images/GamingSecHack.gif'
@@ -10,7 +10,7 @@ const SiteIndex = ({ location }) => {
   require('./index.css')
   return (
     <Layout location={location}>
-      <SEO title="index" description="SecHack365-Fans Toppage" />
+      <Seo title="index" description="SecHack365-Fans Toppage" />
       <Meta title="Home" />
       <h1>SecHack365 非公式 ファンページ</h1>
       <h5 class="box">

@@ -2,14 +2,14 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 
 const SiteIndex = ({ location }) => {
   require('./404.css')
   return (
     <Layout location={location}>
-      <SEO title="404" description="404page" />
+      <Seo title="404" description="404page" />
       <Meta title="404" />
 
       <h1>404 Not Found</h1>
