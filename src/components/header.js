@@ -27,6 +27,11 @@ const headerComponent =  () => {
                 </Link>
               </Nav.Item>
               <Nav.Item as="li">
+                <Link to="/ctf/" className="nav-link">
+                  TsukuCTF
+                </Link>
+              </Nav.Item>
+              <Nav.Item as="li">
                 <a
                   class="nav-link"
                   href="https://github.com/SecHack365-Fans/SecHack365-Fans.github.io"
