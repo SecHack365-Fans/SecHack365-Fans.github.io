@@ -35,13 +35,13 @@ jobs:
           ${{ runner.os }}-yarn-
 
     - name: install
-      run: npm ci
+      run: yarn install --frozen-lockfile
     
     - name: format
-      run: npm run format
+      run: yarn format
 
     - name: build
-      run: npm run build
+      run: yarn build
 
     - name: deploy
       uses: peaceiris/actions-gh-pages@v3
