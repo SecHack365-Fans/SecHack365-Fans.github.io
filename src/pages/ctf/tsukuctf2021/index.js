@@ -6,7 +6,7 @@ import Layout from '../../../components/layout'
 import Seo from '../../../components/seo'
 import Meta from '../../../components/meta'
 
-import "../ctf.css"
+import '../ctf.css'
 
 const SiteIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
@@ -17,12 +17,8 @@ const SiteIndex = ({ data, location }) => {
       <h1>TsukuCTF 2021</h1>
       <div style={{ 'text-align': 'center' }}>
         <a href="https://tsukuctf.sechack365.com/" target="_blank" rel="noopener noreferrer">
-          <StaticImage
-            src="../../../images/tsukuctf2021.png"
-            alt="TsukuCTF"
-            style={{ width: '50%', height: 'auto' }}
-          />
-          <div style={{ 'font-size': '2em' }}>https://tsukuctf.sechack365.com/</div>
+          <StaticImage src="../../../images/tsukuctf2021.png" alt="TsukuCTF" style={{ width: '50%', height: 'auto' }} />
+          <div style={{ 'font-size': '2em', 'word-break': 'break-all' }}>https://tsukuctf.sechack365.com/</div>
         </a>
       </div>
       <hr />
