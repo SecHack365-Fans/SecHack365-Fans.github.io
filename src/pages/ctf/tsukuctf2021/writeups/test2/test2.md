@@ -1,7 +1,7 @@
 ---
 title: Welcome2222222222222
 description: Twitterアカウントを確認します
-author: ryusei_ishika
+author: 
 genre: Tsukushi
 solver: 0(これは変更しない)
 point: 0(これは変更しない)

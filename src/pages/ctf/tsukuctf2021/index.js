@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import { FaTwitter } from 'react-icons/fa'
 
 import Layout from '../../../components/layout'
 import Seo from '../../../components/seo'
@@ -8,6 +9,19 @@ import Meta from '../../../components/meta'
 
 import '../ctf.css'
 import './writeups.css'
+
+const TwitterButton = (props) => {
+  if (props.author) {
+    return (
+      <a href={`https://twitter.com/${props.author}`}>
+        <FaTwitter style={{ color: '#00acee' }} />
+        {props.author}
+      </a>
+    )
+  } else {
+    return <>unknown</>
+  }
+}
 
 const SiteIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
@@ -45,10 +59,11 @@ const SiteIndex = ({ data, location }) => {
                       </a>
                     </div>
                     <div className=".writeups_meta_box">
-                      Author: <a href={`https://twitter.com/${post.frontmatter.author}`}>{post.frontmatter.author}</a>
+                      Author:{' '}
+                      <TwitterButton author={post.frontmatter.author} />
                     </div>
-                    <div className=".writeups_meta_box">Point: {post.frontmatter.point}</div>
-                    <div className=".writeups_meta_box">Solver: {post.frontmatter.solver}</div>
+                    <div className=".writeups_meta_box">Point:{' '}{post.frontmatter.point}</div>
+                    <div className=".writeups_meta_box">Solver:{' '}{post.frontmatter.solver}</div>
                   </span>
                 </header>
                 <section>
