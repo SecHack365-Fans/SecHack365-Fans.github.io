@@ -1,9 +1,13 @@
 ---
-title: テスト問題のWriteup1
-date: "2020-09-07"
-description: ここにCTFのwriteupを置きます
+title: Welcome
+description: Twitterアカウントを確認します
+author: ryusei_ishika
+genre: Tsukushi
+solver: 0(これは変更しない)
+point: 0(これは変更しない)
 ---
 
-# テスト問題のWriteup
+# Welcome
 
-テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+問題文のリンクに従い[Twitter](https://twitter.com/tsukuctf)を開きます。するとアカウント名が`TsukuCTF{2021}`となっています。
+また、Notificationsで述べた通り、`TsukuCTF{@tsukuctf}`や`TsukuCTF{tsukuctf}`もフラグとなります。

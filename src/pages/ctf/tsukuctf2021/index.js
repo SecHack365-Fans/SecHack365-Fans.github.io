@@ -36,7 +36,10 @@ const SiteIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <small>
+                    {post.frontmatter.genre} {post.frontmatter.author}
+                    {post.frontmatter.point} {post.frontmatter.solver}
+                  </small>
                 </header>
                 <section>
                   <p
@@ -64,16 +67,19 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [], order: DESC }) {
       nodes {
         excerpt
         fields {
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
           title
           description
+          author
+          genre
+          solver
+          point
         }
       }
     }
