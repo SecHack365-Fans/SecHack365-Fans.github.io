@@ -7,6 +7,7 @@ import Seo from '../../../components/seo'
 import Meta from '../../../components/meta'
 
 import '../ctf.css'
+import './writeups.css'
 
 const SiteIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
@@ -36,10 +37,19 @@ const SiteIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>
-                    {post.frontmatter.genre} {post.frontmatter.author}
-                    {post.frontmatter.point} {post.frontmatter.solver}
-                  </small>
+                  <span className="writeups_meta">
+                    <div className=".writeups_meta_box">
+                      Genre:{' '}
+                      <a href="#" className="writeups_tsukushi writeups_genre">
+                        {post.frontmatter.genre}
+                      </a>
+                    </div>
+                    <div className=".writeups_meta_box">
+                      Author: <a href={`https://twitter.com/${post.frontmatter.author}`}>{post.frontmatter.author}</a>
+                    </div>
+                    <div className=".writeups_meta_box">Point: {post.frontmatter.point}</div>
+                    <div className=".writeups_meta_box">Solver: {post.frontmatter.solver}</div>
+                  </span>
                 </header>
                 <section>
                   <p
