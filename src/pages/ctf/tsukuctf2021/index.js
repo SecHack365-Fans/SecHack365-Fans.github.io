@@ -54,16 +54,15 @@ const SiteIndex = ({ data, location }) => {
                   <span className="writeups_meta">
                     <div className=".writeups_meta_box">
                       Genre:{' '}
-                      <a href="#" className="writeups_tsukushi writeups_genre">
+                      <a href="#" className={`writeups_genre writeups_${post.frontmatter.genre}`.toLowerCase()}>
                         {post.frontmatter.genre}
                       </a>
                     </div>
                     <div className=".writeups_meta_box">
-                      Author:{' '}
-                      <TwitterButton author={post.frontmatter.author} />
+                      Author: <TwitterButton author={post.frontmatter.author} />
                     </div>
-                    <div className=".writeups_meta_box">Point:{' '}{post.frontmatter.point}</div>
-                    <div className=".writeups_meta_box">Solver:{' '}{post.frontmatter.solver}</div>
+                    <div className=".writeups_meta_box">Point: {post.frontmatter.point}</div>
+                    <div className=".writeups_meta_box">Solver: {post.frontmatter.solver}</div>
                   </span>
                 </header>
                 <section>

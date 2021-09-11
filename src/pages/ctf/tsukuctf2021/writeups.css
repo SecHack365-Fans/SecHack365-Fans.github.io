@@ -21,20 +21,28 @@ a.writeups_genre:active {
 }
 
 .writeups_tsukushi {
-  background: #119de9;
+  background: saddlebrown;
 }
 .writeups_osint {
   background: #119de9;
 }
 .writeups_rev {
+  background: salmon;
 }
 .writeups_web {
+  background: dodgerblue;
 }
 .writeups_crypto {
+  background: gold;
 }
 .writeups_misc {
+  background: limegreen;
 }
 .writeups_hardware {
+  background: gray;
+}
+.writeups_network {
+  background: mediumblue;
 }
 
 .writeups_meta {

@@ -1,8 +1,8 @@
 ---
-title: Welcome
+title: Welcome3
 description: Twitterアカウントを確認します
 author: ryusei_ishika
-genre: Hardware
+genre: Network
 solver: 0(これは変更しない)
 point: 0(これは変更しない)
 ---
