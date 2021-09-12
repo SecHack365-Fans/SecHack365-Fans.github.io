@@ -1,5 +1,5 @@
 ---
-title: Login1
+title: Login2
 description: union select  によるSQLi
 author: FullteaOfEEIC
 genre: Web
