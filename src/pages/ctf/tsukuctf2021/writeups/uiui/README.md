@@ -16,4 +16,4 @@ point: 372
 ![images/image1.png](images/image1.png)  
 スキャンされたファイル名がflagだった。
 
-## TsukuCTF{Careless_uploading_is_dangerous}
+## TsukuCTF{Careless\_uploading\_is\_dangerous}

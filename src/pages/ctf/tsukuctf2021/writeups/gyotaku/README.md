@@ -64,4 +64,4 @@ JavaScriptが動くようだ。
 ![images/image4.png](images/image4.png)  
 ファイルを読み込むとflagが書かれていた。  
 
-## TsukuCTF{Tsukushi_to_Sugina_no_chigai_ga_wakaran}
+## TsukuCTF{Tsukushi\_to\_Sugina\_no\_chigai\_ga\_wakaran}

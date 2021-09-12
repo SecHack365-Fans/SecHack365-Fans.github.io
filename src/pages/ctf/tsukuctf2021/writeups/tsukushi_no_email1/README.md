@@ -16,4 +16,4 @@ point: 100
 flagが書かれていた。  
 ちなみに[Tsukushi_no_email2](../tsukushi_no_email2)を用いることでも取得できる。  
 
-## TsukuCTF{Google_kingdom}
+## TsukuCTF{Google\_kingdom}

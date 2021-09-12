@@ -18,4 +18,4 @@ GHunt
 ![images/image2.png](images/image2.png)  
 カレンダーを出力されたURLから見るとflagが書かれていた。  
 
-## TsukuCTF{Horsetail_is_delicious}
+## TsukuCTF{Horsetail\_is\_delicious}
