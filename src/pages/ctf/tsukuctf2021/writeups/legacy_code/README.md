@@ -1,7 +1,7 @@
 ---
 title: Legacy code
 description: レガシーマシンのアセンブリ言語プログラムを読み解く
-author: taisyo
+author: T_taisyou
 genre: Rev
 solver: 7
 point: 484

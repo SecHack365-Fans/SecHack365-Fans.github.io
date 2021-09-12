@@ -1,7 +1,7 @@
 ---
 title: Login2
 description: union select  によるSQLi
-author: FullteaOfEEIC
+author: rikuta0811_dash
 genre: Web
 solver: 21
 point: 323

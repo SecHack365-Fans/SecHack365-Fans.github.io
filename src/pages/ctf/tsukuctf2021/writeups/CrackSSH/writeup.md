@@ -1,7 +1,7 @@
 ---
 title: CrackSSH!
 description: 脆弱なRSA鍵を解読する
-author: FullteaOfEEIC
+author: rikuta0811_dash
 genre: Crypto
 solver: 13
 point: 436

@@ -3,8 +3,8 @@ title: journey
 description: Response StatusとRequest Methodに関する問題
 author: task4233
 genre: Web
-solver: 0(これは変更しない)
-point: 0(これは変更しない)
+solver: 18
+point: 372
 ---
 
 # journey
