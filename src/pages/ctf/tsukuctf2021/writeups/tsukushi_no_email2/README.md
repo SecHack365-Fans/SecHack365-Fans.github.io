@@ -2,7 +2,7 @@
 title: Tsukushi_no_email2
 description: メールアドレスからカレンダー情報を取得する問題
 author: satoki00
-genre: osint
+genre: OSINT
 solver: 40
 point: 100
 ---

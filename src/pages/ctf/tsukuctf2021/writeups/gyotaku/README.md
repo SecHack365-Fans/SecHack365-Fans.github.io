@@ -2,7 +2,7 @@
 title: gyOTAKU
 description: 魚拓をとるサービスで任意ファイル読み込み
 author: satoki00
-genre: web
+genre: Web
 solver: 4
 point: 496
 ---

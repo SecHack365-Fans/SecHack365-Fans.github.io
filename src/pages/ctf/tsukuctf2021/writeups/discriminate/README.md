@@ -2,7 +2,7 @@
 title: discriminate
 description: 言語モデルで生成された文章の検知
 author: FQCme1
-genre: MISC
+genre: Misc
 solver: 25
 point: 244
 ---

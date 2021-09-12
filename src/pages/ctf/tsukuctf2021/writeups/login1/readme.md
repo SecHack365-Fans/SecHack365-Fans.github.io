@@ -1,6 +1,6 @@
 ---
 title: Login1
-description: ' or 1= 1 ; -- 
+description: "' or 1= 1 ; --"
 author: FullteaOfEEIC
 genre: Web
 solver: 79

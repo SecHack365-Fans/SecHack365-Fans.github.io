@@ -2,7 +2,7 @@
 title: uiui
 description: マルウェアスキャンからの情報流出
 author: satoki00
-genre: osint
+genre: OSINT
 solver: 18
 point: 372
 ---

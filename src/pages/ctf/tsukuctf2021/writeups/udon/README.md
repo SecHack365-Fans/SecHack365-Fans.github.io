@@ -2,7 +2,7 @@
 title: udon
 description: うどんの画像からお店のTwitterを特定する問題
 author: shio_sa1t
-genre: osint
+genre: OSINT
 solver: 10
 point: 464
 ---
