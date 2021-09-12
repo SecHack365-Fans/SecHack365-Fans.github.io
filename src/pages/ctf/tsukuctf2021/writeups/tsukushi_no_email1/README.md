@@ -2,7 +2,7 @@
 title: Tsukushi_no_email1
 description: メールアドレスからアイコン情報を取得する問題
 author: satoki00
-genre: osint
+genre: OSINT
 solver: 44
 point: 100
 ---

@@ -2,7 +2,7 @@
 title: logonly
 description: 攻撃ログから辞書を予測する問題
 author: satoki00
-genre: web
+genre: Web
 solver: 31
 point: 100
 ---

@@ -2,7 +2,7 @@
 title: fishing
 description: 釣り場の画像から場所を特定する問題
 author: shio_sa1t
-genre: osint
+genre: OSINT
 solver: 77
 point: 100
 ---
