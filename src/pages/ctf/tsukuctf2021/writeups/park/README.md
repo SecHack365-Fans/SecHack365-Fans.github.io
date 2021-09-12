@@ -3,8 +3,8 @@ title: park
 description: スーパーのロゴ、新幹線等から特定
 author: Roin_sec
 genre: OSINT
-solver: 0(これは変更しない)
-point: 0(これは変更しない)
+solver: 23
+point: 285
 ---
 
 # park
