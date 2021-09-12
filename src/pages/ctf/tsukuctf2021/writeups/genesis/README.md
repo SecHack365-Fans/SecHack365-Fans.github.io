@@ -85,4 +85,4 @@ getrawtransactionには、オプションとして`decrypt`という項目があ
 これ以降は想定解法1-1や1-2と同じです。
 
 ## Flag
-TsukuCTF{2021_09_11_GENESIS_TKC}
+`TsukuCTF{2021_09_11_GENESIS_TKC}`
