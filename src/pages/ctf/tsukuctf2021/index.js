@@ -27,8 +27,8 @@ const SiteIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   return (
     <Layout location={location}>
-      <Seo title="index" description="SecHack365-Fans Toppage" />
-      <Meta title="Home" />
+      <Seo title="TsukuCTF2021 Writeup" description="TsukuCTF2021 Writeup" />
+      <Meta title="TsukuCTF2021 Writeup" />
       <h1>TsukuCTF 2021</h1>
       <div style={{ 'text-align': 'center' }}>
         <a href="https://tsukuctf.sechack365.com/" target="_blank" rel="noopener noreferrer">

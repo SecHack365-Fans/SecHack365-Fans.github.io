@@ -7,8 +7,8 @@ import Meta from '../../components/meta'
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <Seo title="index" description="SecHack365-Fans Toppage" />
-      <Meta title="Home" />
+      <Seo title="CTF" description="CTF一覧" />
+      <Meta title="CTF" />
       <h1>CTF</h1>
       <ul style={{ 'font-size': '2em' }}>
         <li>
