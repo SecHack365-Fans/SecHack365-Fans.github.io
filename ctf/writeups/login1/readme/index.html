@@ -16,7 +16,7 @@
 </blockquote>
 <p>Login 1 ~ 3がセットでSQL injectionの問題になっています。
 Login1 は一番基本的なSQL injectionで、SQL injectionという攻撃を知っているか? という問題でした。
-Usernameに<code class="language-text">' or 1=1 ; --</code>を指定することで不正ログインができます。</p>
+Usernameに<code class="language-text">' or 1=1 ; --</code>(末尾に半角スペースが必要)を指定することで不正ログインができます。</p>
 <p>SQL injectionを知らない方は、IPAが公開している<a href="https://www.ipa.go.jp/files/000017320.pdf">安全なSQLの呼び出し方</a>や、SecHack365のトレーナーも執筆している<a href="https://book.mynavi.jp/ec/products/detail/id=42421">セキュリティコンテンストチャレンジブック</a>の第4章などを読んでみてください。どちらも日本語です。</p></section></article></main></div><div style="text-align:center"><footer>© <!-- -->2021<!-- -->, SecHack365-Fans All Right Reserved.</footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
