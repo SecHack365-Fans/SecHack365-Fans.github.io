@@ -1,7 +1,7 @@
 ---
 title: CAD
 description: stlファイルのチェック
-author: よしみ.
+author: labo_4423
 genre: Hardware
 solver: 82
 point: 100
