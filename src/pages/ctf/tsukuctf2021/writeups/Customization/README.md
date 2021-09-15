@@ -1,7 +1,7 @@
 ---
 title: Customization
 description: 背景色による文字の隠蔽
-author: よしみ.
+author: labo_4423
 genre: Misc
 solver: 98
 point: 100
