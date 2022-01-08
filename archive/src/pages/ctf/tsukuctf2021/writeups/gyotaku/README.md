@@ -8,13 +8,15 @@ point: 496
 ---
 
 # gyOTAKU
+
 アクセスすると、以下のような魚拓をとれるサービスなようだ。  
 🐟gyOTAKU🐟  
 ![images/image1.png](images/image1.png)  
 魚拓をとると画像が降ってくる。  
 `https://tsukuctf.sechack365.com/problems/gyotaku?url=http://example.com/`  
 ![images/image2.png](images/image2.png)  
-ソースを見ると次のようであった。  
+ソースを見ると次のようであった。
+
 ```python
 ~~~
 def sanitize(text):
@@ -44,24 +46,29 @@ def gyotaku():
     subprocess.run(cmd, shell=True, timeout=1)
 ~~~
 ```
-クエリパラメータで渡されたアドレスをgetし、htmlに保存した後にchromium-browserでスクリーンショットを撮っているようだ。  
+
+クエリパラメータで渡されたアドレスを get し、html に保存した後に chromium-browser でスクリーンショットを撮っているようだ。  
 アドレスは`http://`か`https://`で始まるようサニタイズされている。  
-ファイル名もランダムなのでOSコマンドインジェクションも難しそうだ。  
-ここで`alert(1)`を出すようなサイトを読み込むとInternal Server Errorが発生することに気づく。  
-JavaScriptが動くようだ。  
-ここで、次のようなhtmlを考える。  
+ファイル名もランダムなので OS コマンドインジェクションも難しそうだ。  
+ここで`alert(1)`を出すようなサイトを読み込むと Internal Server Error が発生することに気づく。  
+JavaScript が動くようだ。  
+ここで、次のような html を考える。
+
 ```html
-<script>location.href="/etc/passwd"</script>
+<script>
+  location.href = '/etc/passwd'
+</script>
 ```
+
 これが`http://tsukuctf.example.com/index.html`として配置されていた場合、`http://tsukuctf.example.com/etc/passwd`へリダイレクトされる。  
-しかし、htmlファイルとしてローカルに保存されている場合、`/etc/passwd`が表示される。  
-このhtmlを外部のサーバに配置し魚拓をとると、本アプリによってhtmlファイルとして保存され、chromium-browserが問題サーバ内の`/etc/passwd`を表示する。  
+しかし、html ファイルとしてローカルに保存されている場合、`/etc/passwd`が表示される。  
+この html を外部のサーバに配置し魚拓をとると、本アプリによって html ファイルとして保存され、chromium-browser が問題サーバ内の`/etc/passwd`を表示する。  
 これで問題サーバ内の任意のファイルが読み出せるようになった。  
-問題文よりrootで動いているとのことなので、`/root`以下を捜索する。  
+問題文より root で動いているとのことなので、`/root`以下を捜索する。  
 `/root/.bash_history`を読み取ると次のようであった。  
 ![images/image3.png](images/image3.png)  
 何かが`/root/flagc464f9eba1.txt`に書かれているようだ。  
 ![images/image4.png](images/image4.png)  
-ファイルを読み込むとflagが書かれていた。  
+ファイルを読み込むと flag が書かれていた。
 
-## TsukuCTF{Tsukushi\_to\_Sugina\_no\_chigai\_ga\_wakaran}
+## TsukuCTF{Tsukushi_to_Sugina_no_chigai_ga_wakaran}

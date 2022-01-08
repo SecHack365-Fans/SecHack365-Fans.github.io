@@ -4,8 +4,8 @@ import { Link } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 
-const headerComponent =  () => {
-  require ('../components/header.css')
+const headerComponent = () => {
+  require('../components/header.css')
   return (
     <header className="bg-dark">
       <Container>
@@ -33,7 +33,7 @@ const headerComponent =  () => {
               </Nav.Item>
               <Nav.Item as="li">
                 <a
-                  class="nav-link"
+                  className="nav-link"
                   href="https://github.com/SecHack365-Fans/SecHack365-Fans.github.io"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -45,9 +45,9 @@ const headerComponent =  () => {
                     viewBox="0 1 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                     <polyline points="15 3 21 3 21 9" />
@@ -63,4 +63,4 @@ const headerComponent =  () => {
   )
 }
 
-export default headerComponent;
+export default headerComponent

@@ -8,7 +8,8 @@ point: 464
 ---
 
 # udon
-Google Lensを使って、検索してみます。
+
+Google Lens を使って、検索してみます。
 しかし、そのままではヒットしません。
 
 ![images/udon_lens.png](images/udon_lens.png)
@@ -18,5 +19,6 @@ Google Lensを使って、検索してみます。
 範囲を狭くして、カレーうどんに注目することでヒットします。
 サイトにアクセスして、お店の名前を特定します。
 
-「えん家 Twitter」で検索して出てきたTwitterアカウントのIDをフラグ形式で囲むとフラグになります。
+「えん家 Twitter」で検索して出てきた Twitter アカウントの ID をフラグ形式で囲むとフラグになります。
+
 ## TsukuCTF{sanukiudonenya}
