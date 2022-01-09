@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-writeups-js",
-    "path": "/ctf/writeups/wildTsukushis/README/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"SecHack365-Fans HomePage"}},"markdownRemark":{"id":"6d2a4627-b807-540c-8c15-e4c06149c443","excerpt":"WildTsukushis google Lensを使い，遊具のつくし付近にフォーカスして検索すると，草間彌生の南瓜に紛れて御浜岬に関する記述がヒットします。遊具の形状が一致しているので，これが答えになります。 TsukuCTF{御浜岬}の他に，以下のflagでも正答となっています：","html":"<h1>WildTsukushis</h1>\n<p>google Lensを使い，遊具のつくし付近にフォーカスして検索すると，草間彌生の南瓜に紛れて御浜岬に関する記述がヒットします。遊具の形状が一致しているので，これが答えになります。<br>\nTsukuCTF{御浜岬}の他に，以下のflagでも正答となっています：  </p>\n<div class=\"gatsby-highlight\" data-language=\"txt\"><pre class=\"language-txt\"><code class=\"language-txt\">TsukuCTF{御浜海水浴場}\nTsukuCTF{みはまビーチ}\nTsukuCTF{戸田}</code></pre></div>","frontmatter":{"title":"WildTsukushis","description":"遊具の写真からその設置場所を探す","author":"iiimiiino","genre":"OSINT","solver":"18","point":"100"}}},"pageContext":{"id":"6d2a4627-b807-540c-8c15-e4c06149c443"}},
-    "staticQueryHashes": ["2841359383"]}

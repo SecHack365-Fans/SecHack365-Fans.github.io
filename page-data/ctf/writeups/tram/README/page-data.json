@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-writeups-js",
-    "path": "/ctf/writeups/tram/README/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"SecHack365-Fans HomePage"}},"markdownRemark":{"id":"ceacf6cb-d77d-5e75-a5d1-49316c95b175","excerpt":"tram Google Lens 等を使えば，画像に写っているトラムがプラハ市電であることと，写っている銀行がČSOBという銀行であることが分かります。 加えて，トラムの先頭に表示されている数字が路線の番号であることも調べればわかるので，この場所はプラハ市電の5系統の駅のいずれかです。google map…","html":"<h1>tram</h1>\n<p>Google Lens 等を使えば，画像に写っているトラムがプラハ市電であることと，写っている銀行がČSOBという銀行であることが分かります。<br>\n加えて，トラムの先頭に表示されている数字が路線の番号であることも調べればわかるので，この場所はプラハ市電の5系統の駅のいずれかです。google mapに路線図とČSOBの場所を表示するなどの方法でこれらの情報を合わせて考えると，候補になる場所は Anděl と Václavské náměstí と Dlouhá třídaa になります。<br>\nあとは，候補地をそれぞれ<a href=\"https://www.google.com/maps/@50.0721713,14.4038753,3a,45.4y,144.88h,98.64t/data=!3m6!1e1!3m4!1sbCmIxwbtVzU0YL4sImKppQ!2e0!7i13312!8i6656!5m1!1e2\">ストリートビュー</a>で確認すれば，正解がAndělであることがわかります。</p>","frontmatter":{"title":"tram","description":"写真から駅名を答える","author":"iiimiiino","genre":"OSINT","solver":"43","point":"100"}}},"pageContext":{"id":"ceacf6cb-d77d-5e75-a5d1-49316c95b175"}},
-    "staticQueryHashes": ["2841359383"]}

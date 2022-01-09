@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-writeups-js",
-    "path": "/ctf/writeups/shop/README/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"SecHack365-Fans HomePage"}},"markdownRemark":{"id":"3a07891c-eb76-5aba-928b-5688adeb1307","excerpt":"shop Tsukushi…","html":"<h1>shop</h1>\n<blockquote>\n<p>Tsukushiくんはショッピングモールにデートに来ましたが、相手がいなかったことに到着してから気づきました。帰ろうと思いましたがここがどこかわかりません。動画内に映っているショッピングモールの店舗名を特定してください。</p>\n</blockquote>\n<p>イオンモールと橋がすぐに見えることから，かなり大きな川または湖付近のイオンモールであることがわかります．\nここで，イオンモールにある看板から，店舗数が少なそうなベビーザラスがあるイオンモールより，イオンモール草津と特定できます．</p>\n<div class=\"gatsby-highlight\" data-language=\"txt\"><pre class=\"language-txt\"><code class=\"language-txt\">TsukuCTF{イオンモール草津}\nTsukuCTF{草津}</code></pre></div>","frontmatter":{"title":"shop","description":"ショッピングモールの特定です","author":"ryusei_ishika","genre":"OSINT","solver":"83","point":"100"}}},"pageContext":{"id":"3a07891c-eb76-5aba-928b-5688adeb1307"}},
-    "staticQueryHashes": ["2841359383"]}

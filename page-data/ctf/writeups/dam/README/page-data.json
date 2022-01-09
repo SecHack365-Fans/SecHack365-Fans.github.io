@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-writeups-js",
-    "path": "/ctf/writeups/dam/README/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"SecHack365-Fans HomePage"}},"markdownRemark":{"id":"e0ce3338-71bd-5b33-b47b-c65fc4c6e67c","excerpt":"dam まず解答者は、ダムの画像を見ることになる。その後、解答者は特徴的な橋の存在に気づく。そして、その橋を橋を切り取りGooglelensかけることや「無限 橋 貯水池」等で検索することで探すことができる。 フラグ","html":"<h1>dam</h1>\n<p>まず解答者は、ダムの画像を見ることになる。その後、解答者は特徴的な橋の存在に気づく。そして、その橋を橋を切り取りGooglelensかけることや「無限 橋 貯水池」等で検索することで探すことができる。</p>\n<p>フラグ</p>\n<div class=\"gatsby-highlight\" data-language=\"text\"><pre class=\"language-text\"><code class=\"language-text\">TsukuCTF{河内貯水池}\nTsukuCTF{河内}</code></pre></div>","frontmatter":{"title":"dam","description":"写真から場所を特定する。","author":"猫(1010)","genre":"OSINT","solver":"55","point":"100"}}},"pageContext":{"id":"e0ce3338-71bd-5b33-b47b-c65fc4c6e67c"}},
-    "staticQueryHashes": ["2841359383"]}
