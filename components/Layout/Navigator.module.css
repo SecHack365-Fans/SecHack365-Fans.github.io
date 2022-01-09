@@ -25,11 +25,16 @@
 }
 
 .left {
-  padding: 0;
+  padding: auto;
+  display: flex;
+  justify-content: center;
   margin: auto auto auto 3%;
 }
 
 .right {
+  padding: auto;
+  display: flex;
+  justify-content: center;
   margin: auto 1em auto auto;
 }
 
