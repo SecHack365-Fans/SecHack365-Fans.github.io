@@ -1,6 +1,5 @@
 import { Layout } from "../../../components/Layout";
 import { getAllPostIds, getPostData } from "../../../lib/posts";
-import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import ReactMarkdown from "react-markdown";
