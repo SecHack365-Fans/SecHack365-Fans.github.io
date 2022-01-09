@@ -3,26 +3,25 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
-import { assert } from "console";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
+/* 指定したCTFの問題情報一覧をソートして取得する */
 export function getSortedPostsData(ctfId: string) {
-  const fileNames = fs.readdirSync(`${postsDirectory}/${ctfId}`);
+  const problemIds = fs.readdirSync(`${postsDirectory}/${ctfId}`);
 
-  const allPostsData = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.md$/, "");
-    console.log(id);
-    const fullPath = path.join(`${postsDirectory}/${ctfId}`, fileName);
+  const allPostsData = problemIds.map((problemId) => {
+    const id = problemId;
+    const fullPath = `${postsDirectory}/${ctfId}/${problemId}/README.md`;
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
     return {
       id,
-      ...(matterResult.data as { date: string; title: string }),
+      ...(matterResult.data as { title: string }),
     };
   });
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (a.title < b.title) {
       return 1;
     } else {
       return -1;
@@ -30,23 +29,23 @@ export function getSortedPostsData(ctfId: string) {
   });
 }
 
+/* 指定したCTFのID(問題名)一覧を取得する */
 export function getAllPostIds(ctfId: string) {
-  const fileNames = fs.readdirSync(`${postsDirectory}/${ctfId}`);
-  return fileNames.map((fileName) => {
+  const problemIds = fs.readdirSync(`${postsDirectory}/${ctfId}`);
+  return problemIds.map((problemId) => {
     return {
       params: {
-        id: fileName.replace(/\.md$/, ""),
+        id: problemId,
       },
     };
   });
 }
 
+/* 指定した問題のwriteupの内容を取得する */
 export async function getPostData(id: string, ctfId: string) {
-  const fullPath = `${postsDirectory}/${ctfId}/${id}.md`;
+  const fullPath = `${postsDirectory}/${ctfId}/${id}/README.md`;
   const fileContents = fs.readFileSync(fullPath, "utf8");
-
   const matterResult = matter(fileContents);
-
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);

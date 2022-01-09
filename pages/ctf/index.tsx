@@ -1,10 +1,11 @@
 import { VFC } from "react";
 import { Layout } from "../../components/Layout";
+import Link from "next/link";
 
 const CTF: VFC = () => {
   return (
     <Layout title="" description="">
-      <a href="http://localhost:3000/ctf/tsukuctf">TsukuCTF</a>
+      <Link href="/ctf/tsukuctf2021">TsukuCTF</Link>
     </Layout>
   );
 };

@@ -1,7 +1,6 @@
 import { Layout } from "../../../components/Layout";
 import Link from "next/link";
 import { getSortedPostsData } from "../../../lib/posts";
-import Date from "../../../components/Date";
 import { GetStaticProps } from "next";
 
 const ctfId = "tsukuctf2021";
@@ -10,7 +9,6 @@ const TsukuCTF = ({
   allPostsData,
 }: {
   allPostsData: {
-    date: string;
     title: string;
     id: string;
   }[];
@@ -18,17 +16,14 @@ const TsukuCTF = ({
   return (
     <Layout title="" description="">
       <section>
-        <h2>Blog</h2>
+        <h2>Writeups</h2>
         <ul>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, title }) => (
             <li key={id}>
               <Link href={`/ctf/${ctfId}/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small>
-                <Date dateString={date} />
-              </small>
             </li>
           ))}
         </ul>
