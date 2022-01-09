@@ -1,0 +1,66 @@
+/* 「注意」の枠線 */
+.cautionBox {
+  text-align: center;
+  position: relative;
+  margin: 2em;
+  padding: 0.5em 1em;
+  border: solid 2px #000000;
+  border-radius: 8px;
+  font-size: 1.2em;
+}
+.cautionBox .cautionBoxTitle {
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 19px;
+  background: #fff;
+  color: #000000;
+  font-weight: bold;
+}
+.cautionBox span {
+  margin: 0;
+  padding: 0;
+}
+
+/* 非公式の文字 */
+.unofficial {
+  color: red;
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* 公式サイトへのリンク */
+.officialLink {
+  display: flex;
+  margin: 0;
+  padding: 10px;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.officialLink .officialBtn {
+  padding: 10px;
+  width: 19%;
+  min-width: 7em;
+  text-align: center;
+  border: 2px solid #353a40;
+  margin: 2px;
+}
+
+.officialLink .officialBtn:hover {
+  background: #f8e44c;
+  transform: scale(1.05);
+}
+
+.officialLink .officialBtn a {
+  color: #353a40;
+}
+
+/* トップ画像 */
+.gamingSecHack {
+  text-align: center;
+}

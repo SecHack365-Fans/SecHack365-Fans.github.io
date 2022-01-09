@@ -11,10 +11,8 @@ export const Layout: FC<{
 }> = ({ children, title, description }) => (
   <div>
     <Header title={title} description={description} />
-    <div>
-      <Navigator />
-      <div>{children}</div>
-      <Footer />
-    </div>
+    <Navigator />
+    <div style={{ padding: "15px" }}>{children}</div>
+    <Footer />
   </div>
 );
