@@ -4,8 +4,8 @@ import { Layout } from "../components/Layout";
 const Home: NextPage = () => {
   return (
     <Layout
-      title="AAAAAAAAAAAAAAAAAAAAAAAAA"
-      description="AAAAAAAAAAAAAAAAAAAAAAAAA"
+      title="SecHack365-Fans Top Page"
+      description="SecHack365 非公式 ファンページ"
     >
       <div>AAAAAAAAAAAAAAAAAAAAAA</div>
     </Layout>

@@ -13,7 +13,7 @@
   },
   "lint-staged": {
     "*.{css,less,sass,scss}": [
-      "stylelint --fix"
+      "prettier --write"
     ],
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",

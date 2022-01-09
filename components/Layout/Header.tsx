@@ -6,8 +6,9 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ title, description }: Props) => {
-  const defaultDescription = "AAAAAAAAAAAAAAAAAAAAAAAAA";
-  const defaultTitle = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  const defaultTitle = "SecHack365-Fans";
+  const defaultDescription =
+    "このサイトはSecHack365修了生よって運営されている非公式ののファンページです。";
   return (
     <Head>
       <title>{title ? title : defaultTitle}</title>

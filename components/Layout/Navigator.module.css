@@ -1,0 +1,57 @@
+/** @format */
+
+/* ナビゲーションバー */
+.navbar {
+  background-color: #353a40;
+  height: 3em;
+}
+
+.button {
+  font-size: 1em;
+  text-transform: none;
+}
+
+.button:hover {
+  background-color: #434952;
+}
+
+.home {
+  color: #eee;
+  font-weight: bold;
+}
+
+.otherLink {
+  color: rgb(190, 190, 190);
+}
+
+.left {
+  padding: 0;
+  margin: auto auto auto 3%;
+}
+
+.right {
+  margin: auto 1em auto auto;
+}
+
+/* 右上のメニューバー */
+.menu {
+  position: absolute;
+  margin: 25px;
+}
+
+.menu ul {
+  background-color: #353a40;
+}
+
+.menuItemButton {
+  color: #eee;
+  text-transform: none;
+}
+
+.menuItem:hover {
+  background-color: #434952;
+}
+
+.icon {
+  margin-right: 3px;
+}
