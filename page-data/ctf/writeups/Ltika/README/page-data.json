@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-writeups-js",
+    "path": "/ctf/writeups/Ltika/README/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"SecHack365-Fans HomePage"}},"markdownRemark":{"id":"d58914b4-ccfa-54ea-99c9-f9fc6fc8d57e","excerpt":"Ltika ファイルの拡張子が.inoなのでarduinoのソースコードということがわかる。 また使われている関数はLED…","html":"<h1>Ltika</h1>\n<p>ファイルの拡張子が.inoなのでarduinoのソースコードということがわかる。<br>\nまた使われている関数はLEDの点滅、点灯を行っていることから、それぞれモールス信号のトンとツーを表しているのでそれを読み解く<br>\n. -. .--- ----- -.— … .- .-. -.. .— .- .-. . -.-.—      </p>\n<h2>TsukuCTF{ENJ0YHARDWARE!}</h2>","frontmatter":{"title":"Ltika","description":"Lチカを利用したモールス信号","author":"よしみ.","genre":"Hardware","solver":"49","point":"100"}}},"pageContext":{"id":"d58914b4-ccfa-54ea-99c9-f9fc6fc8d57e"}},
+    "staticQueryHashes": ["2841359383"]}
