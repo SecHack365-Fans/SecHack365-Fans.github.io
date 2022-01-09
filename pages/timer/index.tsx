@@ -1,5 +1,6 @@
 import React, { VFC } from "react";
 import { Layout } from "../../components/Layout";
+import ShowDamedesu from "./script/display";
 
 import styles from "/styles/timer.module.css";
 
@@ -95,6 +96,7 @@ class RealTimeClock extends React.Component<ClockPropsType, ClockStateType> {
 }
 
 const Timer: VFC = () => {
+  ShowDamedesu();
   return (
     <Layout title="" description="">
       <div className={styles.backGround}>

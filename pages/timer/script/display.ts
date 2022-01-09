@@ -1,4 +1,4 @@
-export default function showDamedesu() {
+const ShowDamedesu = () => {
   console.log("＿人人人人人人人人人人＿");
   console.log("＞　進捗ダメです！！　＜");
   console.log("￣Y^Y^Y^Y^Y^Y^Y^Y^Y￣");
@@ -31,5 +31,6 @@ export default function showDamedesu() {
   console.log("                    _~~:~~`");
   console.log("                     ~:~`");
   console.log("                      `");
-  return null;
-}
+};
+
+export default ShowDamedesu;
