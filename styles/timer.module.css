@@ -1,0 +1,48 @@
+/* 背景 */
+.backGround {
+  background-color: black;
+}
+.title {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* 現在時刻 */
+.realTimeClock {
+  text-align: center;
+  color: #ff0000;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* カウントダウンタイマー */
+@font-face {
+  font-family: "7seg4";
+  src: url("/fonts/7seg4.woff") format("woff");
+}
+
+.countDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 3em;
+  width: 70%;
+  height: 6em;
+  background-image: url("/images/timer_warning.jpg");
+  background-size: 100% 100%;
+}
+
+.countDownText {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.countDownTimer {
+  color: #ff0000;
+  font-size: 1em;
+  line-height: 40px;
+  font-family: "7seg4";
+}
