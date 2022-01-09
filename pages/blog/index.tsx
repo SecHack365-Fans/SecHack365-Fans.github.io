@@ -1,11 +1,20 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import { Layout } from "../../components/Layout";
-import Router from "next/router";
+import { useRouter } from "next/router";
 
 const redurectUrl = "/blog/2020";
 
 const RedirectPage: NextPage = () => {
+  const router = useRouter();
+  const isReady = router.isReady;
+
+  if (!isReady) {
+    return <Loading />;
+  }
+
+  router.push(redurectUrl);
+
   return (
     <Layout>
       <p>
@@ -15,18 +24,12 @@ const RedirectPage: NextPage = () => {
   );
 };
 
-RedirectPage.getInitialProps = async ({ res }) => {
-  // サーバー側でリダイレクト
-  if (typeof window === "undefined") {
-    res?.writeHead(302, { Location: redurectUrl });
-    res?.end();
-    return {};
-  }
-
-  // クライアント側でリダイレクト
-  Router.push(redurectUrl);
-
-  return {};
-};
-
 export default RedirectPage;
+
+const Loading = () => {
+  return (
+    <Layout>
+      <p>Loading...</p>
+    </Layout>
+  );
+};
