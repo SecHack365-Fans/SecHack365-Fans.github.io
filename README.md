@@ -1,41 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![SecHack365](https://img.shields.io/static/v1?label=SecHack&message=365&color=ffd700)](https://sechack365.nict.go.jp/) [![github pages](https://github.com/SecHack365-Fans/SecHack365-Fans.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/SecHack365-Fans/SecHack365-Fans.github.io/actions/workflows/gh-pages.yml) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-## Getting Started
+# SecHack365 Fansのホームページ
 
-First, run the development server:
+修了生が運営しています。
 
-```bash
-npm run dev
-# or
-yarn dev
+## このサイトの開発がしたい
+
+```sh
+git clone https://github.com/SecHack365-Fans/SecHack365-Fans.github.io
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```sh
+npm install
+gatsby develop
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+または
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```sh
+yarn
+yarn develop
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# あなたの参加記を追加しましょう
 
-## Learn More
+追加は結構大変な作業なので、どうか皆様の力をお貸しください。
 
-To learn more about Next.js, take a look at the following resources:
+入力支援スクリプトが tool/new_entryにあります。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`$ cd tool/new_entry && docker build . -t sechack365fans-new-entry && docker run -it sechack365fans-new-entry` のように実行すれば、対話的に入力できます。
+その後にJSONが標準出力されるので、`src/pages/2020/data/<自分の該当するコース>.json` に貼ってください！
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+皆様の Pull Request をお待ちしています！
 
-## Deploy on Vercel
+# Contributors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-=======
 * **[xryuseix](https://github.com/xryuseix)** (Development and Operation)
 * **[Krout0n](https://github.com/Krout0n)** (Development and Operation)
 * **[Satoki](https://github.com/satoki)** (Domain Management, Professional NEET)
 * [and more ...](https://github.com/SecHack365-Fans/SecHack365-Fans.github.io/graphs/contributors)
- 
