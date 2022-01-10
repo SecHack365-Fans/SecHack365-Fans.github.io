@@ -8,7 +8,7 @@ import MarkdownRender, {
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-const ctfId = "tsukuctf2021";
+const ctfId = "TsukuCTF2021";
 
 const Post = ({ postData }: PostPropType) => {
   const { title, description, author, genre, solver, point, contentHtml } =
