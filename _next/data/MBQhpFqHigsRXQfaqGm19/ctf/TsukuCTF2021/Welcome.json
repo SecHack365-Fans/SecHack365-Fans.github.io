@@ -1,0 +1,1 @@
+{"pageProps":{"postData":{"id":"Welcome","contentHtml":"# Welcome\n\n問題文のリンクに従い[Twitter](https://twitter.com/tsukuctf)を開きます。するとアカウント名が`TsukuCTF{2021}`となっています。\nまた、Notifications で述べた通り、`TsukuCTF{@tsukuctf}`や`TsukuCTF{tsukuctf}`もフラグとなります。\n","title":"Welcome","description":"Twitterアカウントを確認します","author":"ryusei_ishika","genre":"Tsukushi","solver":154,"point":100}},"__N_SSG":true}

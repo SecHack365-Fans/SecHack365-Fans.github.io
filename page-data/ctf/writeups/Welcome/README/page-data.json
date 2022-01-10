@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-writeups-js",
-    "path": "/ctf/writeups/Welcome/README/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"SecHack365-Fans HomePage"}},"markdownRemark":{"id":"ddfe4bb2-105c-56bb-bca9-ab3b3c8df1b1","excerpt":"Welcome 問題文のリンクに従いTwitterを開きます。するとアカウント名がとなっています。\nまた、Notificationsで述べた通り、やもフラグとなります。","html":"<h1>Welcome</h1>\n<p>問題文のリンクに従い<a href=\"https://twitter.com/tsukuctf\">Twitter</a>を開きます。するとアカウント名が<code class=\"language-text\">TsukuCTF{2021}</code>となっています。\nまた、Notificationsで述べた通り、<code class=\"language-text\">TsukuCTF{@tsukuctf}</code>や<code class=\"language-text\">TsukuCTF{tsukuctf}</code>もフラグとなります。</p>","frontmatter":{"title":"Welcome","description":"Twitterアカウントを確認します","author":"ryusei_ishika","genre":"Tsukushi","solver":"154","point":"100"}}},"pageContext":{"id":"ddfe4bb2-105c-56bb-bca9-ab3b3c8df1b1"}},
-    "staticQueryHashes": ["2841359383"]}

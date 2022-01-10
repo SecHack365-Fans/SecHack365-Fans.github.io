@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[513],{7864:function(e,t,l){l.r(t);var n=l(7294),c=l(8329),a=l(6179),r=l(5909);t.default=function(e){var t=e.location;return n.createElement(c.Z,{location:t},n.createElement(a.Z,{title:"CTF",description:"CTF一覧"}),n.createElement(r.Z,{title:"CTF"}),n.createElement("h1",null,"CTF"),n.createElement("ul",{style:{"font-size":"2em"}},n.createElement("li",null,n.createElement("a",{href:"./tsukuctf2021"},"TsukuCTF 2021"))))}}}]);
-//# sourceMappingURL=component---src-pages-ctf-index-js-fd44d820978ed98d8e42.js.map

@@ -1,0 +1,1 @@
+{"pageProps":{"postData":{"id":"ramen","contentHtml":"# ramen\n\n> ハッカーにとってラーメンは必須の飲み物だといわれています。写真のラーメン店の本店のインスタグラム ID を特定してください。\n\n![ramen.png](ramen.png)\n\nGoogle レンズを使用すると以下のように銀座篝であることがわかります。\n\n```txt\nTsukuCTF{kagari_honten}\n```\n","title":"ramen","description":"ラーメンの特定です","author":"ryusei_ishika","genre":"OSINT","solver":93,"point":100}},"__N_SSG":true}
