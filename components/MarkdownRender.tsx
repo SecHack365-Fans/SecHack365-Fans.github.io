@@ -4,6 +4,8 @@ import path from "path";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
+import styles from "./MarkdownRender.module.css";
+
 type MarkdownProps = {
   id: string | undefined;
   title: string | undefined;
@@ -29,14 +31,18 @@ const components = {
         language={match[1]}
         PreTag="div"
         {...props}
+        className={styles.code}
       >
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     ) : (
-      <code className={className} {...props}>
+      <code className={`${className} ${styles.inlineCode}`} {...props}>
         {children}
       </code>
     );
+  },
+  blockquote: ({ node, children, ...props }: any) => {
+    return <blockquote className={styles.blockQuote}>{children}</blockquote>;
   },
 };
 
