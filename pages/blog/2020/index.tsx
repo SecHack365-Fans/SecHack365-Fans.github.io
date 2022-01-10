@@ -95,10 +95,10 @@ const TableRow = ({
           {/* 2つ目以降の作品のリンクの前には <br /> を入れたいので最初のだけ直接添字アクセスをして、それ以降を map で呼び出す */}
           <AchivementLink {...achivements[0]} />
           {achivements.slice(1).map((achivement) => (
-            <>
+            <span key={achivement.href}>
               <br />
               <AchivementLink {...achivement} />
-            </>
+            </span>
           ))}
         </>
       )}

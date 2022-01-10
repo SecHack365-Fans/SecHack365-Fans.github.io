@@ -42,7 +42,7 @@
   -webkit-justify-content: center;
 }
 
-.officialLink .officialBtn {
+.officialLink a {
   padding: 10px;
   width: 19%;
   min-width: 7em;
@@ -51,12 +51,12 @@
   margin: 2px;
 }
 
-.officialLink .officialBtn:hover {
+.officialLink a:hover {
   background: #f7ea8e;
   transform: scale(1.05);
 }
 
-.officialLink .officialBtn a {
+.officialLink a {
   color: #353a40;
 }
 

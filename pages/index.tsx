@@ -17,24 +17,20 @@ const Home: NextPage = () => {
           のファンページです。 公式のページはこちらになります。
         </div>
         <div className={styles.officialLink}>
-          <div className={styles.officialBtn}>
-            <a
-              href="https://sechack365.nict.go.jp/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Webサイト
-            </a>
-          </div>
-          <div className={styles.officialBtn}>
-            <a
-              href="https://twitter.com/SecHack365"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-          </div>
+          <a
+            href="https://sechack365.nict.go.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Webサイト
+          </a>
+          <a
+            href="https://twitter.com/SecHack365"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+          </a>
         </div>
       </div>
       <div className={styles.gamingSecHack}>

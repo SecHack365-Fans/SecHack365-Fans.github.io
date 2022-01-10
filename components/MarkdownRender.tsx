@@ -15,13 +15,15 @@ type MarkdownProps = {
 const components = (markdownProps: MarkdownProps) => {
   return {
     img: ({ ...props }: any) => {
-      const src = path.join(
-        "https://raw.githubusercontent.com/SecHack365-Fans/SecHack365-Fans.github.io/master/pages/ctf/",
-        markdownProps.ctfId ?? "",
-        "/writeups/",
-        markdownProps.title ?? "",
-        props.src as string
-      );
+      const src =
+        "https://" +
+        path.join(
+          "raw.githubusercontent.com/SecHack365-Fans/SecHack365-Fans.github.io/master/pages/ctf/",
+          markdownProps.ctfId ?? "",
+          "/writeups/",
+          markdownProps.title ?? "",
+          props.src as string
+        );
       return <img src={src} alt={props.alt} style={{ width: "80%" }} />;
     },
     code({ inline, className, children, ...props }: any) {
