@@ -1,7 +1,7 @@
-name: github pages
+name: build-test
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -29,10 +29,3 @@ jobs:
         run: yarn format
       - name: build
         run: yarn build && yarn export
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: out
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
