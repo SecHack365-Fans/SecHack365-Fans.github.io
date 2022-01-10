@@ -5,7 +5,7 @@
     "build": "next build",
     "dev": "next dev",
     "export": "next export",
-    "format": "prettier --write \"(pages|components|styles)/**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "format": "prettier --write \"(pages|components|styles|lib)/**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "all-format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "next lint",
     "prepare": "husky install",
@@ -40,6 +40,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
+    "react-icons": "^4.3.1",
     "react-markdown": "^7.1.2",
     "typescript": "4.5.4"
   }

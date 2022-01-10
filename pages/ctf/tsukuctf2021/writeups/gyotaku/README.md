@@ -56,7 +56,7 @@ JavaScript が動くようだ。
 
 ```html
 <script>
-  location.href = '/etc/passwd'
+  location.href = "/etc/passwd";
 </script>
 ```
 
