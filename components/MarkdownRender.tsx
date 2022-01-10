@@ -16,8 +16,8 @@ const components = (markdownProps: MarkdownProps) => {
   return {
     img: ({ ...props }: any) => {
       const src = path.join(
-        "https://raw.githubusercontent.com/SecHack365-Fans/SecHack365-Fans.github.io/master/src/pages/ctf/",
-        markdownProps.ctfId?.toLowerCase() ?? "",
+        "https://raw.githubusercontent.com/SecHack365-Fans/SecHack365-Fans.github.io/master/pages/ctf/",
+        markdownProps.ctfId ?? "",
         "/writeups/",
         markdownProps.title ?? "",
         props.src as string
