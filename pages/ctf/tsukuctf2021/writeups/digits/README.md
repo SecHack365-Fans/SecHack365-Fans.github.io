@@ -1,6 +1,6 @@
 ---
 title: digits
-description: コンピュータに祈って運よくフラグをもらうってやつ
+description: Pythonのint関数の型変換をバイパス
 author: ryusei_ishika
 genre: Web
 solver: 63
@@ -89,7 +89,7 @@ URL には`+`という文字を入れることができます．これはデリ�
 
 ### お詫び
 
-この問題いっぱいミスをしましたすみませんでした．  
+この問題多くのミスがありすみませんでした．  
 まず最初はファイルを与えておらず，ブラックボックスになっていました．  
 また，最初は`@app.get("/program/digits/")`が`@app.get("/program/digits")`となっていて，`/program/digits/?q=12345678090`とアクセスすると localhost へリダイレクトされるバグがありました．
 

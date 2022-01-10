@@ -23,6 +23,7 @@
 .ctfWriteupList {
   padding: 0 0 0 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 .ctfWriteupList:hover {
   background-color: #e2e2f5ec;
