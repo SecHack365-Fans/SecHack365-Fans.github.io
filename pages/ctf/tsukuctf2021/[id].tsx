@@ -5,24 +5,14 @@ import MarkdownRender, {
   PostPropType,
 } from "../../../components/MarkdownRender";
 
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-
 const ctfId = "TsukuCTF2021";
 
 const Post = ({ postData }: PostPropType) => {
   const { title, description, author, genre, solver, point, contentHtml } =
     postData;
-  const router = useRouter();
-  const [ctfId, setCTFId] = useState<string>("");
-  useEffect(() => {
-    if (router.asPath !== router.route) {
-      setCTFId(String(router.pathname).split("/").slice(-2, -1)[0]);
-    }
-  }, [router]);
   return (
     <Layout title={`${postData.title}-${ctfId}`}>
-      <MarkdownRender id={ctfId} title={title} content={contentHtml} />
+      <MarkdownRender ctfId={ctfId} title={title} content={contentHtml} />
     </Layout>
   );
 };
