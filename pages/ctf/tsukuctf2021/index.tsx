@@ -8,8 +8,8 @@ import styles from "/styles/writeups.module.css";
 
 const ctfId = "tsukuctf2021";
 
-const TwitterButton = ({ author }: { author?: string }) => {
-  if (author) {
+const TwitterButton = ({ author }: { author: string }) => {
+  if (author.match(/[A-Za-z_]+/)) {
     return (
       <a href={`https://twitter.com/${author}`}>
         <FaTwitter style={{ color: "#00acee" }} />
@@ -17,7 +17,7 @@ const TwitterButton = ({ author }: { author?: string }) => {
       </a>
     );
   } else {
-    return <></>;
+    return <>{author}</>;
   }
 };
 
