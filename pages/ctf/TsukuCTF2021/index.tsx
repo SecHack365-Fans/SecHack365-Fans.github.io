@@ -65,7 +65,7 @@ const TsukuCTF = ({
           {allPostsData
             .sort((a, b) => (a.genre > b.genre ? 1 : -1))
             .map(({ id, title, description, author, genre, solver, point }) => (
-              <Link href={`/ctf/${ctfId}/${id}`} key={id}>
+              <Link href={`/ctf/${ctfId}/${id}`} key={id} passHref>
                 <li className={styles.ctfWriteupList}>
                   <h2>{title}</h2>
                   <span className={styles.writeupsMeta}>

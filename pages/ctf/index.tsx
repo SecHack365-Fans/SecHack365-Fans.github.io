@@ -11,7 +11,7 @@ const CTF: VFC = () => {
       <h1>CTF</h1>
       <ul className={styles.ctfList}>
         {ctfIds.map((ctfId) => (
-          <Link href={`/ctf/${ctfId}`} key={String(ctfId)}>
+          <Link href={`/ctf/${ctfId}`} key={String(ctfId)} passHref>
             <li>{ctfId}</li>
           </Link>
         ))}

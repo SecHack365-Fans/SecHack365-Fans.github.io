@@ -22,7 +22,6 @@ const components = (markdownProps: MarkdownProps) => {
         markdownProps.title ?? "",
         props.src as string
       );
-      console.log(src);
       return <img src={src} alt={props.alt} style={{ width: "80%" }} />;
     },
     code({ inline, className, children, ...props }: any) {
@@ -50,7 +49,6 @@ const components = (markdownProps: MarkdownProps) => {
 };
 
 const MarkdownRender = (props: MarkdownProps): JSX.Element => {
-  console.log(props);
   return (
     <ReactMarkdown components={components(props)}>
       {props.content ?? ""}
