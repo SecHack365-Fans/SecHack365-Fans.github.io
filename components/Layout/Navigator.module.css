@@ -6,22 +6,24 @@
   height: 3em;
 }
 
+/* この辺なぜかimportantにしないと開発環境では動くけど静的ビルドすると反映されなくなる */
+/* 要調査 */
 .button {
-  font-size: 1em;
-  text-transform: none;
+  font-size: 1em !important;
+  text-transform: none !important;
 }
 
 .button:hover {
-  background-color: #434952;
+  background-color: #434952 !important;
 }
 
 .home {
-  color: #eee;
-  font-weight: bold;
+  color: #eee !important;
+  font-weight: bold !important;
 }
 
 .otherLink {
-  color: rgb(190, 190, 190);
+  color: rgb(190, 190, 190) !important;
 }
 
 .left {
@@ -49,12 +51,12 @@
 }
 
 .menuItemButton {
-  color: #eee;
-  text-transform: none;
+  color: #eee !important;
+  text-transform: none !important;
 }
 
 .menuItem:hover {
-  background-color: #434952;
+  background-color: #434952 !important;
 }
 
 .icon {
