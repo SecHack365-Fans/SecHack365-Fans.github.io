@@ -21,14 +21,13 @@ jobs:
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          restore-keys: ${{ runner.os }}-yarn-
       - name: Install Dependencies
         run: yarn
       - name: format
         run: yarn format
       - name: build
-        run: yarn build && yarn export
+        run: yarn build && yarn export && echo "fans.sechack365.com" > out/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
