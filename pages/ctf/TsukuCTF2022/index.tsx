@@ -1,3 +1,5 @@
+/** @format */
+
 import { Layout } from "../../../components/Layout";
 import Link from "next/link";
 import { getSortedPostsData } from "../../../lib/posts";
@@ -11,10 +13,13 @@ const ctfId = "TsukuCTF2022";
 const TwitterButton = ({ author }: { author: string }) => {
   if (author.match(/[A-Za-z_]+/)) {
     return (
-      <a href={`https://twitter.com/${author}`}>
+      <button
+        onClick={() => (location.href = `https://twitter.com/${author}`)}
+        className={styles.author}
+      >
         <FaTwitter style={{ color: "#00acee" }} />
         {author}
-      </a>
+      </button>
     );
   } else {
     return <>{author}</>;
@@ -66,30 +71,33 @@ const TsukuCTF = ({
             .sort((a, b) => (a.genre > b.genre ? 1 : -1))
             .map(({ id, title, description, author, genre, solver, point }) => (
               <Link href={`/ctf/${ctfId}/${id}`} key={id} passHref>
-                <li className={styles.ctfWriteupList}>
-                  <h2>{title}</h2>
-                  <span className={styles.writeupsMeta}>
-                    <div className={styles.writeupsMetaBox}>
-                      Genre:{" "}
-                      <a
-                        href="#"
-                        className={`${styles.writeupsGenre} ${
-                          genre2Style[genre.toLowerCase()]
-                        }`}
-                      >
-                        {genre}
-                      </a>
-                    </div>
-                    <div className={styles.writeupsMetaBox}>
-                      Author: <TwitterButton author={author} />
-                    </div>
-                    <div className={styles.writeupsMetaBox}>Point: {point}</div>
-                    <div className={styles.writeupsMetaBox}>
-                      Solver: {solver}
-                    </div>
-                  </span>
-                  <p>{description}</p>
-                </li>
+                <a>
+                  <li className={styles.ctfWriteupList}>
+                    <h2>{title}</h2>
+                    <span className={styles.writeupsMeta}>
+                      <div className={styles.writeupsMetaBox}>
+                        Genre:{" "}
+                        <span
+                          className={`${styles.writeupsGenre} ${
+                            genre2Style[genre.toLowerCase()]
+                          }`}
+                        >
+                          {genre}
+                        </span>
+                      </div>
+                      <div className={styles.writeupsMetaBox}>
+                        Author: <TwitterButton author={author} />
+                      </div>
+                      <div className={styles.writeupsMetaBox}>
+                        Point: {point}
+                      </div>
+                      <div className={styles.writeupsMetaBox}>
+                        Solver: {solver}
+                      </div>
+                    </span>
+                    <p>{description}</p>
+                  </li>
+                </a>
               </Link>
             ))}
         </ul>
