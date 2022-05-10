@@ -3,7 +3,7 @@ import { Layout } from "../../components/Layout";
 import Link from "next/link";
 import styles from "/styles/ctf.module.css";
 
-const ctfIds = ["TsukuCTF2021"];
+const ctfIds = ["TsukuCTF2021", "TsukuCTF2022"];
 
 const CTF: VFC = () => {
   return (
