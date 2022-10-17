@@ -1,6 +1,6 @@
 ---
 title: digits
-description: Pythonのint関数の型変換をバイパス
+description: コンピュータに祈って運よくフラグをもらうってやつ
 author: ryusei_ishika
 genre: Web
 solver: 63
@@ -10,10 +10,10 @@ point: 100
 # digits
 
 > コンピュータは高速に正しく計算してくれますが、昔のコンピュータは今ほど正確に計算できないことがありました。現在もハードウェアの故障などが原因でとても低い確率でコンピュータは計算をミスするでしょう。
-> 運が良いあなたならこの問題が解けるはずです。10 桁の好きな数字をクエリパラメータ `q` に入れて、神に祈りましょう。
-> `https://tsukuctf.sechack365.com/problems/digits`
-> ※この問題では`/problems/digits`以下のみを用います。
-> 他の問題`/problems/<name>`などと混同しないよう注意してください。
+運が良いあなたならこの問題が解けるはずです。10 桁の好きな数字をクエリパラメータ `q` に入れて、神に祈りましょう。
+`https://tsukuctf.sechack365.com/problems/digits`
+※この問題では`/problems/digits`以下のみを用います。
+他の問題`/problems/<name>`などと混同しないよう注意してください。
 
 プログラムはこれです．
 
@@ -58,7 +58,7 @@ def main(q: Optional[str] = None):
         return {"msg": "Sorry... You're unlucky."}
 ```
 
-ちなみに FastAPI が使われているのは僕の好みです．
+ちなみにFastAPIが使われているのは僕の好みです．
 入力`q`のチェックを一つずつ確認しましょう．
 
 ### 1. `q`は`None`であってはならない
@@ -89,9 +89,10 @@ URL には`+`という文字を入れることができます．これはデリ�
 
 ### お詫び
 
-この問題多くのミスがありすみませんでした．  
+この問題いっぱいミスをしましたすみませんでした．  
 まず最初はファイルを与えておらず，ブラックボックスになっていました．  
-また，最初は`@app.get("/program/digits/")`が`@app.get("/program/digits")`となっていて，`/program/digits/?q=12345678090`とアクセスすると localhost へリダイレクトされるバグがありました．
+また，最初は`@app.get("/program/digits/")`が`@app.get("/program/digits")`となっていて，`/program/digits/?q=12345678090`とアクセスするとlocalhostへリダイレクトされるバグがありました．Yちゃんが気づいて直してくれました．本当にすみませんでした......  
+あと`idx = random.randrange(4)`がなんで`idx = random.randrange(10)`ではないかというと，僕のミスです(あまり難易度は変わらないので無視しました)．
 
 ```txt
 TsukuCTF{you_are_lucky_Tsukushi}

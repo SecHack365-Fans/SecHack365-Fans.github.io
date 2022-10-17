@@ -9,11 +9,10 @@ point: 244
 
 # discriminate
 
-## 想定解法 1
-
+## 想定解法1
 以下のようなコードを実行します。 すると、フラグが標準出力されます。
 
-```
+```python
 from transformers import T5Tokenizer, AutoModelForCausalLM
 # トークナイザー
 tokenizer = T5Tokenizer.from_pretrained("rinna/japanese-gpt2-medium")
@@ -40,10 +39,9 @@ for i in range(5, len_text):
 print("TsukuCTF\{",text[i-5: i], "\}")
 ```
 
-## 想定解法 2
+## 想定解法2
 
 こちらのほうが現実的です。
-
 1. https://sechack365.nict.go.jp/achievement からスマートドアハンドルの話題を扱っているポスターを探す。→[PDF](https://sechack365.nict.go.jp/achievement/2020/pdf/2020_08.pdf)
 2. ポスターを読んで与えられた生成文に近い文章を探す。
-3. 生成文とオリジナルを比較し、一致している最後の 5 文字を回答する。
+3. 生成文とオリジナルを比較し、一致している最後の5文字を回答する。

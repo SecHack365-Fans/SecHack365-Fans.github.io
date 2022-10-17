@@ -55,11 +55,13 @@ const TsukuCTF = ({
       <h1>TsukuCTF 2022</h1>
 
       <div className={styles.ctfDetails}>
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://tsukuctf.sechack365.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src="../../../images/tsukuctf-logo.png" alt="TsukuCTF" />
-          <div className={styles.ctfLink}>
-            Registration for TsukuCTF Coming Soon...
-          </div>
+          <div className={styles.ctfLink}>Registration for TsukuCTF</div>
         </a>
         <div className={styles.ctfLink}>
           2022/10/22 12:20pm GMT+9 ~ 2022/10/23 18:00pm GMT+9 (29h40m)
@@ -73,7 +75,14 @@ const TsukuCTF = ({
           >
             Twitter(@tsukuctf)
           </a>{" "}
-          for additional information!
+          or{" "}
+          <a
+            href="https://discord.gg/EEsfKWm9"
+            target="_blank"
+            rel="noopener noreferer noreferrer"
+          >
+            Discord
+          </a>
         </div>
       </div>
       <hr />
