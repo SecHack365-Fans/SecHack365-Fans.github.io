@@ -1,1 +1,0 @@
-{"pageProps":{"postData":{"id":"Customization","contentHtml":"# Customization\n\nマンダラートの中央のマスに何も書かれていないように見えるが、背景と文字が同じ色なだけであるのでマスをクリックすると上部に flag が現れる\n![images/image1.png](images/image1.png)\n\n## TsukuCTF{yak1n1ku\\_ta6eta1}\n","title":"Customization","description":"背景色による文字の隠蔽","author":"labo_4423","genre":"Misc","solver":98,"point":100}},"__N_SSG":true}
