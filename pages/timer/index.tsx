@@ -114,9 +114,6 @@ const ShowDamedesu = () => {
   console.log("＿人人人人人人人人人人＿");
   console.log("＞ 進捗ダメです！！ ＜");
   console.log("￣Y^Y^Y^Y^Y^Y^Y^Y^Y￣");
-  console.log(
-    "Please decode! → VHN1a3VDVEZ7aHR0cHM6Ly9zZWNoYWNrMzY1Lm5pY3QuZ28uanB9"
-  );
   console.log("                        _");
   console.log("                      _:~~");
   console.log("                    .::~:~.");
