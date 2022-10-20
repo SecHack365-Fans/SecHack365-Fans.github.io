@@ -10,19 +10,27 @@ import styles from "/styles/writeups.module.css";
 
 const ctfId = "TsukuCTF2021";
 
-const TwitterButton = ({ author }: { author: string }) => {
-  if (author.match(/[A-Za-z_]+/)) {
+const TwitterButton: Function = ({ authors }: { authors: string }) => {
+  if (authors.match(/([A-Za-z_]+( ?& ?)?)+/)) {
     return (
-      <button
-        onClick={() => (location.href = `https://twitter.com/${author}`)}
-        className={styles.author}
-      >
-        <FaTwitter style={{ color: "#00acee" }} />
-        {author}
-      </button>
+      <span>
+        {authors
+          .split(/ ?& ?/)
+          .map<React.ReactNode>((author, idx) => (
+            <button
+              onClick={() => (location.href = `https://twitter.com/${author}`)}
+              className={styles.author}
+              key={idx}
+            >
+              <FaTwitter style={{ color: "#00acee" }} />
+              {author}
+            </button>
+          ))
+          .reduce((prev, curr) => [prev, " & ", curr])}
+      </span>
     );
   } else {
-    return <>{author}</>;
+    return <>{authors}</>;
   }
 };
 
@@ -86,7 +94,7 @@ const TsukuCTF = ({
                         </span>
                       </div>
                       <div className={styles.writeupsMetaBox}>
-                        Author: <TwitterButton author={author} />
+                        Author: <TwitterButton authors={author} />
                       </div>
                       <div className={styles.writeupsMetaBox}>
                         Point: {point}
