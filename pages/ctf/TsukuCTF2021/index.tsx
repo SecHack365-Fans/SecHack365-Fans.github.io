@@ -67,7 +67,7 @@ const TsukuCTF = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="../../../images/tsukuctf2021.png" alt="TsukuCTF" />
+          <img src="../../../images/tsukuctf.png" alt="TsukuCTF" />
           <div className={styles.ctfLink}>https://tsukuctf.sechack365.com/</div>
         </a>
       </div>
