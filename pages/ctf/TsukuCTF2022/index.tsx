@@ -100,7 +100,17 @@ const TsukuCTF = ({
         <h2>Writeups</h2>
         <ul>
           {allPostsData
-            .sort((a, b) => (a.genre > b.genre ? 1 : -1))
+            // ソートの第一条件をジャンル、第二条件をidでソートすることで、並び順を一意にする
+            // このソート順にしたのは、ユーザがみた時にジャンル->問題名のアルファベット順で探すと思ったため
+            .sort((a, b) =>
+              a.genre === b.genre
+                ? a.id < b.id
+                  ? -1
+                  : 1
+                : a.genre < b.genre
+                ? -1
+                : 1
+            )
             .map(({ id, title, description, author, genre, solver, point }) => (
               <Link href={`/ctf/${ctfId}/${id}`} key={id} passHref>
                 <a>
