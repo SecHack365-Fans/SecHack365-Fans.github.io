@@ -24,4 +24,22 @@ https://www.shimatetsu.co.jp/area/detail/?id=1
 
 幸せの黄色いハンカチや海に近い駅などで、有名な大三東駅もこの島原鉄道の沿線にあります。（大三東駅は有名なので敢えて別の駅にしました）  
 https://www.shimatetsu.co.jp/infos/detail/?id=385  
-またカフェトレインもやっていて車内でランチやスイーツも楽しめるそうです。料金も大人6,000円で割とリーズナブルなのでデート等にも良さそうですね。    
+またカフェトレインもやっていて車内でランチやスイーツも楽しめるそうです。料金も大人6,000円で割とリーズナブルなのでデート等にも良さそうですね。 
+
+
+We can see "ジオパーク"(GeoPark) in the left. According to Japanese Geoparks Network, there are 9 GeoParks in Japan. 
+https://geopark.jp/en/
+
+And There is a yellow train. By searching "<<<GeoPark Name>>> Train Yellow", you can know this is Shimabara Railway.
+
+So This photo must be a station of Shimabara Railway. As you can see there is a flag "パチンコ"(pachinko), the big building behind the station is a pachinko parlor. You'll find this parlor if you google "Shimabara Station Pachinko" or something like that.
+Or you can also find the similar picture from Simabara Railway official website.
+https://www.shimatetsu.co.jp/area/detail/?id=1
+
+Now you know that this photo is taken near Shimabarako Station. Finally, detect the right place based on the angle of the photo and you can know the exact latitude and longitude.
+
+## Tips
+Shimabara Railway stops Omisaki Station, which is known as the station by the sea and also famous for The Yellow Handkerchief.
+(We picked the other station because Omisaki is very famous)
+https://www.shimatetsu.co.jp/infos/detail/?id=385  
+We can also enjoy having lunch and snacks in the train which is called Cafe-Train. The fee is 6000 JPY. How about a date?
