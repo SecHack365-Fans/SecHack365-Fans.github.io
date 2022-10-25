@@ -9,7 +9,7 @@ point: 488
 
 # TsukuCTF Big Fan 1
 
-調査対象者は「I watch everything at TsukuCTF in real time!」と投稿しているので、TwitterのTsukuCTF([@tsukuctf](https://twitter.com/tsukuctf))のフォロワーを確認する。すると、同じアイコンのTwitterIDを特定できる([@SuperProStalker](https://twitter.com/SuperProStalker))。
+調査対象者は「I watch everything at TsukuCTF in real time!」と投稿しているので、TwitterのTsukuCTF([@tsukuctf](https://twitter.com/tsukuctf))のフォロワーを確認する。すると、同じアイコンのTwitterアカウントを特定できる([@SuperProStalker](https://twitter.com/SuperProStalker))。
 
 次にアカウント登録日を求めるが、これはいくつかのツールを用いるとよい([Twitter歴チェッカー](https://lab.syncer.jp/Tool/Twitter-Start-Date-Checker/)など)。
 
