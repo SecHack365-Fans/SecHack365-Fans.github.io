@@ -47,7 +47,7 @@ def response_sanitizer(body: str) -> str:
 ただし、gopherで対象のvalueを取るために、redisのkeyを知る必要がある。  
 keyはredisの `keys *` で全列挙できるため、全てのkeyを列挙してresponseにflagが含まれるものを選択すれば良い。
 
-また、`TsukuCTF22`という文字列を含む場合はsanitizeされるが、`GETRANGE` で一部を抜き出すことで対処できる。  
+また、`TsukuCTF22`という文字列を含む場合はサニタイズされるが、`GETRANGE` で一部を抜き出すことで対処できる。  
 したがって、方針は以下の通りになる。  
 まず、redisに含まれるkeyを全列挙し、次にGETRANGEで列挙したものの一部を読み取る。  
 
@@ -123,7 +123,7 @@ redis.set(id, json.dumps({"id": id, "name": flag}))
 
 その結果、Redisに登録されたFlagが名前で上書きされてしまいます。
 
-詳しくは[mopiさんのブログ](https://mopisec.hatenablog.com/entry/2022/10/24/180123#viewer-8-solves-not-solved)にて検証されているためご覧ください。検証までブログに掲載してくださったmopiさん、ありがとうございました :pray:
+詳しくは[mopiさんのブログ](https://mopisec.hatenablog.com/entry/2022/10/24/180123#viewer-8-solves-not-solved)にて検証されているためご覧ください。検証までブログに掲載してくださったmopiさん、ありがとうございました🙏
 
 ---
 
