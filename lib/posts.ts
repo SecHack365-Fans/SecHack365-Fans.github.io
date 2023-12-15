@@ -7,7 +7,7 @@ import { remark } from "remark";
 export const getSortedPostsData = (ctfId: string) => {
   const postsDirectory = path.join(
     process.cwd(),
-    `pages/ctf/${ctfId}/writeups`
+    `pages/ctf/${ctfId}/writeups`,
   );
   const problemIds = fs.readdirSync(postsDirectory);
 
@@ -15,7 +15,7 @@ export const getSortedPostsData = (ctfId: string) => {
     const id = problemId;
     const fileContents = fs.readFileSync(
       `${postsDirectory}/${problemId}/README.md`,
-      "utf8"
+      "utf8",
     );
     const matterResult = matter(fileContents);
     return {
@@ -30,7 +30,7 @@ export const getSortedPostsData = (ctfId: string) => {
 export const getAllPostIds = (ctfId: string) => {
   const postsDirectory = path.join(
     process.cwd(),
-    `pages/ctf/${ctfId}/writeups`
+    `pages/ctf/${ctfId}/writeups`,
   );
   const problemIds = fs.readdirSync(postsDirectory);
   return problemIds.map((problemId) => {
@@ -46,7 +46,7 @@ export const getAllPostIds = (ctfId: string) => {
 export const getPostData = async (id: string, ctfId: string) => {
   const postsDirectory = path.join(
     process.cwd(),
-    `pages/ctf/${ctfId}/writeups`
+    `pages/ctf/${ctfId}/writeups`,
   );
   const fullPath = `${postsDirectory}/${id}/README.md`;
   const fileContents = fs.readFileSync(fullPath, "utf8");

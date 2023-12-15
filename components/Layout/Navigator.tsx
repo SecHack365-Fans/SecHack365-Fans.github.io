@@ -1,17 +1,15 @@
-import React, { VFC, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-
-import GitHubIcon from "@mui/icons-material/GitHub";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import DescriptionIcon from "@mui/icons-material/Description";
-import AlarmIcon from "@mui/icons-material/Alarm";
-import EmojiFlagsIcon from "@mui/icons-material/EmojiFlags";
+// TODO: いずれお前は消す
+import { Stack, Button, IconButton, Menu, MenuItem } from "@mui/material";
+import {
+  GitHub,
+  MoreVert,
+  Description,
+  Alarm,
+  EmojiFlags,
+} from "@mui/icons-material";
 
 import styles from "./Navigator.module.css";
 
@@ -34,28 +32,28 @@ const pageTitles: pageTitleType[] = [
   {
     title: "参加記",
     href: "/blog",
-    icon: <DescriptionIcon />,
+    icon: <Description />,
     styles: `${styles.button} ${styles.otherLink}`,
     position: "left",
   },
   {
     title: "†締切駆動コース†",
     href: "/timer",
-    icon: <AlarmIcon />,
+    icon: <Alarm />,
     styles: `${styles.button} ${styles.otherLink}`,
     position: "left",
   },
   {
     title: "TsukuCTF",
     href: "/ctf",
-    icon: <EmojiFlagsIcon />,
+    icon: <EmojiFlags />,
     styles: `${styles.button} ${styles.otherLink}`,
     position: "left",
   },
   {
     title: "GitHub",
     href: "https://github.com/SecHack365-Fans/SecHack365-Fans.github.io",
-    icon: <GitHubIcon />,
+    icon: <GitHub />,
     styles: `${styles.button} ${styles.otherLink} ${styles.right}`,
     position: "right",
     onlyIcon: true,
@@ -65,7 +63,7 @@ const pageTitles: pageTitleType[] = [
 /**
  * ナビゲーションバー
  */
-const Navigator: VFC = () => {
+const Navigator = () => {
   const stateProps: {
     mobileView: boolean;
     anchorEl: null | (EventTarget & HTMLElement);
@@ -160,7 +158,7 @@ const Navigator: VFC = () => {
             onClick={handleMenu}
             color="inherit"
           >
-            <MoreVertIcon style={{ color: "#eee" }} />
+            <MoreVert style={{ color: "#eee" }} />
           </IconButton>
           <Menu
             id="menu-appbar"

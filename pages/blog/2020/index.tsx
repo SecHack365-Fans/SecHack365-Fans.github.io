@@ -1,4 +1,3 @@
-import { VFC } from "react";
 import { Layout } from "../../../components/Layout";
 import styles from "/styles/blog.module.css";
 
@@ -106,7 +105,7 @@ const TableRow = ({
   </tr>
 );
 
-const Blog2020: VFC = () => {
+const Blog2020 = () => {
   return (
     <Layout
       title="SecHack365 2020年度 参加記 まとめ"

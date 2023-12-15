@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Navigator from "./Navigator";
 
 export const Layout: FC<{
-  headerChild?: JSX.Element;
+  children?: React.ReactNode;
   title?: string;
   description?: string;
 }> = ({ children, title, description }) => (

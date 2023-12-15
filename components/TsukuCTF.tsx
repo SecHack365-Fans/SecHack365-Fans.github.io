@@ -56,33 +56,29 @@ export const TsukuCTFWriteup = ({
             .sort((a, b) => postSortCb(a, b))
             .map(({ id, title, description, author, genre, solver, point }) => (
               <Link href={`/ctf/${ctfId}/${id}`} key={id} passHref>
-                <a>
-                  <li className={styles.ctfWriteupList}>
-                    <h2>{title}</h2>
-                    <span className={styles.writeupsMeta}>
-                      <div className={styles.writeupsMetaBox}>
-                        Genre:{" "}
-                        <span
-                          className={`${styles.writeupsGenre} ${
-                            genre2Style[genre.toLowerCase()]
-                          }`}
-                        >
-                          {genre}
-                        </span>
-                      </div>
-                      <div className={styles.writeupsMetaBox}>
-                        Author: <TwitterButton authors={author} />
-                      </div>
-                      <div className={styles.writeupsMetaBox}>
-                        Point: {point}
-                      </div>
-                      <div className={styles.writeupsMetaBox}>
-                        Solver: {solver}
-                      </div>
-                    </span>
-                    <p>{description}</p>
-                  </li>
-                </a>
+                <li className={styles.ctfWriteupList}>
+                  <h2>{title}</h2>
+                  <span className={styles.writeupsMeta}>
+                    <div className={styles.writeupsMetaBox}>
+                      Genre:{" "}
+                      <span
+                        className={`${styles.writeupsGenre} ${
+                          genre2Style[genre.toLowerCase()]
+                        }`}
+                      >
+                        {genre}
+                      </span>
+                    </div>
+                    <div className={styles.writeupsMetaBox}>
+                      Author: <TwitterButton authors={author} />
+                    </div>
+                    <div className={styles.writeupsMetaBox}>Point: {point}</div>
+                    <div className={styles.writeupsMetaBox}>
+                      Solver: {solver}
+                    </div>
+                  </span>
+                  <p>{description}</p>
+                </li>
               </Link>
             ))}
         </ul>

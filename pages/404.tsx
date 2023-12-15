@@ -1,9 +1,8 @@
-import { VFC } from "react";
 import { Layout } from "../components/Layout";
 
 import styles from "../styles/404.module.css";
 
-const Custom404: VFC = () => {
+const Custom404 = () => {
   return (
     <Layout title="404 not found">
       <h1>404 Not Found</h1>

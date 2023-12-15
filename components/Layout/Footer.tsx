@@ -1,7 +1,6 @@
-import { VFC } from "react";
 import styles from "./Footer.module.css";
 
-const Footer: VFC = () => {
+const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (

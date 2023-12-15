@@ -22,7 +22,7 @@ const components = (markdownProps: MarkdownProps) => {
           markdownProps.ctfId ?? "",
           "/writeups/",
           markdownProps.title ?? "",
-          props.src as string
+          props.src as string,
         );
       return <img src={src} alt={props.alt} style={{ width: "80%" }} />;
     },

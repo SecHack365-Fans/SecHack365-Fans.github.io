@@ -1,7 +1,7 @@
 import { FaTwitter } from "react-icons/fa";
 import styles from "/styles/writeups.module.css";
 
-export const TwitterButton: Function = ({ authors }: { authors: string }) => {
+export const TwitterButton = ({ authors }: { authors: string }) => {
   if (authors.match(/([A-Za-z_]+( ?& ?)?)+/)) {
     return (
       <span>
