@@ -1,6 +1,17 @@
 import { NextPage } from "next";
 import { Layout } from "../components/Layout";
-import styles from "../styles/index.module.css";
+// import styles from "../styles/index.module.css";
+
+import stylex from "@stylexjs/stylex";
+
+const style = stylex.create({
+  code: {
+    backgroundColor: "red",
+    width: 100,
+    height: 100,
+    color: "blue",
+  },
+});
 
 const Home: NextPage = () => {
   return (
@@ -9,7 +20,8 @@ const Home: NextPage = () => {
       description="SecHack365 非公式 ファンページ"
     >
       <h1>SecHack365 非公式 ファンページ</h1>
-      <div className={styles.cautionBox}>
+      <code {...stylex.props(style.code)}>app/page.tsx</code>
+      {/* <div className={styles.cautionBox}>
         <div>
           <span className={styles.cautionBoxTitle}>注意</span>
           このページは修了生よって運営されている
@@ -35,7 +47,7 @@ const Home: NextPage = () => {
       </div>
       <div className={styles.gamingSecHack}>
         <img src="/images/GamingSecHack.gif" alt="GamingSecHack" />
-      </div>
+      </div> */}
     </Layout>
   );
 };

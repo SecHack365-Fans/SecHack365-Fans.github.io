@@ -7,10 +7,12 @@ const [_name, options] = plugins.find(
 );
 const rootDir = options.unstable_moduleResolution.rootDir ?? __dirname;
 
-module.exports = stylexPlugin({
+const stylexConfig = stylexPlugin({
   rootDir,
+  useCSSLayers: true,
 })({});
 
 module.exports = {
+  ...stylexConfig,
   output: "export",
 };
