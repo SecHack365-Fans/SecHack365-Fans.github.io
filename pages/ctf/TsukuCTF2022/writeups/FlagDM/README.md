@@ -11,9 +11,9 @@ point: 500
 
 ## Phase 1 (Get Email)
 
-Google ドキュメントのURLが与えられます。Googleドキュメントには作成者に関するさまざまな情報が含まれています。その情報を知る手段として[GHunt](https://github.com/mxrch/GHunt)があります。しかし、GHuntはdocコマンドは[issueにも書かれている通り](https://github.com/mxrch/GHunt/issues/360)、一時的に使用できませんでした(勿論、現時点では使用できる可能性もあります)。
+Google ドキュメントの URL が与えられます。Google ドキュメントには作成者に関するさまざまな情報が含まれています。その情報を知る手段として[GHunt](https://github.com/mxrch/GHunt)があります。しかし、GHunt は doc コマンドは[issue にも書かれている通り](https://github.com/mxrch/GHunt/issues/360)、一時的に使用できませんでした(勿論、現時点では使用できる可能性もあります)。
 
-そこで、ここでは[xeuledoc](https://github.com/Malfrats/xeuledoc)を使用します。これはGHuntと殆ど同じコードですが、[Google Internal token](https://github.com/Malfrats/xeuledoc/blob/master/xeuledoc/core.py#L37)の関係でGHuntを使用できない場合でも、こちらは使用できることがあります。
+そこで、ここでは[xeuledoc](https://github.com/Malfrats/xeuledoc)を使用します。これは GHunt と殆ど同じコードですが、[Google Internal token](https://github.com/Malfrats/xeuledoc/blob/master/xeuledoc/core.py#L37)の関係で GHunt を使用できない場合でも、こちらは使用できることがあります。
 
 ```bash
 $ xeuledoc https://docs.google.com/document/d/1y266JcI1E8piugLQDPaK7boSzAKykg4FepQZIOt4Phg
@@ -36,24 +36,24 @@ Email : mpju40nchoyba85@gmail.com
 Google ID : 03458870179467391774
 ```
 
-このように名前、Email、Google IDなどが手に入りました。名前は偽名のようです。しかし、Emailが手に入ったのでこれを使用します。
+このように名前、Email、Google ID などが手に入りました。名前は偽名のようです。しかし、Email が手に入ったのでこれを使用します。
 
 ## Phase 2 (Get Twitter)
 
-先ほどのGHuntを用いて、EmailからGaia IDを取得します。
+先ほどの GHunt を用いて、Email から Gaia ID を取得します。
 
 ```bash
 python3 ghunt.py email mpju40nchoyba85@gmail.com
 
-     .d8888b.  888    888                   888    
-    d88P  Y88b 888    888                   888    
-    888    888 888    888                   888    
-    888        8888888888 888  888 88888b.  888888 
-    888  88888 888    888 888  888 888 "88b 888    
-    888    888 888    888 888  888 888  888 888    
-    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.  
+     .d8888b.  888    888                   888
+    d88P  Y88b 888    888                   888
+    888    888 888    888                   888
+    888        8888888888 888  888 88888b.  888888
+    888  88888 888    888 888  888 888 "88b 888
+    888    888 888    888 888  888 888  888 888
+    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.
      "Y8888P88 888    888  "Y88888 888  888  "Y888
-    
+
 [+] 1 account found !
 
 ------------------------------
@@ -76,7 +76,7 @@ Hangouts Bot : No
 [-] YouTube channel not found.
 
 Google Maps : https://www.google.com/maps/contrib/117114600888142762916/reviews
-[-] No reviews    
+[-] No reviews
 
 Google Calendar : https://calendar.google.com/calendar/u/0/embed?src=mpju40nchoyba85@gmail.com
 [-] No public Google Calendar.
@@ -86,18 +86,18 @@ Google Calendar : https://calendar.google.com/calendar/u/0/embed?src=mpju40nchoy
 
 ```bash
 Google Maps : https://www.google.com/maps/contrib/117114600888142762916/reviews
-[-] No reviews 
+[-] No reviews
 ```
 
-この人はGoogle Mapのレビューを投稿していないように見えます。しかし、実際には存在します。[こちら](https://www.google.com/maps/contrib/117114600888142762916/reviews)の「写真」をクリックしてみてください。表示しない設定においても、レビューの写真のみ表示されています。
+この人は Google Map のレビューを投稿していないように見えます。しかし、実際には存在します。[こちら](https://www.google.com/maps/contrib/117114600888142762916/reviews)の「写真」をクリックしてみてください。表示しない設定においても、レビューの写真のみ表示されています。
 
 ![review](./review.png)
 
-よく見ると権利表記のTwitter IDが表示されています。`@07xm8d9pzp`
+よく見ると権利表記の Twitter ID が表示されています。`@07xm8d9pzp`
 
 [https://twitter.com/07xm8d9pzp](https://twitter.com/07xm8d9pzp)
 
-プロフィールにYoutubeのチャンネルが記載されています。
+プロフィールに Youtube のチャンネルが記載されています。
 
 [https://www.youtube.com/channel/UCZ7_GtoaC4oHCKBLhJi13Ww](https://www.youtube.com/channel/UCZ7_GtoaC4oHCKBLhJi13Ww)
 
@@ -119,11 +119,11 @@ You are running version 0.14.0. Version 0.14.2 is available at https://git.io/sh
 [+] skyrock: https://gross_poem.skyrock.com/
 ```
 
-このうち、[Trakt](https://www.trakt.tv/users/gross_poem)を開くと明らかに怪しいBase64の文字列が表示されています。
+このうち、[Trakt](https://www.trakt.tv/users/gross_poem)を開くと明らかに怪しい Base64 の文字列が表示されています。
 
 `TmljZSEgRmxhZyBpcyBIZXJlISAtPiBUc3VrdUNURjIye000bnlfMFMxTjdfNzAwbHNfM3gxNTd9Cg==`
 
-Base64をデコードします。
+Base64 をデコードします。
 
 ```bash
 $ echo "TmljZSEgRmxhZyBpcyBIZXJlISAtPiBUc3VrdUNURjIye000bnlfMFMxTjdfNzAwbHNfM3gxNTd9Cg==" | base64 -d
@@ -136,7 +136,7 @@ Nice! Flag is Here! -> TsukuCTF22{M4ny_0S1N7_700ls_3x157}
 
 ## Tips
 
-実はGHuntでも`resources/data.txt`の`internal`にxeuledocのトークンを使用すると、正常に動作します。
+実は GHunt でも`resources/data.txt`の`internal`に xeuledoc のトークンを使用すると、正常に動作します。
 
 結果的に変更される箇所はここです。
 
@@ -147,15 +147,15 @@ Nice! Flag is Here! -> TsukuCTF22{M4ny_0S1N7_700ls_3x157}
 ```bash
 $ python3 ghunt.py doc https://docs.google.com/document/d/1y266JcI1E8piugLQDPaK7boSzAKykg4FepQZIOt4Phg
 
-     .d8888b.  888    888                   888    
-    d88P  Y88b 888    888                   888    
-    888    888 888    888                   888    
-    888        8888888888 888  888 88888b.  888888 
-    888  88888 888    888 888  888 888 "88b 888    
-    888    888 888    888 888  888 888  888 888    
-    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.  
+     .d8888b.  888    888                   888
+    d88P  Y88b 888    888                   888
+    888    888 888    888                   888
+    888        8888888888 888  888 88888b.  888888
+    888  88888 888    888 888  888 888 "88b 888
+    888    888 888    888 888  888 888  888 888
+    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.
      "Y8888P88 888    888  "Y88888 888  888  "Y888
-    
+
 
 Document ID : 1y266JcI1E8piugLQDPaK7boSzAKykg4FepQZIOt4Phg
 
@@ -227,8 +227,7 @@ Google ID : 03458870179467391774
 Profile picture saved !
 ```
 
-しかし、このトークンではdocコマンドしか使用する権限がありません。
-
+しかし、このトークンでは doc コマンドしか使用する権限がありません。
 
 ## Phase 1 (Get Email)
 
@@ -265,15 +264,15 @@ With using GHunt, we can detect Gaia ID from Email.
 ```bash
 python3 ghunt.py email mpju40nchoyba85@gmail.com
 
-     .d8888b.  888    888                   888    
-    d88P  Y88b 888    888                   888    
-    888    888 888    888                   888    
-    888        8888888888 888  888 88888b.  888888 
-    888  88888 888    888 888  888 888 "88b 888    
-    888    888 888    888 888  888 888  888 888    
-    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.  
+     .d8888b.  888    888                   888
+    d88P  Y88b 888    888                   888
+    888    888 888    888                   888
+    888        8888888888 888  888 88888b.  888888
+    888  88888 888    888 888  888 888 "88b 888
+    888    888 888    888 888  888 888  888 888
+    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.
      "Y8888P88 888    888  "Y88888 888  888  "Y888
-    
+
 [+] 1 account found !
 
 ------------------------------
@@ -296,7 +295,7 @@ Hangouts Bot : No
 [-] YouTube channel not found.
 
 Google Maps : https://www.google.com/maps/contrib/117114600888142762916/reviews
-[-] No reviews    
+[-] No reviews
 
 Google Calendar : https://calendar.google.com/calendar/u/0/embed?src=mpju40nchoyba85@gmail.com
 [-] No public Google Calendar.
@@ -307,7 +306,7 @@ And this person doesn't seem to provide any Google Map reviews as GHunt says
 
 ```bash
 Google Maps : https://www.google.com/maps/contrib/117114600888142762916/reviews
-[-] No reviews 
+[-] No reviews
 ```
 
 However, (s)he does! Let's click the photo(写真) tab in [this page](https://www.google.com/maps/contrib/117114600888142762916/reviews). Even though the review is set not to display, the photo is displayed.
@@ -321,7 +320,6 @@ And you'll find YouTube link in Twitter profile.
 [https://www.youtube.com/channel/UCZ7_GtoaC4oHCKBLhJi13Ww](https://www.youtube.com/channel/UCZ7_GtoaC4oHCKBLhJi13Ww)
 
 Now this person use `gross_poem` as his account name.
-
 
 ## Phase 3 (Get Flag)
 
@@ -355,8 +353,8 @@ Nice! Flag is Here! -> TsukuCTF22{M4ny_0S1N7_700ls_3x157}
 `TsukuCTF22{M4ny_0S1N7_700ls_3x157}`
 
 ## Tips
-Actually, GHunt works fine when you specify xeuledoc token at `internal` in `resources/data.txt`.
 
+Actually, GHunt works fine when you specify xeuledoc token at `internal` in `resources/data.txt`.
 
 This will be modified
 [https://github.com/mxrch/GHunt/blob/4601d75d6bb12c33a605a7ac5bf88e151e9ba3d3/modules/email.py#L46](https://github.com/mxrch/GHunt/blob/4601d75d6bb12c33a605a7ac5bf88e151e9ba3d3/modules/email.py#L46)
@@ -366,15 +364,15 @@ And the result is following
 ```bash
 $ python3 ghunt.py doc https://docs.google.com/document/d/1y266JcI1E8piugLQDPaK7boSzAKykg4FepQZIOt4Phg
 
-     .d8888b.  888    888                   888    
-    d88P  Y88b 888    888                   888    
-    888    888 888    888                   888    
-    888        8888888888 888  888 88888b.  888888 
-    888  88888 888    888 888  888 888 "88b 888    
-    888    888 888    888 888  888 888  888 888    
-    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.  
+     .d8888b.  888    888                   888
+    d88P  Y88b 888    888                   888
+    888    888 888    888                   888
+    888        8888888888 888  888 88888b.  888888
+    888  88888 888    888 888  888 888 "88b 888
+    888    888 888    888 888  888 888  888 888
+    Y88b  d88P 888    888 Y88b 888 888  888 Y88b.
      "Y8888P88 888    888  "Y88888 888  888  "Y888
-    
+
 
 Document ID : 1y266JcI1E8piugLQDPaK7boSzAKykg4FepQZIOt4Phg
 

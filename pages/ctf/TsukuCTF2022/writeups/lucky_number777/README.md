@@ -15,7 +15,7 @@ point: 497
 f"{flag=}"
 ```
 
-PythonはPython3.8から[デバッグ用のf文字列をサポートしました](https://docs.python.org/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging)．これを用いるとf文字列内で簡潔にprintデバッグが可能です．
+Python は Python3.8 から[デバッグ用の f 文字列をサポートしました](https://docs.python.org/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging)．これを用いると f 文字列内で簡潔に print デバッグが可能です．
 
 ```python
 # https://docs.python.org/3/whatsnew/3.8.html#f-strings-support-for-self-documenting-expressions-and-debugging
@@ -29,7 +29,7 @@ print(f'{user=} {member_since=}')
 
 ## TsukuCTF22{wh4ts_new_1n_pyth0n_3X}
 
-他にも、以下のような解法があります。他の方法がございましたら是非あなたのWriteupを通して教えてください！
+他にも、以下のような解法があります。他の方法がございましたら是非あなたの Writeup を通して教えてください！
 
 ```python
 f"{flag!a}"

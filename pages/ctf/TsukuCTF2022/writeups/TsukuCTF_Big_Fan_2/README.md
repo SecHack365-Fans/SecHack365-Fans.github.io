@@ -11,9 +11,9 @@ point: 500
 
 [@SuperProStalker](https://twitter.com/SuperProStalker)のツイートにこのようなものがあります。
 
-> Webサイトを作成しました。知らない人にアクセスされると困るので、暗号で伝えます。
+> Web サイトを作成しました。知らない人にアクセスされると困るので、暗号で伝えます。
 > Web site was created. We don't want strangers to access it, so we tell them in code.
-> 
+>
 > ctf 073b6d com
 > https://twitter.com/SuperProStalker/status/1571228640981192704
 
@@ -25,11 +25,11 @@ point: 500
 
 [https://twitter.com/SuperProStalker/status/1582443953109884929](https://twitter.com/SuperProStalker/status/1582443953109884929)
 
-このことから、彼のWebサイトのドメインはアルファベットのみで構成されているわけではなく、日本語の文字も含まれている可能性があります。
+このことから、彼の Web サイトのドメインはアルファベットのみで構成されているわけではなく、日本語の文字も含まれている可能性があります。
 
-punycodeというものを使うことで日本語のドメインをアルファベットのドメインに変換することができます。punycodeの使用に従って、正しいドメインを構築するとこのようになります(`xn--ctf-073b6d.com` )。
+punycode というものを使うことで日本語のドメインをアルファベットのドメインに変換することができます。punycode の使用に従って、正しいドメインを構築するとこのようになります(`xn--ctf-073b6d.com` )。
 これは`つくctf.com`となりました。
 
-このドメインのサブドメインを検索します([https://crt.sh/?q=xn--ctf-073b6d.com](https://crt.sh/?q=xn--ctf-073b6d.com))。すると`this-is-flag-site.xn--ctf-073b6d.com`というものが出てくるので、開くと中にBase64のフラグ(`VHN1a3VDVEYyMnt3aDQ3XzE1XzRfcHVuMWMwZDM/fQo=`)がありました。
+このドメインのサブドメインを検索します([https://crt.sh/?q=xn--ctf-073b6d.com](https://crt.sh/?q=xn--ctf-073b6d.com))。すると`this-is-flag-site.xn--ctf-073b6d.com`というものが出てくるので、開くと中に Base64 のフラグ(`VHN1a3VDVEYyMnt3aDQ3XzE1XzRfcHVuMWMwZDM/fQo=`)がありました。
 
 ## `TsukuCTF22{wh47_15_4_pun1c0d3?}`

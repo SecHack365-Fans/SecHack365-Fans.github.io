@@ -11,4 +11,4 @@ point: 294
 
 ![flag](./flag.png)
 
-## TsukuCTF22{Welcome\_to\_TsukuCTF\_2022!!!!}
+## TsukuCTF22{Welcome_to_TsukuCTF_2022!!!!}
