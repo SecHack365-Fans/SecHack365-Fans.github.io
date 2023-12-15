@@ -630,6 +630,11 @@
   dependencies:
     "@stylexjs/shared" "0.3.0"
 
+"@stylexjs/eslint-plugin@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@stylexjs/eslint-plugin/-/eslint-plugin-0.3.0.tgz#ad674ca2f66776acf5deaa704a3f8a98fd248eac"
+  integrity sha512-/XeqkTSV4XqOq5Z/61TvQMG1prdP+XTOauqDaDYyETdxu1pg/3h/88hhkSyHkjeBfVoLxfG0GIxpq4efhUWzpQ==
+
 "@stylexjs/nextjs-plugin@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@stylexjs/nextjs-plugin/-/nextjs-plugin-0.3.0.tgz#02eecc9f699977c1c6cf0c99c5d9e63c063dbfc8"
