@@ -4,7 +4,7 @@ import { s } from "../../styles/Navigator.stylex";
 import stylex from "@stylexjs/stylex";
 
 // TODO: いずれお前は消す
-import { Stack, Button, IconButton, Menu, MenuItem } from "@mui/material";
+import { IconButton, Menu } from "@mui/material";
 import {
   FaGithub,
   FaEllipsisV,
@@ -94,11 +94,9 @@ const Navigator = () => {
             href={pageTitle.href}
             key={pageTitle.href}
             passHref
-            {...stylex.props(s.navLink, s.github)}
+            {...stylex.props(...pageTitle.styles, s.navLink)}
           >
-            <Button variant="text" {...stylex.props(...pageTitle.styles)}>
-              {pageTitle.onlyIcon ? pageTitle.icon : pageTitle.title}
-            </Button>
+            {pageTitle.onlyIcon ? pageTitle.icon : pageTitle.title}
           </Link>
         ))}
       </div>
@@ -123,59 +121,52 @@ const Navigator = () => {
     };
 
     return (
-      <Stack spacing={1} direction="row" {...stylex.props(s.navbar)}>
-        <span>
-          <Link href="/" passHref>
-            <Button variant="text" {...stylex.props(s.button, s.home)}>
-              TOP
-            </Button>
-          </Link>
-        </span>
-        <span {...stylex.props(s.navLink)}>
-          <IconButton
-            size="large"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleMenu}
-            color="inherit"
-          >
-            <FaEllipsisV style={{ color: "#eee" }} />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            {...stylex.props(s.menu)}
-          >
-            {pageTitles
-              .filter((pageTitle) => pageTitle.title !== "TOP")
-              .map((page) => (
-                <MenuItem key={page.title} {...stylex.props(s.menuItem)}>
-                  <Link href={page.href} passHref>
-                    <Button
-                      variant="text"
-                      {...stylex.props(s.menuItemButton)}
-                      onClick={handleClose}
-                    >
-                      <span {...stylex.props(s.icon)}>{page.icon ?? ""}</span>
-                      {page.title}
-                    </Button>
-                  </Link>
-                </MenuItem>
-              ))}
-          </Menu>
-        </span>
-      </Stack>
+      <div {...stylex.props(s.navbar)}>
+        <Link href="/" passHref {...stylex.props(s.button, s.home)}>
+          TOP
+        </Link>
+        <IconButton
+          size="large"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={handleMenu}
+          color="inherit"
+          {...stylex.props(s.navLink)}
+        >
+          <FaEllipsisV style={{ color: "#eee" }} />
+        </IconButton>
+        <Menu
+          id="menu-appbar"
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          {...stylex.props(s.menu)}
+        >
+          {pageTitles
+            .filter((pageTitle) => pageTitle.title !== "TOP")
+            .map((page) => (
+              <div key={page.title} {...stylex.props(s.menuItem)}>
+                <Link
+                  href={page.href}
+                  passHref
+                  {...stylex.props(s.menuItemButton)}
+                >
+                  <span {...stylex.props(s.icon)}>{page.icon ?? ""}</span>
+                  {page.title}
+                </Link>
+              </div>
+            ))}
+        </Menu>
+      </div>
     );
   };
 
