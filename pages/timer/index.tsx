@@ -3,12 +3,28 @@ import { Layout } from "../../components/Layout";
 
 import styles from "/styles/timer.module.css";
 
-const DeadLine = new Date("2022/1/31/0:0");
+function getNextJanuary31st() {
+  let date = new Date();
+
+  if (date.getMonth() >= 1) {
+    date.setFullYear(date.getFullYear() + 1);
+  }
+
+  date.setMonth(0);
+  date.setDate(31);
+  date.setHours(23);
+  date.setMinutes(59);
+  date.setSeconds(59);
+
+  return date;
+}
+
+const DeadLine = getNextJanuary31st();
 const NextEvent = (
   <>
-    SecHack365&apos;21
+    SecHack365&apos;{DeadLine.getFullYear() - 2001}
     <br />
-    最終発表会まで
+    最終発表会まで(多分)
   </>
 );
 

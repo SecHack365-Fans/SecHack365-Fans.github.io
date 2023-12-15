@@ -8,8 +8,7 @@ import MarkdownRender, {
 const ctfId = "TsukuCTF2021";
 
 const Post = ({ postData }: PostPropType) => {
-  const { title, description, author, genre, solver, point, contentHtml } =
-    postData;
+  const { title, contentHtml } = postData;
   return (
     <Layout title={`${postData.title}-${ctfId}`}>
       <MarkdownRender ctfId={ctfId} title={title} content={contentHtml} />
