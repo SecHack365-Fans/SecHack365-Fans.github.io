@@ -9,6 +9,7 @@ export const s = stylex.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    color: "#eee",
   },
   navLink: {
     marginLeft: {
