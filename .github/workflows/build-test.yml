@@ -25,7 +25,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install Dependencies
         run: yarn
-      - name: format
-        run: yarn format
+      - name: lint
+        run: yarn lint
       - name: build
-        run: yarn build && yarn export
+        run: yarn build
