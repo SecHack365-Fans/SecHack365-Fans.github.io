@@ -7,7 +7,7 @@
 ## このサイトの開発がしたい
 
 ```sh
-git clone https://github.com/SecHack365-Fans/SecHack365-Fans.github.io
+git clone https://github.com/SecHack365-Fans/SecHack365-Fans.github.io.git
 ```
 
 ```sh
@@ -25,10 +25,3 @@ yarn dev
 その後にJSONが標準出力されるので、`pages/blog/2020/data/<自分の該当するコース>.json` に貼ってください！
 
 皆様の Pull Request をお待ちしています！
-
-# Contributors
-
-* **[xryuseix](https://github.com/xryuseix)** (Development and Operation)
-* **[Krout0n](https://github.com/Krout0n)** (Development and Operation)
-* **[Satoki](https://github.com/satoki)** (Domain Management, Professional NEET)
-* [and more ...](https://github.com/SecHack365-Fans/SecHack365-Fans.github.io/graphs/contributors)
