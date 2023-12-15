@@ -1,17 +1,7 @@
 import { NextPage } from "next";
 import { Layout } from "../components/Layout";
-// import styles from "../styles/index.module.css";
-
+import { s } from "../styles/index.stylex";
 import stylex from "@stylexjs/stylex";
-
-const style = stylex.create({
-  code: {
-    backgroundColor: "red",
-    width: 100,
-    height: 100,
-    color: "blue",
-  },
-});
 
 const Home: NextPage = () => {
   return (
@@ -20,19 +10,19 @@ const Home: NextPage = () => {
       description="SecHack365 非公式 ファンページ"
     >
       <h1>SecHack365 非公式 ファンページ</h1>
-      <code {...stylex.props(style.code)}>app/page.tsx</code>
-      {/* <div className={styles.cautionBox}>
+      <div {...stylex.props(s.cautionBox)}>
         <div>
-          <span className={styles.cautionBoxTitle}>注意</span>
+          <span {...stylex.props(s.cautionBoxTitle)}>注意</span>
           このページは修了生よって運営されている
-          <div className={styles.unofficial}>非公式</div>
+          <div {...stylex.props(s.unofficial)}>非公式</div>
           のファンページです。 公式のページはこちらになります。
         </div>
-        <div className={styles.officialLink}>
+        <div {...stylex.props(s.officialLink)}>
           <a
             href="https://sechack365.nict.go.jp/"
             target="_blank"
             rel="noopener noreferrer"
+            {...stylex.props(s.officialLinkA)}
           >
             Webサイト
           </a>
@@ -40,14 +30,15 @@ const Home: NextPage = () => {
             href="https://twitter.com/SecHack365"
             target="_blank"
             rel="noopener noreferrer"
+            {...stylex.props(s.officialLinkA)}
           >
             Twitter
           </a>
         </div>
       </div>
-      <div className={styles.gamingSecHack}>
+      <div {...stylex.props(s.gamingSecHack)}>
         <img src="/images/GamingSecHack.gif" alt="GamingSecHack" />
-      </div> */}
+      </div>
     </Layout>
   );
 };

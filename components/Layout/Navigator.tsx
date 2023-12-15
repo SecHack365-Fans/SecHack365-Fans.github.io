@@ -1,61 +1,55 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { s } from "../../styles/Navigator.stylex";
+import stylex from "@stylexjs/stylex";
 
 // TODO: いずれお前は消す
 import { Stack, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import {
-  GitHub,
-  MoreVert,
-  Description,
-  Alarm,
-  EmojiFlags,
-} from "@mui/icons-material";
-
-import styles from "./Navigator.module.css";
+  FaGithub,
+  FaEllipsisV,
+  FaBook,
+  FaStopwatch,
+  FaFlag,
+} from "react-icons/fa";
 
 type pageTitleType = {
   title: string;
   href: string;
-  position: "left" | "right";
   icon?: JSX.Element;
-  styles?: string | undefined;
-  onlyIcon?: boolean | undefined;
+  styles: any[];
+  onlyIcon?: boolean;
 };
 
 const pageTitles: pageTitleType[] = [
   {
     title: "TOP",
     href: "/",
-    styles: `${styles.button} ${styles.home}`,
-    position: "left",
+    styles: [s.button, s.home],
   },
   {
     title: "参加記",
     href: "/blog",
-    icon: <Description />,
-    styles: `${styles.button} ${styles.otherLink}`,
-    position: "left",
+    icon: <FaBook />,
+    styles: [s.button, s.otherLink],
   },
   {
     title: "†締切駆動コース†",
     href: "/timer",
-    icon: <Alarm />,
-    styles: `${styles.button} ${styles.otherLink}`,
-    position: "left",
+    icon: <FaStopwatch />,
+    styles: [s.button, s.otherLink],
   },
   {
     title: "TsukuCTF",
     href: "/ctf",
-    icon: <EmojiFlags />,
-    styles: `${styles.button} ${styles.otherLink}`,
-    position: "left",
+    icon: <FaFlag />,
+    styles: [s.button, s.otherLink],
   },
   {
     title: "GitHub",
     href: "https://github.com/SecHack365-Fans/SecHack365-Fans.github.io",
-    icon: <GitHub />,
-    styles: `${styles.button} ${styles.otherLink} ${styles.right}`,
-    position: "right",
+    icon: <FaGithub />,
+    styles: [s.button, s.otherLink],
     onlyIcon: true,
   },
 ];
@@ -94,30 +88,20 @@ const Navigator = () => {
    */
   const displayDesktop = (): JSX.Element => {
     return (
-      <Stack spacing={1} direction="row" className={styles.navbar}>
-        <span className={styles.left}>
-          {pageTitles
-            .filter((pageTitle) => pageTitle.position === "left")
-            .map((pageTitle) => (
-              <Link href={pageTitle.href} key={pageTitle.href} passHref>
-                <Button variant="text" className={pageTitle.styles}>
-                  {pageTitle.onlyIcon ? pageTitle.icon : pageTitle.title}
-                </Button>
-              </Link>
-            ))}
-        </span>
-        <span className={styles.right}>
-          {pageTitles
-            .filter((pageTitle) => pageTitle.position === "right")
-            .map((pageTitle) => (
-              <Link href={pageTitle.href} key={pageTitle.href} passHref>
-                <Button variant="text" className={pageTitle.styles}>
-                  {pageTitle.onlyIcon ? pageTitle.icon : pageTitle.title}
-                </Button>
-              </Link>
-            ))}
-        </span>
-      </Stack>
+      <div {...stylex.props(s.navbar)}>
+        {pageTitles.map((pageTitle, idx) => (
+          <Link
+            href={pageTitle.href}
+            key={pageTitle.href}
+            passHref
+            {...stylex.props(s.navLink, s.github)}
+          >
+            <Button variant="text" {...stylex.props(...pageTitle.styles)}>
+              {pageTitle.onlyIcon ? pageTitle.icon : pageTitle.title}
+            </Button>
+          </Link>
+        ))}
+      </div>
     );
   };
 
@@ -139,18 +123,15 @@ const Navigator = () => {
     };
 
     return (
-      <Stack spacing={1} direction="row" className={styles.navbar}>
-        <span className={styles.left}>
+      <Stack spacing={1} direction="row" {...stylex.props(s.navbar)}>
+        <span>
           <Link href="/" passHref>
-            <Button
-              variant="text"
-              className={`${styles.button} ${styles.home}`}
-            >
+            <Button variant="text" {...stylex.props(s.button, s.home)}>
               TOP
             </Button>
           </Link>
         </span>
-        <span className={styles.right}>
+        <span {...stylex.props(s.navLink)}>
           <IconButton
             size="large"
             aria-controls="menu-appbar"
@@ -158,7 +139,7 @@ const Navigator = () => {
             onClick={handleMenu}
             color="inherit"
           >
-            <MoreVert style={{ color: "#eee" }} />
+            <FaEllipsisV style={{ color: "#eee" }} />
           </IconButton>
           <Menu
             id="menu-appbar"
@@ -174,19 +155,19 @@ const Navigator = () => {
             }}
             open={Boolean(anchorEl)}
             onClose={handleClose}
-            className={styles.menu}
+            {...stylex.props(s.menu)}
           >
             {pageTitles
               .filter((pageTitle) => pageTitle.title !== "TOP")
               .map((page) => (
-                <MenuItem key={page.title} className={styles.menuItem}>
+                <MenuItem key={page.title} {...stylex.props(s.menuItem)}>
                   <Link href={page.href} passHref>
                     <Button
                       variant="text"
-                      className={styles.menuItemButton}
+                      {...stylex.props(s.menuItemButton)}
                       onClick={handleClose}
                     >
-                      <span className={styles.icon}>{page.icon ?? ""}</span>
+                      <span {...stylex.props(s.icon)}>{page.icon ?? ""}</span>
                       {page.title}
                     </Button>
                   </Link>
