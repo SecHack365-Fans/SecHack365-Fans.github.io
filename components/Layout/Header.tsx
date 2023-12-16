@@ -22,7 +22,7 @@ const Header: React.FC<Props> = ({ title, description }: Props) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         property="og:image"
-        content="https://opengraph.githubassets.com/139256f8ccf77c03f7d9d1b51e30822cb3d14d45abeae53f15384cefc9c7e9da/SecHack365-Fans/SecHack365-Fans.github.io"
+        content="https://fans.sechack365.com/images/tsukuctf-logo.png"
       />
     </Head>
   );
