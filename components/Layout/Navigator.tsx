@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { s } from "../../styles/Navigator.stylex";
-import stylex from "@stylexjs/stylex";
+import stylex, { StaticStyles } from "@stylexjs/stylex";
 
 // TODO: いずれお前は消す
 import { IconButton, Menu } from "@mui/material";
@@ -17,7 +17,7 @@ type pageTitleType = {
   title: string;
   href: string;
   icon?: JSX.Element;
-  styles: any[];
+  styles: StaticStyles[];
   onlyIcon?: boolean;
 };
 

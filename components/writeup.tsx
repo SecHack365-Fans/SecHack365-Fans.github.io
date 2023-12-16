@@ -1,14 +1,26 @@
-import styles from "/styles/writeups.module.css";
+import { genreStyles } from "../styles/writeups.stylex";
 
-export const genre2Style: { [key: string]: string } = {
-  tsukushi: styles.tsukushiGenre,
-  osint: styles.osintGenre,
-  rev: styles.revGenre,
-  web: styles.webGenre,
-  crypto: styles.cryptoGenre,
-  misc: styles.miscGenre,
-  hardware: styles.hardwareGenre,
-  network: styles.networkGenre,
+export const genre2Style = (genre: string) => {
+  switch (genre.toLowerCase()) {
+    case "tsukushi":
+      return genreStyles.tsukushi;
+    case "osint":
+      return genreStyles.osint;
+    case "rev":
+      return genreStyles.rev;
+    case "web":
+      return genreStyles.web;
+    case "crypto":
+      return genreStyles.crypto;
+    case "misc":
+      return genreStyles.misc;
+    case "hardware":
+      return genreStyles.hardware;
+    case "network":
+      return genreStyles.network;
+    default:
+      return genreStyles.other;
+  }
 };
 
 type Post = {

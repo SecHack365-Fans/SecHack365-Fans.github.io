@@ -11,10 +11,10 @@ export const s = stylex.create({
     width: "100%",
     fontSize: "1.4em",
     padding: "10px 0 10px 15px",
-    marginBottom: "10px",
-    borderRadius: "5px",
+    marginBottom: 10,
+    borderRadius: 5,
     borderLeftStyle: "solid",
-    borderLeftWidth: "5px",
+    borderLeftWidth: 5,
     borderLeftColor: "#5c9ee7",
     fontWeight: "bold",
     boxShadow: {
@@ -34,10 +34,10 @@ export const s = stylex.create({
   },
   ctfLogoImage: {
     width: "80%",
-    maxWidth: "800px",
+    maxWidth: 800,
     height: "auto",
   },
   ctfIcon: {
-    marginRight: "10px",
+    marginRight: 10,
   },
 });
