@@ -1,10 +1,11 @@
-import styles from "./Footer.module.css";
+import stylex from "@stylexjs/stylex";
+import { s } from "../../styles/Footer.stylex";
 
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <div className={styles.footer}>
+    <div {...stylex.props(s.footer)}>
       © 2021-{year} SecHack365-Fans All Right Reserved.
     </div>
   );
