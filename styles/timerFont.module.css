@@ -1,0 +1,11 @@
+/* カウントダウンタイマーのフォント */
+@font-face {
+  font-family: "7seg4";
+  src: url("/fonts/7seg4.woff") format("woff");
+}
+.countDownTimer {
+  color: #ff0000;
+  font-size: 1em;
+  line-height: 40px;
+  font-family: "7seg4";
+}

@@ -1,7 +1,10 @@
 import React from "react";
-import { Layout } from "../../components/Layout";
+import { Layout } from "../components/Layout";
+import { s } from "../styles/timer.stylex";
+import stylex from "@stylexjs/stylex";
 
-import styles from "/styles/timer.module.css";
+// NOTE: StyleXでローカルフォントの指定の方法がわからなかった
+import styles from "/styles/timerFont.module.css";
 
 function getNextJanuary31st() {
   let date = new Date();
@@ -74,35 +77,43 @@ class RealTimeClock extends React.Component<ClockPropsType, ClockStateType> {
 
   toCountDownFormat = (value: number | undefined, padding: number) => {
     if (typeof value === "undefined") {
-      return <></>;
+      return "";
     } else {
-      return (
-        <span className={styles.countDownTimer}>
-          {this.zeroPadding(value, padding)}
-        </span>
-      );
+      return this.zeroPadding(value, padding);
     }
   };
 
   render() {
     return (
       <div>
-        <div className={styles.realTimeClock}>
+        <div {...stylex.props(s.realTimeClock)}>
           現実世界の時刻
           <br />
           {typeof this.state.date == "string"
             ? this.state.date
             : this.state.date?.toLocaleTimeString() ?? ""}
         </div>
-        <div className={styles.countDown}>
-          <div className={styles.countDownText}>
+        <div {...stylex.props(s.countDown)}>
+          <div {...stylex.props(s.countDownText)}>
             {NextEvent}
             <br />
             <span className={styles.countDownTimer}>{this.state.diffDays}</span>
-            日 {this.toCountDownFormat(this.state.diffHours, 2)}:
-            {this.toCountDownFormat(this.state.diffMinutes, 2)}:
-            {this.toCountDownFormat(this.state.diffSeconds, 2)}.
-            {this.toCountDownFormat(this.state.diffMilliSeconds, 2)}
+            日{" "}
+            <span className={styles.countDownTimer}>
+              {this.toCountDownFormat(this.state.diffHours, 2)}
+            </span>
+            :
+            <span className={styles.countDownTimer}>
+              {this.toCountDownFormat(this.state.diffMinutes, 2)}
+            </span>
+            :
+            <span className={styles.countDownTimer}>
+              {this.toCountDownFormat(this.state.diffSeconds, 2)}
+            </span>
+            .
+            <span className={styles.countDownTimer}>
+              {this.toCountDownFormat(this.state.diffMilliSeconds, 2)}
+            </span>
           </div>
         </div>
       </div>
@@ -114,9 +125,9 @@ const Timer = () => {
   ShowDamedesu();
   return (
     <Layout title="" description="">
-      <div className={styles.backGround}>
+      <div {...stylex.props(s.backGround)}>
         <div>
-          <p className={styles.title}>†限界タイマー†</p>
+          <p {...stylex.props(s.title)}>†限界タイマー†</p>
         </div>
         <RealTimeClock />
       </div>

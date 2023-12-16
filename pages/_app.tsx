@@ -1,6 +1,6 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import inject from "@stylexjs/dev-runtime";
+import "../styles/globals.css";
 
 if (process.env.NODE_ENV !== "production") {
   inject({
