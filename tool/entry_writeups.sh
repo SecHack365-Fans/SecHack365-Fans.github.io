@@ -23,7 +23,7 @@ for category in "${categories[@]}"; do
                 continue
             fi
             mkdir -p pages/ctf/TsukuCTF2023/writeups/$base
-            cp -f $filename/writeup/README.md pages/ctf/TsukuCTF2023/writeups/$base/README.md
+            cp -rf $filename/writeup/ pages/ctf/TsukuCTF2023/writeups/$base/
         done
     fi
 done
