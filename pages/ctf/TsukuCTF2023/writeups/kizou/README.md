@@ -21,7 +21,7 @@ Medium
 
 ## 解法
 
-![kizou](./image.jpg)
+![kizou](image.jpg)
 
 1. 画像の右上あたりにau Style NAHAが書かれています。那覇市であることがわかります。
 2. Googleストリートビューで像を確認しますが、解像度が低いため識別できません
