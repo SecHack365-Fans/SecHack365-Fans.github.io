@@ -1,9 +1,14 @@
 #!/bin/bash
 
 YEAR=2023
+EXIST_TSUKUSHI=false
 
 shopt -s nocaseglob
-categories=('osint' 'tsukushi' 'crypto' 'misc' 'rev' 'web' 'hardware')
+categories=('osint' 'crypto' 'misc' 'rev' 'web' 'hardware')
+
+if $EXIST_TSUKUSHI; then
+    categories+=('tsukushi')
+fi
 
 for category in "${categories[@]}"; do
     if [ -d ../TsukuCTF$YEAR/$category ]; then
