@@ -1,7 +1,7 @@
 ---
 title: Where
 description: この写真に移っている場所はどこ?
-author: yu1k
+author: yu1k_
 genre: OSINT
 solver: 98
 point: 406
