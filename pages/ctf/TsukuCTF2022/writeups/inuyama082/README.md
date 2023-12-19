@@ -14,7 +14,7 @@ point: 302
 つくし君は愛知県犬山市にデートに来た時の思い出の写真を見返しています。 おいしそうな写真を見つけ、おやつが食べたくなりました。 写真のおやつの名前を教えてください。  
 `※フラグの形式はTsukuCTF22{XXXXXXX ver.XXXXXX}です。`
 
-[inuyama082.jpg](files/inuyama082.jpg)
+![inuyama082.jpg](images/inuyama082.jpg)
 
 ## 難易度
 
@@ -28,7 +28,6 @@ CTF の作問では飯テロを心がけているのですが、今回はスイ�
 ## 解法
 
 抹茶がついている特徴的なスイーツの写真が渡される。  
-![inuyama082.jpg](files/inuyama082.jpg)  
 `愛知県犬山市`と問題文にあることから、「犬山 抹茶 スイーツ」と Google 画像検索する。  
 すると以下のように、同じものが見つかる。  
 ![googles.png](images/googles.png)  
