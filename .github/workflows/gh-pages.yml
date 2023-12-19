@@ -27,7 +27,7 @@ jobs:
       - name: lint
         run: yarn lint
       - name: build
-        run: yarn build && echo "fans.sechack365.com" > out/CNAME
+        run: yarn build && echo "tsukuctf.org" > out/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -2,7 +2,8 @@ import { FaTwitter } from "react-icons/fa";
 import stylex from "@stylexjs/stylex";
 import { s } from "../styles/writeups.stylex";
 
-export const TwitterButton = ({ authors }: { authors: string }) => {
+export const TwitterButton = ({ authors }: { authors?: string }) => {
+  if (!authors) return <></>;
   if (authors.match(/([A-Za-z_]+( ?& ?)?)+/)) {
     return (
       <span>

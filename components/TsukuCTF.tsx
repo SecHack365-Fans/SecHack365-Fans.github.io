@@ -3,7 +3,7 @@ import Link from "next/link";
 import { TwitterButton } from "./TwitterButton";
 import { genre2Style, AllPostedData, postSortCb } from "./writeup";
 import stylex from "@stylexjs/stylex";
-import { s, genreStyles } from "../styles/writeups.stylex";
+import { s } from "../styles/writeups.stylex";
 
 const CTFDescription = ({ date }: { date: string }) => {
   return (
@@ -63,7 +63,10 @@ export const TsukuCTFWriteup = ({
                     <div {...stylex.props(s.writeupMetaBox)}>
                       Genre:
                       <span
-                        {...stylex.props(s.writeupGenre, genre2Style(genre))}
+                        {...stylex.props(
+                          s.writeupGenre,
+                          genre ? genre2Style(genre) : {},
+                        )}
                       >
                         {genre}
                       </span>
