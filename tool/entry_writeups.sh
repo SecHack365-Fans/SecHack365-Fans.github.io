@@ -10,6 +10,10 @@ if $EXIST_TSUKUSHI; then
     categories+=('tsukushi')
 fi
 
+if [ -d pages/ctf/TsukuCTF$YEAR/writeups ]; then
+    rm -rf pages/ctf/TsukuCTF$YEAR/writeups
+fi
+
 for category in "${categories[@]}"; do
     if [ -d ../TsukuCTF$YEAR/$category ]; then
         for filename in ../TsukuCTF2023/$category/*; do
