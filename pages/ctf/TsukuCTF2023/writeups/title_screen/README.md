@@ -34,9 +34,9 @@ iNESフォーマットのヘッダ情報からNES(ファミリーコンピュー
 ```
 
 動作させた場合最終的に以下のように動作します。  
-<img src="nes_emulator.png" width="70%">  
+![](nes_emulator.png)  
 白ロムに実際に書き込み、実機で実行しても動作します。  
-<img src="nes_original.jpg" width="70%">  
+![](nes_original.jpg)  
 
 
 この問題を解くにあたって参照するべきアルゴリズムはほぼここだけとなります。  
@@ -62,7 +62,7 @@ BG(4KB)とスプライト(4KB)あわせて8KBのデータが記録されてい�
 ```
 3bit目、スプライト用CHRテーブルのオフセットが`$1000`に設定されているので画像の並び通りBG→スプライトの順でアドレス展開されていることがわかります。  
 よって、dataラベルに書かれているアドレスにあるキャラクタブロックを順に画像上部からピックアップすればいいことがわかります。  
-<img src="chr_address.png" width="50%">  
+![](chr_address.png)  
 並べると`Tsukushi_Quest`という文字列が読み取れます。  
 dataラベルには末尾に`$8c`もありますが、これはダミーデータで`mapping2_x_loop`が14回でループが終わるため表示されません。  
 よってフラグは`TsukuCTF23{Tsukushi_Quest}`となります。  
@@ -71,7 +71,7 @@ dataラベルには末尾に`$8c`もありますが、これはダミーデー�
 ### 余談1
 コメント付きのソースファイル一式を以下に公開しました。  
 実際にコンパイルして実行できるようにしてあります。  
-https://github.com/TakedaHiromasa/tsukuctf-title_screen  
+[https://github.com/TakedaHiromasa/tsukuctf-title_screen](https://github.com/TakedaHiromasa/tsukuctf-title_screen)  
 
 ### 余談2
 iNESヘッダは1996年あたりから提案されている**NESエミュレータ向けの仕様**であり、父は現役のNES開発者ではなかったことがうかがえます。  
