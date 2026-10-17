@@ -24,10 +24,27 @@ const resolveImageUrl = (src: string, ctfId: string, postId: string) => {
   return new URL(src, baseUrl).toString();
 };
 
+const resolveLinkUrl = (href: string, ctfId: string, postId: string) => {
+  if (
+    /^[a-z][a-z\d+.-]*:/i.test(href) ||
+    href.startsWith("//") ||
+    href.startsWith("/") ||
+    href.startsWith("#")
+  ) {
+    return href;
+  }
+
+  const repositoryUrl = `https://github.com/SecHack365-Fans/SecHack365-Fans.github.io/blob/master/pages/ctf/${encodeURIComponent(ctfId)}/writeups/${encodeURIComponent(postId)}/`;
+  return new URL(href, repositoryUrl).toString();
+};
+
 const createMarkdownComponents = ({
   ctfId,
   postId,
 }: Pick<MarkdownProps, "ctfId" | "postId">): Components => ({
+  a: ({ href = "", node: _node, ...props }) => (
+    <a {...props} href={resolveLinkUrl(href, ctfId, postId)} />
+  ),
   img: ({ src = "", alt, node: _node, ...props }) => (
     <img
       {...props}

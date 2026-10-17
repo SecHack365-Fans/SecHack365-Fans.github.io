@@ -9,7 +9,7 @@ point: 100
 
 # Tsukushi_no_email2
 
-[Tsukushi_no_email1](../tsukushi_no_email1)から`tsukuctf@gmail.com`がこの CTF のメールアドレスであることがわかる。  
+[Tsukushi_no_email1](/ctf/TsukuCTF2021/Tsukushi_no_email1)から`tsukuctf@gmail.com`がこの CTF のメールアドレスであることがわかる。\
 Google の情報を取得したい場合以下のツールを使用することが多い。  
 GHunt  
 [https://github.com/mxrch/GHunt](https://github.com/mxrch/GHunt)  

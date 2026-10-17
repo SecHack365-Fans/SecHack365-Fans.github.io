@@ -19,6 +19,6 @@ point: 100
 ![images/unnamed.jpg](./images/unnamed.jpg)
 
 flag が書かれていた。  
-ちなみに[Tsukushi_no_email2](../tsukushi_no_email2)を用いることでも取得できる。
+ちなみに[Tsukushi_no_email2](/ctf/TsukuCTF2021/Tsukushi_no_email2)を用いることでも取得できる。
 
 ## TsukuCTF{Google_kingdom}
