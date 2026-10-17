@@ -1,9 +1,15 @@
 import { Layout } from "./Layout";
 import Link from "next/link";
 import { TwitterButton } from "./TwitterButton";
-import { genre2Style, AllPostedData, postSortCb } from "./writeup";
-import stylex from "@stylexjs/stylex";
+import { comparePosts, getGenreStyle } from "./writeup";
+import * as stylex from "@stylexjs/stylex";
+import type { PostIndexProps } from "../lib/posts";
 import { s } from "../styles/writeups.stylex";
+
+type TsukuCtfPageProps = PostIndexProps & {
+  ctfId: string;
+  date: string;
+};
 
 const CTFDescription = ({ date }: { date: string }) => {
   return (
@@ -14,7 +20,7 @@ const CTFDescription = ({ date }: { date: string }) => {
         rel="noopener noreferrer"
       >
         <img
-          src="../../../images/tsukuctf-logo.png"
+          src="/images/tsukuctf-logo.png"
           alt="TsukuCTF"
           {...stylex.props(s.ctfLogo)}
         />
@@ -25,7 +31,7 @@ const CTFDescription = ({ date }: { date: string }) => {
         <a
           href="https://x.com/tsukuctf"
           target="_blank"
-          rel="noopener noreferer noreferrer"
+          rel="noopener noreferrer"
         >
           X(@tsukuctf)
         </a>{" "}
@@ -39,7 +45,7 @@ export const TsukuCTFWriteup = ({
   allPostsData,
   ctfId,
   date,
-}: AllPostedData) => {
+}: TsukuCtfPageProps) => {
   return (
     <Layout title={`${ctfId} Writeups`} description={`${ctfId} Writeups`}>
       <h1>{ctfId}</h1>
@@ -48,16 +54,14 @@ export const TsukuCTFWriteup = ({
       <div {...stylex.props(s.writeups)}>
         <h2>Writeups</h2>
         <ul {...stylex.props(s.ctfWriteupUl)}>
-          {allPostsData
-            .sort((a, b) => postSortCb(a, b))
+          {[...allPostsData]
+            .sort(comparePosts)
             .map(({ id, title, description, author, genre, solver, point }) => (
-              <Link
-                href={`/ctf/${ctfId}/${id}`}
-                key={id}
-                passHref
-                {...stylex.props(s.writeupLink)}
-              >
-                <li {...stylex.props(s.ctfWriteupList)}>
+              <li key={id} {...stylex.props(s.ctfWriteupList)}>
+                <Link
+                  href={`/ctf/${ctfId}/${id}`}
+                  {...stylex.props(s.writeupLink)}
+                >
                   <div {...stylex.props(s.writeupTitle)}>{title}</div>
                   <div {...stylex.props(s.writeupMeta)}>
                     <div {...stylex.props(s.writeupMetaBox)}>
@@ -65,7 +69,7 @@ export const TsukuCTFWriteup = ({
                       <span
                         {...stylex.props(
                           s.writeupGenre,
-                          genre ? genre2Style(genre) : {},
+                          genre ? getGenreStyle(genre) : {},
                         )}
                       >
                         {genre}
@@ -85,11 +89,20 @@ export const TsukuCTFWriteup = ({
                   <span {...stylex.props(s.writeupDescription)}>
                     {description}
                   </span>
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
         </ul>
       </div>
     </Layout>
   );
+};
+
+export const createPostIndexPage = (ctfId: string, date: string) => {
+  const PostIndexPage = ({ allPostsData }: PostIndexProps) => (
+    <TsukuCTFWriteup allPostsData={allPostsData} ctfId={ctfId} date={date} />
+  );
+
+  PostIndexPage.displayName = `${ctfId}IndexPage`;
+  return PostIndexPage;
 };

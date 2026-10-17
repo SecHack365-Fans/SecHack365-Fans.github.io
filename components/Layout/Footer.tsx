@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import { s } from "../../styles/Footer.stylex";
 
 const Footer = () => {
@@ -6,7 +6,7 @@ const Footer = () => {
   const year = date.getFullYear();
   return (
     <div {...stylex.props(s.footer)}>
-      © 2021-{year} SecHack365-Fans All Right Reserved.
+      © 2021-{year} SecHack365-Fans. All Rights Reserved.
     </div>
   );
 };

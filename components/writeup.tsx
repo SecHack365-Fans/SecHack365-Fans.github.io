@@ -1,6 +1,7 @@
 import { genreStyles } from "../styles/writeups.stylex";
+import type { PostSummary } from "../lib/posts";
 
-export const genre2Style = (genre: string) => {
+export const getGenreStyle = (genre: string) => {
   switch (genre.toLowerCase()) {
     case "tsukushi":
       return genreStyles.tsukushi;
@@ -23,23 +24,7 @@ export const genre2Style = (genre: string) => {
   }
 };
 
-type Post = {
-  id: string;
-  title: string;
-  description: string;
-  author: string;
-  genre: string;
-  solver: number;
-  point: number;
-};
-
-export type AllPostedData = {
-  allPostsData: Post[];
-  ctfId: string;
-  date: string;
-};
-
 // ソートの第一条件をジャンル、第二条件をidでソートすることで、並び順を一意にする
 // このソート順にしたのは、ユーザがみた時にジャンル->問題名のアルファベット順で探すと思ったため
-export const postSortCb = (a: Post, b: Post) =>
-  a.genre === b.genre ? (a.id < b.id ? -1 : 1) : a.genre < b.genre ? -1 : 1;
+export const comparePosts = (a: PostSummary, b: PostSummary) =>
+  a.genre.localeCompare(b.genre) || a.id.localeCompare(b.id);

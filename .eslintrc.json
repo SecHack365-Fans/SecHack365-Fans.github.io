@@ -1,8 +1,0 @@
-{
-  "plugins": ["@stylexjs"],
-  "extends": "next/core-web-vitals",
-  "rules": {
-    "@next/next/no-img-element": "off",
-    "@stylexjs/valid-styles": "error"
-  }
-}

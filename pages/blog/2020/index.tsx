@@ -1,88 +1,67 @@
 import { Layout } from "../../../components/Layout";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 import { s } from "../../../styles/blog.stylex";
 
-// 表現駆動のエントリデータ
-const ExprData = require("./data/expr.json");
+import developmentEntries from "./data/dev.json";
+import expressionEntries from "./data/expr.json";
+import researchEntries from "./data/research.json";
+import studyEntries from "./data/study.json";
+import thoughtEntries from "./data/think.json";
 
-// 学習駆動コースのデータ
-const StudyData = require("./data/study.json");
+type Achievement = {
+  title: string;
+  href: string;
+};
 
-// 開発駆動のエントリデータ
-const DevData = require("./data/dev.json");
+type Entry = {
+  author: string;
+  title: string;
+  blogHRef: string;
+  blogHostedAt: string;
+  achivements: Achievement[];
+};
 
-// 思索駆動のエントリデータ
-const ThinkData = require("./data/think.json");
-
-// 研究駆動のエントリデータ
-const ResearchData = require("./data/research.json");
-
-// コース一覧
-
-type Cources = {
+type Course = {
   courseName: string;
-  courseData: Array<tableRowType>;
-  styles?: string;
-}[];
+  courseData: Entry[];
+};
 
-const Courses: Cources = [
+const courses: Course[] = [
   {
     courseName: "表現駆動",
-    courseData: ExprData,
+    courseData: expressionEntries,
   },
   {
     courseName: "学習駆動",
-    courseData: StudyData,
+    courseData: studyEntries,
   },
   {
     courseName: "開発駆動",
-    courseData: DevData,
+    courseData: developmentEntries,
   },
   {
     courseName: "思索駆動",
-    courseData: ThinkData,
+    courseData: thoughtEntries,
   },
   {
     courseName: "研究駆動",
-    courseData: ResearchData,
+    courseData: researchEntries,
   },
 ];
 
-/**
- * TableRow でのみの使用を想定している
- * @param {string} title - 作品のタイトル
- * @param {string} href - 作品へのリンク
- * @returns {JSX.Element} - 多分
- */
-const AchivementLink = ({ title, href }: { title: string; href: string }) => (
+const AchievementLink = ({ title, href }: Achievement) => (
   <a href={href} target="_blank" rel="noopener noreferrer">
     {title}
   </a>
 );
 
-/**
- * テーブルの1行
- * @param {string} author - 参加者の名前
- * @param {string} title - 参加記のタイトル
- * @param {string} blogHRef - 参加記への href
- * @param {string} blogHostedAt - 参加記をホスティングしてるドメイン
- * @param {Array<{title: string, href: string}>} achivements - 作品のタイトルとリンク
- * @returns {JSX.Element} - 多分
- */
-type tableRowType = {
-  author: string;
-  title: string;
-  blogHRef: string;
-  blogHostedAt: string;
-  achivements: Array<{ title: string; href: string }>;
-};
 const TableRow = ({
   author,
   title,
   blogHRef,
   blogHostedAt,
   achivements,
-}: tableRowType) => (
+}: Entry) => (
   <tr>
     <td {...stylex.props(s.sh365_name)}>{author}</td>
     <td {...stylex.props(s.sh365_title)}>{title}</td>
@@ -92,18 +71,12 @@ const TableRow = ({
       </a>
     </td>
     <td {...stylex.props(s.sh365_hack)}>
-      {achivements.length > 0 && (
-        <>
-          {/* 2つ目以降の作品のリンクの前には <br /> を入れたいので最初のだけ直接添字アクセスをして、それ以降を map で呼び出す */}
-          <AchivementLink {...achivements[0]} />
-          {achivements.slice(1).map((achivement) => (
-            <span key={achivement.href}>
-              <br />
-              <AchivementLink {...achivement} />
-            </span>
-          ))}
-        </>
-      )}
+      {achivements.map((achievement, index) => (
+        <span key={achievement.href}>
+          {index > 0 && <br />}
+          <AchievementLink {...achievement} />
+        </span>
+      ))}
     </td>
   </tr>
 );
@@ -118,10 +91,12 @@ const Blog2020 = () => {
       <p>
         2020年度にSecHack365に参加したトレーニーによる参加ブログのまとめです。(順不同)
       </p>
-      {Courses.map((course, idx) => (
-        <div {...stylex.props(s.courseTables)} key={idx}>
+      {courses.map((course, index) => (
+        <div {...stylex.props(s.courseTables)} key={course.courseName}>
           <h2 {...stylex.props(s.coursettl)}>
-            <span {...stylex.props(s.courceId)}>{`0${idx}`}</span>
+            <span {...stylex.props(s.courseId)}>
+              {String(index + 1).padStart(2, "0")}
+            </span>
             {course.courseName}
           </h2>
           <div>
@@ -135,7 +110,7 @@ const Blog2020 = () => {
                 </tr>
               </thead>
               <tbody>
-                {course.courseData.map((data: tableRowType) => (
+                {course.courseData.map((data) => (
                   <TableRow {...data} key={data.author} />
                 ))}
               </tbody>

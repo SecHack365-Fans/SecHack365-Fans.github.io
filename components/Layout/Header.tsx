@@ -8,21 +8,21 @@ interface Props {
 const Header: React.FC<Props> = ({ title, description }: Props) => {
   const defaultTitle = "SecHack365-Fans";
   const defaultDescription =
-    "このサイトはSecHack365修了生よって運営されている非公式ののファンページです。";
+    "このサイトはSecHack365修了生によって運営されている非公式のファンページです。";
+  const pageTitle = title || defaultTitle;
+  const pageDescription = description || defaultDescription;
   return (
     <Head>
-      <title>{title ? title : defaultTitle}</title>
-      <meta
-        name="description"
-        content={description ? description : defaultDescription}
-      />
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
       <link rel="icon" href="/favicon.ico" />
-      <meta name="og:title" content={title} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         property="og:image"
-        content="https://fans.sechack365.com/images/tsukuctf-logo.png"
+        content="https://tsukuctf.org/images/tsukuctf-logo.png"
       />
     </Head>
   );

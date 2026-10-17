@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 
 export const s = stylex.create({
   /* 「注意」の枠線 */
@@ -19,7 +19,7 @@ export const s = stylex.create({
     top: "-13px",
     left: "10px",
     padding: "0px 9px",
-    lineHeight: "1",
+    lineHeight: 1,
     fontSize: "19px",
     fontWeight: "bold",
     backgroundColor: "#fff",

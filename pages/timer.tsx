@@ -1,130 +1,104 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import { s } from "../styles/timer.stylex";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 
 // NOTE: StyleXでローカルフォントの指定の方法がわからなかった
 import styles from "/styles/timerFont.module.css";
 
-function getNextJanuary31st() {
-  let date = new Date();
+type ClockState = {
+  now: Date;
+  eventYear: number;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  centiseconds: number;
+};
 
-  if (date.getMonth() >= 1) {
-    date.setFullYear(date.getFullYear() + 1);
-  }
+const getDeadline = (now: Date) => {
+  const year = now.getMonth() >= 1 ? now.getFullYear() + 1 : now.getFullYear();
+  return new Date(year, 0, 31, 23, 59, 59, 999);
+};
 
-  date.setMonth(0);
-  date.setDate(31);
-  date.setHours(23);
-  date.setMinutes(59);
-  date.setSeconds(59);
+const getClockState = (now: Date): ClockState => {
+  const deadline = getDeadline(now);
+  const remainingCentiseconds = Math.max(
+    0,
+    Math.floor((deadline.getTime() - now.getTime()) / 10),
+  );
+  const centisecondsPerDay = 24 * 60 * 60 * 100;
+  const centisecondsPerHour = 60 * 60 * 100;
+  const centisecondsPerMinute = 60 * 100;
 
-  return date;
-}
-
-const DeadLine = getNextJanuary31st();
-const NextEvent = (
-  <>
-    SecHack365&apos;{DeadLine.getFullYear() - 2001}
-    <br />
-    最終発表会まで(多分)
-  </>
-);
-
-type ClockPropsType = {};
-type ClockStateType = Partial<{
-  date: Date | string;
-  diffDays: number | undefined;
-  diffHours: number | undefined;
-  diffMinutes: number | undefined;
-  diffSeconds: number | undefined;
-  diffMilliSeconds: number | undefined;
-}>;
-class RealTimeClock extends React.Component<ClockPropsType, ClockStateType> {
-  constructor(props: ClockPropsType) {
-    super(props);
-    this.state = {
-      date: "Wait...",
-    };
-  }
-
-  componentDidMount() {
-    setInterval(() => this.tick(), 10);
-  }
-
-  tick() {
-    const date = new Date();
-    const diff = DeadLine.getTime() - date.getTime();
-    const diffDays = diff / (1000 * 60 * 60 * 24);
-    const diffHour = (diffDays - Math.floor(diffDays)) * 24;
-    const diffMinute = (diffHour - Math.floor(diffHour)) * 60;
-    const diffSecond = (diffMinute - Math.floor(diffMinute)) * 60;
-    const diffMilliSecond = (diffSecond - Math.floor(diffSecond)) * 100;
-
-    this.setState({
-      date: date,
-      diffDays: Math.floor(diffDays),
-      diffHours: Math.floor(diffHour),
-      diffMinutes: Math.floor(diffMinute),
-      diffSeconds: Math.floor(diffSecond),
-      diffMilliSeconds: Math.floor(diffMilliSecond),
-    });
-  }
-
-  zeroPadding = (num: number, length: number) => {
-    return ("0000000000" + num).slice(-length);
+  return {
+    now,
+    eventYear: deadline.getFullYear() - 2001,
+    days: Math.floor(remainingCentiseconds / centisecondsPerDay),
+    hours: Math.floor(
+      (remainingCentiseconds % centisecondsPerDay) / centisecondsPerHour,
+    ),
+    minutes: Math.floor(
+      (remainingCentiseconds % centisecondsPerHour) / centisecondsPerMinute,
+    ),
+    seconds: Math.floor((remainingCentiseconds % centisecondsPerMinute) / 100),
+    centiseconds: remainingCentiseconds % 100,
   };
+};
 
-  toCountDownFormat = (value: number | undefined, padding: number) => {
-    if (typeof value === "undefined") {
-      return "";
-    } else {
-      return this.zeroPadding(value, padding);
-    }
-  };
+const formatCountdownPart = (value: number) => String(value).padStart(2, "0");
 
-  render() {
-    return (
-      <div>
-        <div {...stylex.props(s.realTimeClock)}>
-          現実世界の時刻
+const RealTimeClock = () => {
+  const [clock, setClock] = useState<ClockState>();
+
+  useEffect(() => {
+    const updateClock = () => setClock(getClockState(new Date()));
+    updateClock();
+    const intervalId = window.setInterval(updateClock, 10);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  return (
+    <div>
+      <div {...stylex.props(s.realTimeClock)}>
+        現実世界の時刻
+        <br />
+        {clock?.now.toLocaleTimeString() ?? "Wait..."}
+      </div>
+      <div {...stylex.props(s.countDown)}>
+        <div {...stylex.props(s.countDownText)}>
+          SecHack365&apos;{clock?.eventYear}
           <br />
-          {typeof this.state.date == "string"
-            ? this.state.date
-            : this.state.date?.toLocaleTimeString() ?? ""}
-        </div>
-        <div {...stylex.props(s.countDown)}>
-          <div {...stylex.props(s.countDownText)}>
-            {NextEvent}
-            <br />
-            <span className={styles.countDownTimer}>{this.state.diffDays}</span>
-            日{" "}
-            <span className={styles.countDownTimer}>
-              {this.toCountDownFormat(this.state.diffHours, 2)}
-            </span>
-            :
-            <span className={styles.countDownTimer}>
-              {this.toCountDownFormat(this.state.diffMinutes, 2)}
-            </span>
-            :
-            <span className={styles.countDownTimer}>
-              {this.toCountDownFormat(this.state.diffSeconds, 2)}
-            </span>
-            .
-            <span className={styles.countDownTimer}>
-              {this.toCountDownFormat(this.state.diffMilliSeconds, 2)}
-            </span>
-          </div>
+          最終発表会まで(多分)
+          <br />
+          <span className={styles.countDownTimer}>{clock?.days}</span>日{" "}
+          <span className={styles.countDownTimer}>
+            {formatCountdownPart(clock?.hours ?? 0)}
+          </span>
+          :
+          <span className={styles.countDownTimer}>
+            {formatCountdownPart(clock?.minutes ?? 0)}
+          </span>
+          :
+          <span className={styles.countDownTimer}>
+            {formatCountdownPart(clock?.seconds ?? 0)}
+          </span>
+          .
+          <span className={styles.countDownTimer}>
+            {formatCountdownPart(clock?.centiseconds ?? 0)}
+          </span>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 const Timer = () => {
-  ShowDamedesu();
+  useEffect(showProgressWarning, []);
+
   return (
-    <Layout title="" description="">
+    <Layout title="限界タイマー">
       <div {...stylex.props(s.backGround)}>
         <div>
           <p {...stylex.props(s.title)}>†限界タイマー†</p>
@@ -137,7 +111,7 @@ const Timer = () => {
 
 export default Timer;
 
-const ShowDamedesu = () => {
+const showProgressWarning = () => {
   console.log("＿人人人人人人人人人人＿");
   console.log("＞ 進捗ダメです！！ ＜");
   console.log("￣Y^Y^Y^Y^Y^Y^Y^Y^Y￣");

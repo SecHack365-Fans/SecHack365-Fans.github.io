@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState, type JSX, type MouseEvent } from "react";
 import Link from "next/link";
-import { s } from "../../styles/Navigator.stylex";
-import stylex, { StaticStyles } from "@stylexjs/stylex";
-
-// TODO: いずれお前は消す
 import { IconButton, Menu } from "@mui/material";
+import * as stylex from "@stylexjs/stylex";
+import type { StaticStyles } from "@stylexjs/stylex";
 import {
-  FaGithub,
-  FaEllipsisV,
   FaBook,
-  FaStopwatch,
+  FaEllipsisV,
   FaFlag,
+  FaGithub,
+  FaStopwatch,
 } from "react-icons/fa";
 
-type pageTitleType = {
+import { s } from "../../styles/Navigator.stylex";
+
+type NavigationItem = {
   title: string;
   href: string;
   icon?: JSX.Element;
   styles: StaticStyles[];
-  onlyIcon?: boolean;
+  iconOnly?: boolean;
 };
 
-const pageTitles: pageTitleType[] = [
+const navigationItems: NavigationItem[] = [
   {
     title: "TOP",
     href: "/",
@@ -50,127 +50,102 @@ const pageTitles: pageTitleType[] = [
     href: "https://github.com/SecHack365-Fans/SecHack365-Fans.github.io",
     icon: <FaGithub />,
     styles: [s.button, s.otherLink],
-    onlyIcon: true,
+    iconOnly: true,
   },
 ];
 
-/**
- * ナビゲーションバー
- */
+const DesktopNavigation = () => (
+  <div {...stylex.props(s.navbar)}>
+    {navigationItems.map((item) => (
+      <Link
+        href={item.href}
+        key={item.href}
+        aria-label={item.iconOnly ? item.title : undefined}
+        {...stylex.props(...item.styles, s.navLink)}
+      >
+        {item.iconOnly ? item.icon : item.title}
+      </Link>
+    ))}
+  </div>
+);
+
+type MobileNavigationProps = {
+  anchorElement: HTMLElement | null;
+  onOpen: (event: MouseEvent<HTMLElement>) => void;
+  onClose: () => void;
+};
+
+const MobileNavigation = ({
+  anchorElement,
+  onOpen,
+  onClose,
+}: MobileNavigationProps) => (
+  <div {...stylex.props(s.navbar)}>
+    <Link href="/" {...stylex.props(s.button, s.home)}>
+      TOP
+    </Link>
+    <IconButton
+      size="large"
+      aria-controls="menu-appbar"
+      aria-haspopup="true"
+      aria-expanded={Boolean(anchorElement)}
+      aria-label="メニューを開く"
+      onClick={onOpen}
+      color="inherit"
+      {...stylex.props(s.navLink)}
+    >
+      <FaEllipsisV style={{ color: "#eee" }} />
+    </IconButton>
+    <Menu
+      id="menu-appbar"
+      anchorEl={anchorElement}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      keepMounted
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
+      open={Boolean(anchorElement)}
+      onClose={onClose}
+      {...stylex.props(s.menu)}
+    >
+      {navigationItems.slice(1).map((item) => (
+        <div key={item.href} {...stylex.props(s.menuItem)}>
+          <Link
+            href={item.href}
+            onClick={onClose}
+            {...stylex.props(s.menuItemButton)}
+          >
+            <span {...stylex.props(s.icon)}>{item.icon}</span>
+            {item.title}
+          </Link>
+        </div>
+      ))}
+    </Menu>
+  </div>
+);
+
 const Navigator = () => {
-  const stateProps: {
-    mobileView: boolean;
-    anchorEl: null | (EventTarget & HTMLElement);
-  } = {
-    mobileView: false,
-    anchorEl: null,
-  };
-  const [state, setState] = useState(stateProps);
-  const { mobileView, anchorEl } = state;
+  const [isMobile, setIsMobile] = useState(false);
+  const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    const setResponsiveness = () => {
-      return window.innerWidth < 600
-        ? setState((prevState) => ({ ...prevState, mobileView: true }))
-        : setState((prevState) => ({ ...prevState, mobileView: false }));
-    };
+    const mediaQuery = window.matchMedia("(max-width: 599px)");
+    const updateViewport = () => setIsMobile(mediaQuery.matches);
 
-    setResponsiveness();
-    window.addEventListener("resize", () => setResponsiveness());
-
-    return () => {
-      window.removeEventListener("resize", () => setResponsiveness());
-    };
+    updateViewport();
+    mediaQuery.addEventListener("change", updateViewport);
+    return () => mediaQuery.removeEventListener("change", updateViewport);
   }, []);
 
-  /**
-   * 画面の横幅が広い時のナビゲーションバー
-   */
-  const displayDesktop = (): JSX.Element => {
-    return (
-      <div {...stylex.props(s.navbar)}>
-        {pageTitles.map((pageTitle, idx) => (
-          <Link
-            href={pageTitle.href}
-            key={pageTitle.href}
-            passHref
-            {...stylex.props(...pageTitle.styles, s.navLink)}
-          >
-            {pageTitle.onlyIcon ? pageTitle.icon : pageTitle.title}
-          </Link>
-        ))}
-      </div>
-    );
-  };
+  if (!isMobile) {
+    return <DesktopNavigation />;
+  }
 
-  /**
-   * 画面の横幅が狭い時のナビゲーションバー(ハンバーガーメニュー)
-   */
-  const displayMobile = (): JSX.Element => {
-    const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-      setState((prevState) => ({
-        ...prevState,
-        anchorEl: event.currentTarget,
-      }));
-    };
-    const handleClose = () => {
-      setState((prevState) => ({
-        ...prevState,
-        anchorEl: null,
-      }));
-    };
-
-    return (
-      <div {...stylex.props(s.navbar)}>
-        <Link href="/" passHref {...stylex.props(s.button, s.home)}>
-          TOP
-        </Link>
-        <IconButton
-          size="large"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleMenu}
-          color="inherit"
-          {...stylex.props(s.navLink)}
-        >
-          <FaEllipsisV style={{ color: "#eee" }} />
-        </IconButton>
-        <Menu
-          id="menu-appbar"
-          anchorEl={anchorEl}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          keepMounted
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          {...stylex.props(s.menu)}
-        >
-          {pageTitles
-            .filter((pageTitle) => pageTitle.title !== "TOP")
-            .map((page) => (
-              <div key={page.title} {...stylex.props(s.menuItem)}>
-                <Link
-                  href={page.href}
-                  passHref
-                  {...stylex.props(s.menuItemButton)}
-                >
-                  <span {...stylex.props(s.icon)}>{page.icon ?? ""}</span>
-                  {page.title}
-                </Link>
-              </div>
-            ))}
-        </Menu>
-      </div>
-    );
-  };
-
-  return mobileView ? displayMobile() : displayDesktop();
+  return (
+    <MobileNavigation
+      anchorElement={anchorElement}
+      onOpen={(event) => setAnchorElement(event.currentTarget)}
+      onClose={() => setAnchorElement(null)}
+    />
+  );
 };
 
 export default Navigator;

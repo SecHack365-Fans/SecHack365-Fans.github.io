@@ -1,73 +1,85 @@
-import ReactMarkdown from "react-markdown";
-import path from "path";
-
+import ReactMarkdown, { type Components } from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
+import type { PostPageProps } from "../lib/posts";
+import { Layout } from "./Layout";
 import styles from "./MarkdownRender.module.css";
 
 type MarkdownProps = {
-  ctfId: string | undefined;
-  title: string | undefined;
-  content: string | undefined;
+  ctfId: string;
+  postId: string;
+  content: string;
 };
 
-const components = (markdownProps: MarkdownProps) => {
-  return {
-    img: ({ ...props }: any) => {
-      const src =
-        "https://" +
-        path.join(
-          "raw.githubusercontent.com/SecHack365-Fans/SecHack365-Fans.github.io/master/pages/ctf/",
-          markdownProps.ctfId ?? "",
-          "/writeups/",
-          markdownProps.title ?? "",
-          props.src as string,
-        );
-      return <img src={src} alt={props.alt} style={{ width: "80%" }} />;
-    },
-    code({ inline, className, children, ...props }: any) {
-      const match = /language-(\w+)/.exec(className || "");
-      return !inline && match ? (
-        <SyntaxHighlighter
-          style={tomorrow}
-          language={match[1]}
-          PreTag="div"
-          {...props}
-          className={styles.code}
-        >
-          {String(children).replace(/\n$/, "")}
-        </SyntaxHighlighter>
-      ) : (
-        <code className={`${className} ${styles.inlineCode}`} {...props}>
-          {children}
-        </code>
-      );
-    },
-    blockquote: ({ node, children, ...props }: any) => {
-      return <blockquote className={styles.blockQuote}>{children}</blockquote>;
-    },
+const resolveImageUrl = (src: string, ctfId: string, postId: string) => {
+  if (/^[a-z][a-z\d+.-]*:/i.test(src)) {
+    return src;
+  }
+  if (src.startsWith("//")) {
+    return `https:${src}`;
+  }
+
+  const baseUrl = `https://raw.githubusercontent.com/SecHack365-Fans/SecHack365-Fans.github.io/master/pages/ctf/${encodeURIComponent(ctfId)}/writeups/${encodeURIComponent(postId)}/`;
+  return new URL(src, baseUrl).toString();
+};
+
+const createMarkdownComponents = ({
+  ctfId,
+  postId,
+}: Pick<MarkdownProps, "ctfId" | "postId">): Components => ({
+  img: ({ src = "", alt, node: _node, ...props }) => (
+    <img
+      {...props}
+      src={typeof src === "string" ? resolveImageUrl(src, ctfId, postId) : src}
+      alt={alt ?? ""}
+      style={{ width: "80%" }}
+    />
+  ),
+  code: ({ className, children, node: _node, ...props }) => {
+    const language = /language-(\w+)/.exec(className ?? "")?.[1];
+
+    return language ? (
+      <SyntaxHighlighter
+        style={tomorrow}
+        language={language}
+        PreTag="div"
+        className={styles.code}
+      >
+        {String(children).replace(/\n$/, "")}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={`${className ?? ""} ${styles.inlineCode}`} {...props}>
+        {children}
+      </code>
+    );
+  },
+  blockquote: ({ children, node: _node, ...props }) => (
+    <blockquote {...props} className={styles.blockQuote}>
+      {children}
+    </blockquote>
+  ),
+});
+
+const MarkdownRender = ({ ctfId, postId, content }: MarkdownProps) => (
+  <ReactMarkdown components={createMarkdownComponents({ ctfId, postId })}>
+    {content}
+  </ReactMarkdown>
+);
+
+export const createPostPage = (ctfId: string) => {
+  const PostPage = ({ postData }: PostPageProps) => {
+    const { id, title, content } = postData;
+
+    return (
+      <Layout title={`${title}-${ctfId}`}>
+        <MarkdownRender ctfId={ctfId} postId={id} content={content} />
+      </Layout>
+    );
   };
-};
 
-const MarkdownRender = (props: MarkdownProps): JSX.Element => {
-  return (
-    <ReactMarkdown components={components(props)}>
-      {props.content ?? ""}
-    </ReactMarkdown>
-  );
+  PostPage.displayName = `${ctfId}PostPage`;
+  return PostPage;
 };
 
 export default MarkdownRender;
-
-export type PostPropType = {
-  postData: {
-    title: string;
-    description: string;
-    author: string;
-    genre: string;
-    solver: number;
-    point: number;
-    contentHtml: string;
-  };
-};

@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 
 export const s = stylex.create({
   ctfList: {
@@ -8,6 +8,7 @@ export const s = stylex.create({
     flexWrap: "wrap",
   },
   ctfColumn: {
+    display: "block",
     width: "100%",
     fontSize: "1.4em",
     padding: "10px 0 10px 15px",

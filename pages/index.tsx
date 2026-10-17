@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { Layout } from "../components/Layout";
 import { s } from "../styles/index.stylex";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       <div {...stylex.props(s.cautionBox)}>
         <div>
           <span {...stylex.props(s.cautionBoxTitle)}>注意</span>
-          このページは修了生よって運営されている
+          このページは修了生によって運営されている
           <div {...stylex.props(s.unofficial)}>非公式</div>
           のファンページです。 公式のページはこちらになります。
         </div>

@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 
 export const s = stylex.create({
   /* ナビゲーションバー */

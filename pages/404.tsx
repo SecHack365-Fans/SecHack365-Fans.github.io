@@ -1,7 +1,7 @@
 import { Layout } from "../components/Layout";
 
 import { s } from "../styles/404.stylex";
-import stylex from "@stylexjs/stylex";
+import * as stylex from "@stylexjs/stylex";
 
 const Custom404 = () => {
   return (
