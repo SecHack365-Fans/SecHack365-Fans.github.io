@@ -11,6 +11,7 @@
     "format": "prettier --write \"{pages,components,styles,lib}/**/*.{ts,tsx,json,md,css}\"",
     "format:check": "prettier --check \"{pages,components,styles,lib}/**/*.{ts,tsx,json,css}\" \"*.{ts,json,md}\"",
     "lint": "eslint .",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test --experimental-strip-types lib/*.test.mts",
     "typecheck": "tsc --noEmit",
     "prepare": "husky"
   },
@@ -28,7 +29,6 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^9.5.0",
     "@stylexjs/stylex": "^0.19.1",
-    "date-fns": "^4.4.0",
     "next": "^16.4.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",

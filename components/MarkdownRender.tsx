@@ -2,6 +2,10 @@ import ReactMarkdown, { type Components } from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
+import {
+  resolveMarkdownImageUrl,
+  resolveMarkdownLinkUrl,
+} from "../lib/markdownUrls";
 import type { PostPageProps } from "../lib/posts";
 import { Layout } from "./Layout";
 import styles from "./MarkdownRender.module.css";
@@ -12,43 +16,21 @@ type MarkdownProps = {
   content: string;
 };
 
-const resolveImageUrl = (src: string, ctfId: string, postId: string) => {
-  if (/^[a-z][a-z\d+.-]*:/i.test(src)) {
-    return src;
-  }
-  if (src.startsWith("//")) {
-    return `https:${src}`;
-  }
-
-  const baseUrl = `https://raw.githubusercontent.com/SecHack365-Fans/SecHack365-Fans.github.io/master/pages/ctf/${encodeURIComponent(ctfId)}/writeups/${encodeURIComponent(postId)}/`;
-  return new URL(src, baseUrl).toString();
-};
-
-const resolveLinkUrl = (href: string, ctfId: string, postId: string) => {
-  if (
-    /^[a-z][a-z\d+.-]*:/i.test(href) ||
-    href.startsWith("//") ||
-    href.startsWith("/") ||
-    href.startsWith("#")
-  ) {
-    return href;
-  }
-
-  const repositoryUrl = `https://github.com/SecHack365-Fans/SecHack365-Fans.github.io/blob/master/pages/ctf/${encodeURIComponent(ctfId)}/writeups/${encodeURIComponent(postId)}/`;
-  return new URL(href, repositoryUrl).toString();
-};
-
 const createMarkdownComponents = ({
   ctfId,
   postId,
 }: Pick<MarkdownProps, "ctfId" | "postId">): Components => ({
   a: ({ href = "", node: _node, ...props }) => (
-    <a {...props} href={resolveLinkUrl(href, ctfId, postId)} />
+    <a {...props} href={resolveMarkdownLinkUrl(href, ctfId, postId)} />
   ),
   img: ({ src = "", alt, node: _node, ...props }) => (
     <img
       {...props}
-      src={typeof src === "string" ? resolveImageUrl(src, ctfId, postId) : src}
+      src={
+        typeof src === "string"
+          ? resolveMarkdownImageUrl(src, ctfId, postId)
+          : src
+      }
       alt={alt ?? ""}
       style={{ width: "80%" }}
     />
